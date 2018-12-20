@@ -36,5 +36,11 @@
 @property (nonatomic, assign) NSInteger sign;
 @end
 
-
-
+@interface StarShowObject : NSObject
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, assign) NSInteger point;
+@property (nonatomic, assign) NSInteger star;
+@property (nonatomic, assign) double weight;
++(NSMutableArray *)createStarShowObject;
++(StarShowObject *)createStarShowObjectWithDictionary:(NSDictionary *)dict;
+@end

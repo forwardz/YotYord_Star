@@ -18,6 +18,7 @@
     NSArray *arrStar;
     NSArray *arrShowTable;
     NSInteger typeTable;
+    double sumPoint;
 }
 // TopBar
 // Profile

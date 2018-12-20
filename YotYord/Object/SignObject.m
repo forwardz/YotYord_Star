@@ -120,3 +120,40 @@ static NSMutableArray *shareSignObejct;
 }
 
 @end
+
+@implementation StarShowObject
+-(id)initWithCoder:(NSCoder *)decoder{
+    self = [super init];
+    if (self){
+        self.name = [decoder decodeObjectForKey:@"name"];
+        self.weight = [[decoder decodeObjectForKey:@"weight"] doubleValue];
+        self.point = [[decoder decodeObjectForKey:@"point"] integerValue];
+        self.star = [[decoder decodeObjectForKey:@"star"] integerValue];
+    }
+    return self;
+}
+
+-(void)encodeWithCoder:(NSCoder *)encoder{
+    if (self.name) [encoder encodeObject:self.name forKey:@"name"];
+    if (self.weight) [encoder encodeObject:[NSNumber numberWithDouble:self.weight] forKey:@"weight"];
+    if (self.point) [encoder encodeObject:[NSNumber numberWithInteger:self.point] forKey:@"point"];
+    if (self.star) [encoder encodeObject:[NSNumber numberWithInteger:self.star] forKey:@"star"];
+}
+
++(NSMutableArray *)createStarShowObject{
+    NSMutableArray *arr = [NSMutableArray array];
+    for(NSDictionary *dict in [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"StarShowPlist" ofType:@"plist"]]){
+        [arr addObject:[StarShowObject createStarShowObjectWithDictionary:dict]];
+    }
+    return arr;
+}
++(StarShowObject *)createStarShowObjectWithDictionary:(NSDictionary *)dict{
+    StarShowObject *sso = [[StarShowObject alloc] init];
+    sso.name = [dict objectForKey:@"name"];
+    sso.weight = [[dict objectForKey:@"weight"] doubleValue];
+    sso.point = [[dict objectForKey:@"point"] integerValue];
+    sso.star = [[dict objectForKey:@"star"] integerValue];
+    return sso;
+}
+
+@end

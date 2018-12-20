@@ -21,12 +21,14 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     
-    arrStar = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"StarShowPlist" ofType:@"plist"]];
+//    arrStar = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"StarShowPlist" ofType:@"plist"]];
+    
     
     [HeaderPointObject createHeaderPointArray];
     [HeaderPointObject createHeaderPoint2Array];
     
     typeTable = 0;
+    arrStar = [StarShowObject createStarShowObject];
     arrShowTable = [StarReportObject createStarReportArray];
 //    arrShowTable = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"StarReportPlist" ofType:@"plist"]];
 //    arrShowTable = [HeaderPointObject shareHeaderPoint];
@@ -220,18 +222,20 @@
     [[SignObject shareSignObject] addObject:so];
     signObject = so;
     
-    arrShowTable = [StarReportObject createStarReportArray];
-
-    
-    [self calculateTableOne];
-    [self calculateTableTwo];
-    [self setLabelDateView];
-    [self.mainCollectionView reloadData];
-    [self.starTableView reloadData];
+    [self drawUI];
 }
 -(void)updateSignObjectFidnish:(SignObject *)so{
     signObject = so;
     
+    [self drawUI];
+}
+
+-(void)drawUI{
+    arrStar = [StarShowObject createStarShowObject];
+    arrShowTable = [StarReportObject createStarReportArray];
+    [self calculateTableOne];
+    [self calculateTableTwo];
+    [self calculateSumPoint];
     [self setLabelDateView];
     [self.mainCollectionView reloadData];
     [self.starTableView reloadData];
@@ -252,6 +256,7 @@
                         for(StarSubObject *sso in [sro.arrPoint filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:[NSString stringWithFormat:@"%@",predict]]]){
                             sso.sign++;
                             NSLog(@"ดาวจริง = %zd, คะแนน = %zd",sso.star,sso.sign);
+                            [self addPointToStar:sso.star];
                         }
                     }
                 }
@@ -277,6 +282,7 @@
                             for(StarSubObject *sso in [sro.arrPoint filteredArrayUsingPredicate:predict]){
                                 sso.sign++;
                                 NSLog(@"ดาวจริง = %zd, คะแนน = %zd",sso.star,sso.sign);
+                                [self addPointToStar:sso.star];
                             }
                         }
                         
@@ -288,6 +294,7 @@
                         for(StarSubObject *sso in [sro.arrPoint filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:[NSString stringWithFormat:@"star == %d",i]]]){
                             sso.sign++;
                             NSLog(@"ดาวจริง = %zd, คะแนน = %zd",sso.star,sso.sign);
+                            [self addPointToStar:sso.star];
                         }
                     }
                 }
@@ -316,6 +323,7 @@
                             for(StarSubObject *sso in [sro.arrPoint filteredArrayUsingPredicate:predict]){
                                 sso.sign++;
                                 NSLog(@"ดาวจริง = %zd, คะแนน = %zd",sso.star,sso.sign);
+                                [self addPointToStar:sso.star];
                             }
                         }
                     }
@@ -342,6 +350,7 @@
                                     for(StarSubObject *sso in [sro.arrPoint filteredArrayUsingPredicate:predict]){
                                         sso.sign++;
                                         NSLog(@"ดาวจริง = %zd, คะแนน = %zd",sso.star,sso.sign);
+                                        [self addPointToStar:sso.star];
                                     }
                                 }
                             }
@@ -353,6 +362,15 @@
             i++;
         }
         j++;
+    }
+}
+-(void)calculateSumPoint{
+    sumPoint = [[arrStar valueForKeyPath:@"@sum.point"] doubleValue];
+}
+
+-(void)addPointToStar:(NSInteger)star{
+    for(StarShowObject *sso in [arrStar filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:[NSString stringWithFormat:@"star == %zd",star]]]){
+        sso.point++;
     }
 }
 
@@ -412,8 +430,14 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     StarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StarTableViewCell"];
     [cell setBackgroundColor:[UIColor clearColor]];
-    [cell.lblStar setText:[arrStar objectAtIndex:indexPath.row]];
-    [cell setStarTableViewCell:((float)arc4random() / UINT32_MAX)];
+    StarShowObject *sso = [arrStar objectAtIndex:indexPath.row];
+    [cell.lblStar setText:sso.name];
+    if(sumPoint == 0){
+        [cell setStarTableViewCell:0];
+    }else{
+        [cell setStarTableViewCell:((sso.point*sso.weight)/sumPoint)];
+    }
+    
     return cell;
 }
 @end
