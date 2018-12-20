@@ -1,0 +1,26 @@
+//
+// Prefix header for all source files of the 'FoodStory_Owner' target in the 'FoodStory_Owner' project
+//
+
+#import <Availability.h>
+
+@import Firebase;
+
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+
+#import <QuickLook/QuickLook.h>
+//#import "RasiObject.h"
+#import "SignObject.h"
+#import "HeaderPointObject.h"
+#import "CALayer+Additions.h"
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 6.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+
+#endif

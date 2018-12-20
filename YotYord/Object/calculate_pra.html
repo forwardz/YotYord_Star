@@ -1,0 +1,1888 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <script type="text/javascript" charset="utf-8" src="your.js"></script>
+    <script type="text/javascript" charset="utf-8" src="andYourJsfileName.js"></script>
+
+    <script>
+        
+        function myFunction(data)
+        {
+            // do your javascript operation
+            var a = data.split(",");
+            var Dy = parseInt(a[0]);
+            var Mo = parseInt(a[1]);
+            var Yr = parseInt(a[2]);
+            var Hr = parseInt(a[3]);
+            var Mn = parseInt(a[4]);
+            var Sc = parseInt(a[5]);
+            var Zone = parseInt(a[6]);
+            
+            var zN2 = Dy;
+            var zN3 = Mo;
+            var zN4 = Yr - 543;
+            var zD3 = Hr;
+            var zE3 = Mn;
+            var zF3 = Sc;
+            var zI9 = Zone;
+            
+            if (zN3 < 3){
+                zN5 = zN4 + 9999;
+            }else{
+                zN5 = zN4 + 10000;
+            }
+            
+            if (zN3 < 3){
+                zN6 = zN3 + 13;
+            }else{
+                zN6 = zN3 + 1;
+            }
+            
+            
+            var zN7 =  (zN2 - 4346448) + (Math.floor(30.6 * zN6)) + (Math.floor(365.25 * zN5)) + (Math.floor(zN5 / 400)) - (Math.floor(zN5 / 100));
+            var zI11 = ((zD3 + (zE3 / 60) + (zF3 / 3600)) + 7 - zI9) / 24;
+            var zN8 = ((zN7 + 2415020) - (19/24)) + zI11;
+            
+            var JDN = zN8;
+            
+            return JDN;
+        }
+    
+        function Pra1(JDN){
+            var JD;
+            if (JDN < 2422415.20833){
+                JD = JDN;
+            }else{
+                JD = JDN - (18 / 1440);
+            }
+            
+            var zA12 = JD - (1954167 + (16 / 24) + (11 / 1440) + (24 / 86400)) + 0.00000001;
+
+
+            var zA13 = zA12;
+            var zA14 = zA13 / 365.25875;
+            
+            var zA15 = Math.floor((zA14 - Math.floor(zA14)) * 292207);
+            var zA16 = Math.floor(zA15 / 24350);
+            var zA17 = zA15 - (zA16 * 24350);
+            var zA18 = Math.floor(zA17 / 811);
+            var zA19 = zA17 - (zA18 * 811);
+            var zA20 = (Math.floor(zA19 / 14));
+            var zA21 = (zA16 * 1800) + (zA18 * 60) + zA20 - 3;
+            
+            var zA22;
+            if (zA21 < 4800){
+                zA22 = zA21 + 21600 - 4800;
+            }else{
+                zA22 = zA21 - 4800;
+            }
+            
+            var zA23;
+            if (zA22 < 5400){
+                zA23 = zA22;
+            }else if(zA22 < 10800){
+                zA23 = 10800 - zA22;
+            }else if(zA22 < 16200){
+                zA23 = zA22 - 10800;
+            }else{
+                zA23 = 21600 - zA22;
+            }
+            
+            var zA24 = Math.floor(zA23 / 900);
+            var zA25;
+            if(zA23 - (zA24 * 900) == 0){
+                if(zA23 + zA24 == 0){
+                    zA25 = 0;
+                }else{
+                    zA25 = 900;
+                }
+            }else{
+                zA25 = zA23 - (zA24 * 900);
+            }
+            
+            var bhu1;
+            switch (zA24 +1) {
+                case 1:
+                    bhu1 = 35;
+                break;
+                case 2:
+                    bhu1 = 32;
+                break;
+                case 3:
+                    bhu1 = 27;
+                break;
+                case 4:
+                    bhu1 = 22;
+                break;
+                case 5:
+                    bhu1 = 13;
+                break;
+                case 6:
+                    bhu1 = 5;
+                break;
+                case 7:
+                    bhu1 = 0;
+            }
+            var zA26 = Math.floor((bhu1 * zA25) / 900);
+
+            var bol1;
+            switch (zA24 +1) {
+                case 1:
+                    bol1 = 0;
+                break;
+                case 2:
+                    bol1 = 35;
+                break;
+                case 3:
+                    bol1 = 67;
+                break;
+                case 4:
+                    bol1 = 94;
+                break;
+                case 5:
+                    bol1 = 116;
+                break;
+                case 6:
+                    bol1 = 129;
+                break;
+                case 7:
+                    bol1 = 134;
+            }
+
+            var zA27 = bol1 + zA26;
+            var zA28;
+            if(zA22 < 10800){
+                zA28 = zA21 - zA27;
+            }else{
+                zA28 = zA21 + zA27;
+            }
+            
+            var zA29 = zA28 - (Math.floor(zA28 / 21600) * 21600);
+            var Pra1 = zA29;
+            return Pra1;
+        }
+    
+        function Pra2(JDN){
+            var JD;
+            if (JDN < 2422415.20833){
+                JD = JDN;
+            }else{
+                JD = JDN - (18 / 1440);
+            }
+            
+            var zA12 = JD - (1954167 + (16 / 24) + (11 / 1440) + (24 / 86400)) + 0.00000001;
+            var zA13 = zA12;
+            var zA14 = zA13 / 365.25875;
+            
+            var zA15 = Math.floor((zA14 - Math.floor(zA14)) * 292207);
+            var zA16 = Math.floor(zA15 / 24350);
+            var zA17 = zA15 - (zA16 * 24350);
+            var zA18 = Math.floor(zA17 / 811);
+            var zA19 = zA17 - (zA18 * 811);
+            var zA20 = (Math.floor(zA19 / 14));
+            var zA21 = (zA16 * 1800) + (zA18 * 60) + zA20 - 3;
+            
+            var zC14 = Math.floor(zA14);
+            var zC15 = Math.floor((zC14 * 292207 + 373) / 800) + 1;
+            var yC15;
+            if( zC14 < 610 ){
+                yC15 = zC15 * 11 + 556;
+            }
+            else{
+                yC15 = zC15 * 11 + 650;
+            }
+            
+            
+            var zC16 = yC15 - (Math.floor(yC15 / 692) * 692);
+            var zC18 = zC14 + 3740;
+            var zC19 = 588100.74125 + (zC18 * 365.25875) - (19 / 24);
+            var zC20;
+            if(zC14 < 610 ){
+                zC20 = zC14 * 365.25875 + 1;
+            }
+            else{
+                zC20 = zC14 * 365.25875 + 1.46625;
+            }
+            var zC21 = JD - zC19 + 0.00000001;
+            var zC22 = zC20 + zC21;
+            var zC17 = (zC22 - Math.floor(zC22)) * 86400;
+            var zC23 = Math.floor(zC22) - Math.floor(zC20);
+            var zC24 = (zC23 - 1) * 703 + zC16;
+            var zC25 = Math.floor((zC17 * 703) / 86400);
+            var zB26;
+            if(zC14 < 610){
+                zB26 = 1;
+            }
+            else{
+                zB26 = 0;
+            }
+            var zB27;
+            if( zC14 < 610 ){
+                zB27 = 556;
+            }
+            else{
+                zB27 = 650;
+            }
+            
+            var zC26 = Math.floor((((zC15 - zB26) * 11) + zB27) / 692);
+            var zC27;
+            if( zC14 < 610 ){
+                zC27 = zC15 - 1;
+            }
+            else{
+                zC27 = zC15;
+            }
+            
+            
+            var zC28 = (zC26 + zC27) - (Math.floor((zC26 + zC27) / 30) * 30);
+            var zC29 = zC24 + zC25;
+            var zC30 = zC29 - (Math.floor(zC29 / 692) * 692);
+            var zC31 = Math.floor(zC29 / 692) + zC28;
+            var zC32 = zC31 - (Math.floor(zC31 / 30) * 30);
+            var zD9;
+            if( zC14 < 610 ){
+                zD9 = Math.floor(zC22) + 813;
+            }
+            else{
+                zD9 = Math.floor(zC22) - 621;
+            }
+            
+            var zD10 = zD9 - (Math.floor(zD9 / 3232) * 3232);
+            var zD11 = ((zD10 - 1) * 86400 + zC17) * 3 / (808 * 86400);
+            var zD12 = (zD11 - Math.floor(zD11)) * 30;
+            var zD13 = (zD12 - Math.floor(zD12)) * 60;
+            var zD14 = Math.floor(zD11);
+            var zD15 = Math.floor(zD12);
+            var zD16 = Math.floor(zD13);
+            var zD17 = ((zD14 * 1800) + (zD15 * 60) + zD16) + 2;
+            var zD18 = (zD17 + 21600) - (Math.floor((zD17 + 21600) / 21600) * 21600);
+            var zD19 = (zC32 * 720) + (Math.floor(zC30 / 25) + zC30) - 40 + zA21;
+            var zD20 = zD19 - (Math.floor(zD19 / 21600) * 21600);
+            var zD21 = zD20 + 21600 - zD17;
+            var zD22 = zD21 - (Math.floor(zD21 / 21600) * 21600);
+            var zD23;
+            if( zD22 < 5400 ){
+                zD23 = zD22;
+            }
+            else if( zD22 < 10800 ){
+                zD23 = 10800 - zD22;
+            }
+            else if( zD22 < 16200 ){
+                zD23 = zD22 - 10800;
+            }
+            else{
+                zD23 = 21600 - zD22;
+            }
+            var zD24 = Math.floor(zD23 / 900);
+            var zD25;
+            if( zD23 - (zD24 * 900) == 0 ){
+                if( zD23 + zD24 == 0 ){
+                    zD25 = 0;
+                }
+                else{
+                    zD25 = 900;
+                }
+            }
+            else{
+                zD25 = zD23 - (zD24 * 900);
+            }
+            var bhu2;
+            switch(zD24 + 1){
+                case 1:
+                bhu2 = 77;
+                break;
+                case 2:
+                bhu2 = 71;
+                break;
+                case 3:
+                bhu2 = 61;
+                break;
+                case 4:
+                bhu2 = 47;
+                break;
+                case 5:
+                bhu2 = 30;
+                break;
+                case 6:
+                bhu2 = 10;
+                break;
+                case 7:
+                bhu2 = 0;
+                break;
+            }
+            
+            var zD26 = Math.floor((bhu2 * zD25) / 900);
+            var bol2;
+            switch(zD24 + 1){
+                case 1:
+                bol2 = 0;
+                break;
+                case 2:
+                bol2 = 77;
+                break;
+                case 3:
+                bol2 = 148;
+                break;
+                case 4:
+                bol2 = 209;
+                break;
+                case 5:
+                bol2 = 256;
+                break;
+                case 6:
+                bol2 = 286;
+                break;
+                case 7:
+                bol2 = 296;
+                break;
+            }
+            var zD27 = bol2 + zD26;
+            var zD28;
+            if( zD22 < 10800 ){
+                zD28 = 21600 + zD20 - zD27;
+            }
+            else{
+                zD28 = zD20 + zD27;
+            }
+            var zD29 = zD28 - (Math.floor(zD28 / 21600) * 21600);
+            var Pra2 = zD29;
+            return Pra2;
+        }
+    
+        function Pra3(JDN){
+            
+            var JD;
+            if(JDN < 2422415.20833){
+                JD = JDN;
+            }
+            else{
+                JD = JDN - (18 / 1440);
+            }
+            
+            var zAF3 = 1;
+            var zAF4 = 2;
+            var zAF5 = 16;
+            var zAF6 = 505;
+            var zAF9 = 7620;
+            var zAF10 = 45;
+            var zAF11 = 4 / 15;
+            
+            var zA12 = JD - (1954167 + (16 / 24) + (11 / 1440) + (24 / 86400)) + 0.00000001;
+            var zA13 = zA12;
+            var zA14 = zA13 / 365.25875;
+            var zA15 = Math.floor((zA14 - Math.floor(zA14)) * 292207);
+            var zA16 = Math.floor(zA15 / 24350);
+            var zA17 = zA15 - (zA16 * 24350);
+            var zA18 = Math.floor(zA17 / 811);
+            var zA19 = zA17 - (zA18 * 811);
+            var zA20 = (Math.floor(zA19 / 14));
+            var zA21 = (zA16 * 1800) + (zA18 * 60) + zA20 - 3;
+            var zE10 = zA21 - 23;
+            var zC14 = Math.floor(zA14);
+            var zC14_1;
+            if (zC14 < 610){
+                zC14_1 = 0;
+            }
+            else{
+                zC14_1 = 610;
+            }
+            var zE11 = (zC14 - zC14_1) * 21600 + zE10;
+            var zAF7;
+            if (zC14 >= 610){
+                zAF7 = 5420;
+            }
+            else{
+                zAF7 = 20754;
+            }
+            
+            
+            var zAF12 = (Math.floor((zE11 * zAF3) / zAF4) + Math.floor((zE11 * zAF5) / zAF6)) + zAF7;
+            var zAF13 = zAF12 - (Math.floor(zAF12 / 21600) * 21600);
+            var zAF13 = zAF12 - (Math.floor(zAF12 / 21600) * 21600);
+            var zAF14;
+            if( zAF13 < zAF9 ){
+                zAF14 = zAF13 + 21600 - zAF9;
+            }
+            else{
+                zAF14 = zAF13 - zAF9;
+            }
+            var zAF15 = Math.floor(zAF14 / 5400) + 1;
+            
+            var zAF16;
+            switch(zAF15){
+                case 1:
+                zAF16 = -1;
+                break;
+                case 2:
+                zAF16 = -1;
+                break;
+                case 3:
+                zAF16 = 1;
+                break;
+                case 4:
+                zAF16 = 1;
+                break;
+            }
+            var zAF17;
+            switch(zAF15){
+                case 1:
+                zAF17 = zAF14;
+                break;
+                case 2:
+                zAF17 = 10800 - zAF14;
+                break;
+                case 3:
+                zAF17 = zAF14 - 10800;
+                break;
+                case 4:
+                zAF17 = 21600 - zAF14;
+                break;
+            }
+            var zAF18;
+            switch(zAF15){
+                case 1:
+                zAF18 = 1;
+                break;
+                case 2:
+                zAF18 = -1;
+                break;
+                case 3:
+                zAF18 = -1;
+                break;
+                case 4:
+                zAF18 = 1;
+                break;
+            }
+            var zAF19;
+            switch(zAF15){
+                case 1:
+                zAF19 = 5400 - zAF14;
+                break;
+                case 2:
+                zAF19 = zAF14 - 5400;
+                break;
+                case 3:
+                zAF19 = 16200 - zAF14;
+                break;
+                case 4:
+                zAF19 = zAF14 - 16200;
+                break;
+            }
+            
+            var zAF20;
+            if(zAF17 >= 0 && zAF17 <= 1799){
+                zAF20 = Math.floor((zAF17 * 14640) / 1800);
+            }
+            else if(zAF17 >= 1800 && zAF17 <= 3599){
+                zAF20 = Math.floor(((zAF17 - 1800) * 10980) / 1800) + 14640;
+            }
+            else if(zAF17 >= 1800 && zAF17 <= 5399){
+                zAF20 = Math.floor(((zAF17 - 3600) * 3660) / 1800) + 25620;
+            }
+
+            var zAF21;
+            if(zAF19 >= 0 && zAF19 <= 1799){
+                zAF21 = Math.floor((zAF19 * 14640) / 1800);
+            }
+            else if(zAF19 >= 1800 && zAF19 <= 3599){
+                zAF21 = Math.floor(((zAF19 - 1800) * 10980) / 1800) + 14640;
+            }
+            else if(zAF19 >= 1800 && zAF19 <= 5399){
+                zAF21 = Math.floor(((zAF19 - 3600) * 3660) / 1800) + 25620;
+            }
+            
+            var zAF22 = Math.floor((Math.floor(zAF21 + 30) / 60) / 2);
+            var zAF23 = (zAF10 * 60) + (zAF22 * zAF18);
+            var zAF24 = Math.floor(zAF20 * 60 / zAF23);
+            var zAF25_1 = zAF13 + (zAF24 * zAF16);
+            var zAF25;
+            if(zAF25_1 < 0 ){
+                zAF25 = zAF25_1 + 21600;
+            }
+            else{
+                zAF25 = zAF25_1;
+            }
+
+            var zAF26_1 = zAF25 - zE10;
+            var zAF26 = zAF26_1 + 21600 + 21600;
+            var zAF27 = zAF26 - (Math.floor(zAF26 / 21600) * 21600);
+            var zAF28 = Math.floor(zAF27 / 5400) + 1;
+            var zAF29;
+            switch(zAF28){
+                case 1:
+                zAF29 = -1;
+                break;
+                case 2:
+                zAF29 = -1;
+                break;
+                case 3:
+                zAF29 = 1;
+                break;
+                case 4:
+                zAF29 = 1;
+                break;
+            }
+            var zAF30;
+            switch(zAF28){
+                case 1:
+                zAF30 = zAF27;
+                break;
+                case 2:
+                zAF30 = 10800 - zAF27;
+                break;
+                case 3:
+                zAF30 = zAF27 - 10800;
+                break;
+                case 4:
+                zAF30 = 21600 - zAF27;
+                break;
+            }
+            var zAF31;
+            switch(zAF28){
+                case 1:
+                zAF31 = 1;
+                break;
+                case 2:
+                zAF31 = -1;
+                break;
+                case 3:
+                zAF31 = -1;
+                break;
+                case 4:
+                zAF31 = 1;
+                break;
+            }
+            
+            var zAF32;
+            switch(zAF28){
+                case 1:
+                zAF32 = 5400 - zAF27;
+                break;
+                case 2:
+                zAF32 = zAF27 - 5400;
+                break;
+                case 3:
+                zAF32 = 16200 - zAF27;
+                break;
+                case 4:
+                zAF32 = zAF27 - 16200;
+                break;
+            }
+            
+            
+            var zAF33;
+            if(zAF30 >= 0 && zAF30 <= 1799){
+                zAF33 = Math.floor((zAF30 * 14640) / 1800);
+            }
+            else if(zAF30 >= 1800 && zAF30 <= 3599){
+                zAF33 = Math.floor(((zAF30 - 1800) * 10980) / 1800) + 14640;
+            }
+            else if(zAF30 >= 1800 && zAF30 <= 5399){
+                zAF33 = Math.floor(((zAF30 - 3600) * 3660) / 1800) + 25620;
+            }
+            
+            var zAF34;
+            if(zAF32 >= 0 && zAF32 <= 1799){
+                zAF34 = Math.floor((zAF32 * 14640) / 1800);
+            }
+            else if(zAF32 >= 1800 && zAF32 <= 3599){
+                zAF34 = Math.floor(((zAF32 - 1800) * 10980) / 1800) + 14640;
+            }
+            else if(zAF32 >= 1800 && zAF32 <= 5399){
+                zAF34 = Math.floor(((zAF32 - 3600) * 3660) / 1800) + 25620;
+            }
+            
+            var zAF35 = Math.floor((Math.floor(zAF33 + 30) / 60) / 3);
+            var zAF36 = Math.floor(zAF11 * zAF23);
+            var zAF37 = zAF36 + zAF35;
+            var zAF38 = zAF37 + (Math.floor((zAF34 + 30) / 60) * zAF31);
+            var zAF39 = Math.floor(zAF33 * 60 / zAF38);
+            
+            var zAF40_1 = zAF25 + (zAF39 * zAF29);
+            var zAF40 = zAF40_1 + 21600 + 21600;
+            var zAF41 = zAF40 - (Math.floor(zAF40 / 21600) * 21600);
+            var Pra3 = zAF41;
+            return Pra3;
+
+        }
+    
+    function Pra5(JDN){
+        var JD;
+        if(JDN < 2422415.20833) {
+            JD = JDN;
+        }
+        else{
+            JD = JDN - (18 / 1440);
+        }
+        
+        var zAG3 = 1;
+        var zAG4 = 12;
+        var zAG5 = 1;
+        var zAG6 = 1032;
+        var zAG9 = 10320;
+        var zAG10 = 92;
+        var zAG11 = 3 / 7;
+        
+        
+        var zA2 = JD - (1954511 + (5 / 24));
+        var zA3 = Math.floor(zA2 / 679);
+        var zA4 = zA2 - (zA3 * 679);
+        
+        var zA12 = JD - (1954167 + (16 / 24) + (11 / 1440) + (24 / 86400)) + (zA4 / 86400);
+        var zA13 = zA12;
+        var zA14 = zA13 / 365.25875;
+        var zA15 = Math.floor((zA14 - Math.floor(zA14)) * 292207);
+        var zA16 = Math.floor(zA15 / 24350);
+        var zA17 = zA15 - (zA16 * 24350);
+        var zA18 = Math.floor(zA17 / 811);
+        var zA19 = zA17 - (zA18 * 811);
+        var zA20 = (Math.floor(zA19 / 14));
+        var zA21 = (zA16 * 1800) + (zA18 * 60) + zA20 - 3;
+        var zE10 = zA21 - 23;
+        var zC14 = Math.floor(zA14);
+        var zC14_1;
+        if (zC14 < 610){
+            zC14_1 = 0;
+        }
+        else{
+            zC14_1 = 610;
+        }
+        var zE11 = (zC14 - zC14_1) * 21600 + zE10;
+        var zAG7;
+        if (zC14 >= 610) {
+            zAG7 = 14297;
+        }
+        else{
+            zAG7 = 672;
+        }
+        
+        var zAG12 = (Math.floor((zE11 * zAG3) / zAG4) + Math.floor((zE11 * zAG5) / zAG6)) + zAG7;
+        var zAG13 = zAG12 - (Math.floor(zAG12 / 21600) * 21600);
+        var zAG13 = zAG12 - (Math.floor(zAG12 / 21600) * 21600);
+        var zAG14;
+        if(zAG13 < zAG9){
+            zAG14 = zAG13 + 21600 - zAG9;
+        }
+        else{
+            zAG14 = zAG13 - zAG9;
+        }
+        var zAG15 = Math.floor(zAG14 / 5400) + 1;
+        var zAG16;
+        switch(zAG15){
+            case 1:
+            zAG16 = -1;
+            break;
+            case 2:
+            zAG16 = -1;
+            break;
+            case 3:
+            zAG16 = 1;
+            break;
+            case 4:
+            zAG16 = 1;
+            break;
+        }
+        var zAG17;
+        switch(zAG15){
+            case 1:
+            zAG17 = zAG14;
+            break;
+            case 2:
+            zAG17 = 10800 - zAG14;
+            break;
+            case 3:
+            zAG17 = zAG14 - 10800;
+            break;
+            case 4:
+            zAG17 = 21600 - zAG14;
+            break;
+        }
+        var zAG18;
+        switch(zAG15){
+            case 1:
+            zAG18 = 1;
+            break;
+            case 2:
+            zAG18 = -1;
+            break;
+            case 3:
+            zAG18 = -1;
+            break;
+            case 4:
+            zAG18 = 1;
+            break;
+        }
+        var zAG19;
+        switch(zAG15){
+            case 1:
+            zAG19 = 5400 - zAG14;
+            break;
+            case 2:
+            zAG19 = zAG14 - 5400;
+            break;
+            case 3:
+            zAG19 = 16200 - zAG14;
+            break;
+            case 4:
+            zAG19 = zAG14 - 16200;
+            break;
+        }
+        
+        var zAG20;
+        if(zAG17 >=0 && zAG17 <= 1799){
+            zAG20 = Math.floor((zAG17 * 14640) / 1800);
+        }else if(zAG17 >= 1800 && zAG17 <= 3599){
+            zAG20 = Math.floor(((zAG17 - 1800) * 10980) / 1800) + 14640;
+        }else if(zAG17 >= 1800 && zAG17 <= 5399){
+            zAG20 = Math.floor(((zAG17 - 3600) * 3660) / 1800) + 25620;
+        }
+        var zAG21;
+        if(zAG19 >=0 && zAG19 <= 1799){
+            zAG21 = Math.floor((zAG19 * 14640) / 1800);
+        }else if(zAG19 >= 1800 && zAG19 <= 3599){
+            zAG21 = Math.floor(((zAG19 - 1800) * 10980) / 1800) + 14640;
+        }else if(zAG19 >= 1800 && zAG19 <= 5399){
+            zAG21 = Math.floor(((zAG19 - 3600) * 3660) / 1800) + 25620;
+        }
+        var zAG22 = Math.floor((Math.floor(zAG21 + 30) / 60) / 2);
+        var zAG23 = (zAG10 * 60) + (zAG22 * zAG18);
+        var zAG24 = Math.floor(zAG20 * 60 / zAG23);
+        var zAG25_1 = zAG13 + (zAG24 * zAG16);
+        var zAG25;
+        if (zAG25_1 < 0 ){
+            zAG25 = zAG25_1 + 21600;
+        }
+        else{
+            zAG25 = zAG25_1;
+        }
+        var zAG26_1 = zAG25 - zE10;
+        var zAG26 = zAG26_1 + 21600 + 21600;
+        var zAG27 = zAG26 - (Math.floor(zAG26 / 21600) * 21600);
+        var zAG28 = Math.floor(zAG27 / 5400) + 1;
+        var zAG29;
+        switch(zAG28){
+            case 1:
+            zAG29 = -1;
+            break;
+            case 2:
+            zAG29 = -1;
+            break;
+            case 3:
+            zAG29 = 1;
+            break;
+            case 4:
+            zAG29 = 1;
+            break;
+        }
+        var zAG30;
+        switch(zAG28){
+            case 1:
+            zAG30 = zAG27;
+            break;
+            case 2:
+            zAG30 = 10800 - zAG27;
+            break;
+            case 3:
+            zAG30 = zAG27 - 10800;
+            break;
+            case 4:
+            zAG30 = 21600 - zAG27;
+            break;
+        }
+        var zAG31;
+        switch(zAG28){
+            case 1:
+            zAG31 = 1;
+            break;
+            case 2:
+            zAG31 = -1;
+            break;
+            case 3:
+            zAG31 = -1;
+            break;
+            case 4:
+            zAG31 = 1;
+            break;
+        }
+        var zAG32;
+        switch(zAG28){
+            case 1:
+            zAG32 = 5400 - zAG27;
+            break;
+            case 2:
+            zAG32 = zAG27 - 5400;
+            break;
+            case 3:
+            zAG32 = 16200 - zAG27;
+            break;
+            case 4:
+            zAG32 = zAG27 - 16200;
+            break;
+        }
+        
+        var zAG33;
+        if(zAG30 >=0 && zAG30 <= 1799){
+            zAG33 = Math.floor((zAG30 * 14640) / 1800);
+        }else if(zAG30 >= 1800 && zAG30 <= 3599){
+            zAG33 = Math.floor(((zAG30 - 1800) * 10980) / 1800) + 14640;
+        }else if(zAG30 >= 1800 && zAG30 <= 5399){
+            zAG33 = Math.floor(((zAG30 - 3600) * 3660) / 1800) + 25620;
+        }
+        
+        var zAG34;
+        if(zAG32 >=0 && zAG32 <= 1799){
+            zAG34 = Math.floor((zAG32 * 14640) / 1800);
+        }else if(zAG32 >= 1800 && zAG32 <= 3599){
+            zAG34 = Math.floor(((zAG32 - 1800) * 10980) / 1800) + 14640;
+        }else if(zAG32 >= 1800 && zAG32 <= 5399){
+            zAG34 = Math.floor(((zAG32 - 3600) * 3660) / 1800) + 25620;
+        }
+        
+        var zAG35 = Math.floor((Math.floor(zAG33 + 30) / 60) / 3);
+        var zAG36 = Math.floor(zAG11 * zAG23);
+        var zAG37 = zAG36 + zAG35;
+        var zAG38 = zAG37 + (Math.floor((zAG34 + 30) / 60) * zAG31);
+        var zAG39 = Math.floor(zAG33 * 60 / zAG38);
+        
+        var zAG40_1 = zAG25 + (zAG39 * zAG29);
+        var zAG40 = zAG40_1 + 21600 + 21600;
+        var zAG41 = zAG40 - (Math.floor(zAG40 / 21600) * 21600);
+        var Pra5 = zAG41;
+        return Pra5;
+    }
+    
+    function Pra4(JDN){
+        var JD;
+        if( JDN < 2422415.20833 ){
+            JD = JDN;
+        }
+        else{
+            JD = JDN - (18 / 1440);
+        }
+        
+        var zAD3 = 7;
+        var zAD4 = 46;
+        var zAD5 = 4;
+        var zAD6 = 1;
+        var zAD9 = 13200;
+        var zAD10 = 100;
+        var zAD11 = 21;
+        
+        var zA12 = JD - (1954167 + (16 / 24) + (11 / 1440) + (24 / 86400)) + 0.00000001;
+        var zA13 = zA12;
+        var zA14 = zA13 / 365.25875;
+        var zA15 = Math.floor((zA14 - Math.floor(zA14)) * 292207);
+        var zA16 = Math.floor(zA15 / 24350);
+        var zA17 = zA15 - (zA16 * 24350);
+        var zA18 = Math.floor(zA17 / 811);
+        var zA19 = zA17 - (zA18 * 811);
+        var zA20 = (Math.floor(zA19 / 14));
+        var zA21 = (zA16 * 1800) + (zA18 * 60) + zA20 - 3;
+        var zE10 = zA21 - 23;
+        var zC14 = Math.floor(zA14);
+        var zC14_1;
+        if( zC14 < 610 ){
+            zC14_1 = 0;
+        }
+        else{
+            zC14_1 = 610;
+        }
+        var zE11 = (zC14 - zC14_1) * 21600 + zE10;
+        var zAD7;
+        if( zC14 >= 610 ){
+            zAD7 = 10642;
+        }
+        else{
+            zAD7 = 14869;
+        }
+        var zAD12 = (Math.floor((zE11 * zAD3) / zAD4) + Math.floor((zE11 * zAD5) / zAD6)) + zAD7;
+        var zAD13 = zAD12 - (Math.floor(zAD12 / 21600) * 21600);
+        var zAD14;
+        if( zE10 < zAD9 ){
+            zAD14 = zE10 + 21600 - zAD9;
+        }else{
+            zAD14 = zE10 - zAD9;
+        }
+        var zAD15 = Math.floor(zAD14 / 5400) + 1;
+        var zAD16;
+        switch(zAD15){
+            case 1:
+            zAD16 = -1;
+            break;
+            case 2:
+            zAD16 = -1;
+            break;
+            case 3:
+            zAD16 = 1;
+            break;
+            case 4:
+            zAD16 = 1;
+            break;
+        }
+        var zAD17;
+        switch(zAD15){
+            case 1:
+            zAD17 = zAD14;
+            break;
+            case 2:
+            zAD17 = 10800 - zAD14;
+            break;
+            case 3:
+            zAD17 = zAD14 - 10800;
+            break;
+            case 4:
+            zAD17 = 21600 - zAD14;
+            break;
+        }
+        var zAD18;
+        switch(zAD15){
+            case 1:
+            zAD18 = 1;
+            break;
+            case 2:
+            zAD18 = -1;
+            break;
+            case 3:
+            zAD18 = -1;
+            break;
+            case 4:
+            zAD18 = 1;
+            break;
+        }
+        var zAD19;
+        switch(zAD15){
+            case 1:
+            zAD19 = 5400 - zAD14;
+            break;
+            case 2:
+            zAD19 = zAD14 - 5400;
+            break;
+            case 3:
+            zAD19 = 16200 - zAD14;
+            break;
+            case 4:
+            zAD19 = zAD14 - 16200;
+            break;
+        }
+        var zAD20;
+        if(zAD17 >= 0 && zAD17 <= 1799){
+            zAD20 = Math.floor((zAD17 * 14640) / 1800);
+        }else if(zAD17 >= 1800 && zAD17 <= 3599){
+            zAD20 = Math.floor(((zAD17 - 1800) * 10980) / 1800) + 14640;
+        }else if(zAD17 >= 1800 && zAD17 <= 5399){
+            zAD20 = Math.floor(((zAD17 - 3600) * 3660) / 1800) + 25620;
+        }
+        
+        var zAD21;
+        if(zAD19 >= 0 && zAD19 <= 1799){
+            zAD21 = Math.floor((zAD19 * 14640) / 1800);
+        }else if(zAD19 >= 1800 && zAD19 <= 3599){
+            zAD21 = Math.floor(((zAD19 - 1800) * 10980) / 1800) + 14640;
+        }else if(zAD19 >= 1800 && zAD19 <= 5399){
+            zAD21 = Math.floor(((zAD19 - 3600) * 3660) / 1800) + 25620;
+        }
+        
+        var zAD22 = Math.floor((Math.floor(zAD21 + 30) / 60) / 2);
+        var zAD23 = (zAD10 * 60) + (zAD22 * zAD18);
+        var zAD24 = Math.floor(zAD20 * 60 / zAD23);
+        var zAD25_1 = zE10 + (zAD24 * zAD16);
+        var zAD25;
+        if( zAD25_1 < 0 ){
+            zAD25 = zAD25_1 + 21600;
+        }
+        else{
+            zAD25 = zAD25_1;
+        }
+        var zAD26_1 = zAD25 - zAD13;
+        var zAD26 = zAD26_1 + 21600 + 21600;
+        var zAD27 = zAD26 - (Math.floor(zAD26 / 21600) * 21600);
+        var zAD28 = Math.floor(zAD27 / 5400) + 1;
+        switch(zAD28){
+            case 1:
+            zAD29 = -1;
+            break;
+            case 2:
+            zAD29 = -1;
+            break;
+            case 3:
+            zAD29 = 1;
+            break;
+            case 4:
+            zAD29 = 1;
+            break;
+        }
+        switch(zAD28){
+            case 1:
+            zAD30 = zAD27;
+            break;
+            case 2:
+            zAD30 = 10800 - zAD27;
+            break;
+            case 3:
+            zAD30 = zAD27 - 10800;
+            break;
+            case 4:
+            zAD30 = 21600 - zAD27;
+            break;
+        }
+        switch(zAD28){
+            case 1:
+            zAD31 = 1;
+            break;
+            case 2:
+            zAD31 = -1;
+            break;
+            case 3:
+            zAD31 = -1;
+            break;
+            case 4:
+            zAD31 = 1;
+            break;
+        }
+        switch(zAD28){
+            case 1:
+            zAD32 = 5400 - zAD27;
+            break;
+            case 2:
+            zAD32 = zAD27 - 5400;
+            break;
+            case 3:
+            zAD32 = 16200 - zAD27;
+            break;
+            case 4:
+            zAD32 = zAD27 - 16200;
+            break;
+        }
+        var zAD33;
+        if(zAD30 >= 0 && zAD30 <= 1799){
+            zAD33 = Math.floor((zAD30 * 14640) / 1800);
+        }else if(zAD30 >= 1800 && zAD30 <= 3599){
+            zAD33 = Math.floor(((zAD30 - 1800) * 10980) / 1800) + 14640;
+        }else if(zAD30 >= 1800 && zAD30 <= 5399){
+            zAD33 = Math.floor(((zAD30 - 3600) * 3660) / 1800) + 25620;
+        }
+        
+        var zAD34;
+        if(zAD32 >= 0 && zAD32 <= 1799){
+            zAD34 = Math.floor((zAD32 * 14640) / 1800);
+        }else if(zAD32 >= 1800 && zAD32 <= 3599){
+            zAD34 = Math.floor(((zAD32 - 1800) * 10980) / 1800) + 14640;
+        }else if(zAD32 >= 1800 && zAD32 <= 5399){
+            zAD34 = Math.floor(((zAD32 - 3600) * 3660) / 1800) + 25620;
+        }
+       
+        var zAD35 = Math.floor((Math.floor(zAD33 + 30) / 60) / 3);
+        var zAD36 = zAD11 * 60;
+        var zAD37 = zAD36 + zAD35;
+        var zAD38 = zAD37 + (Math.floor((zAD34 + 30) / 60) * zAD31);
+        var zAD39 = Math.floor(zAD33 * 60 / zAD38);
+        
+        var zAD40_1 = zAD25 + (zAD39 * zAD29);
+        var zAD40 = zAD40_1 + 21600 + 21600;
+        var zAD41 = zAD40 - (Math.floor(zAD40 / 21600) * 21600);
+        var zAD42 = Math.floor(zAD41 / 1800);
+        var Pra4 = zAD41;
+        return Pra4;
+
+    }
+        function Pra8(JDN){
+            var JD;
+            if(JDN < 2422415.20833){
+                JD = JDN;
+            }else{
+                JD = JDN - (18/1440);
+            }
+            
+            var zA12 = JD - (1954167 + (16 / 24) + (11 / 1440) + (24 / 86400)) + 0.00000001;
+            var zA13 = zA12;
+            var zA14 = zA13 / 365.25875;
+            var zA15 = Math.floor((zA14 - Math.floor(zA14)) * 292207);
+            var zA16 = Math.floor(zA15 / 24350);
+            var zA17 = zA15 - (zA16 * 24350);
+            var zA18 = Math.floor(zA17 / 811);
+            var zA19 = zA17 - (zA18 * 811);
+            var zA20 = (Math.floor(zA19 / 14));
+            var zA21 = (zA16 * 1800) + (zA18 * 60) + zA20 - 3;
+            var zE10 = zA21 - 23;
+            var zC14 = Math.floor(zA14);
+            
+            var zC14_1;
+            if(zC14 < 610){
+                zC14_1 = 0;
+            }else{
+                zC14_1 = 610;
+            }
+            
+            var zE11 = (zC14 - zC14_1) * 21600 + zE10;
+            var zE13 = Math.floor(zE11 / 20) + Math.floor(zE11 / 265);
+            var zE14 = zE13 - (Math.floor(zE13 / 21600) * 21600);
+            var zE15_1;
+            if(zC14 >= 610){
+                zE15_1 = 15150;
+            }else{
+                zE15_1 = 12154;
+            }
+            var zE15_2 = zE15_1 - zE14 + 21600 + 21600;
+            var zE15 = zE15_2 - (Math.floor(zE15_2 / 21600) * 21600);
+            var Pra8 = zE15;
+            return Pra8;
+        }
+    
+        function Pra9(JDN){
+            var JD;
+            if(JDN < 2422415.20833){
+                JD = JDN;
+            }else{
+                JD = JDN - (18/1440);
+            }
+            
+            var zA2 = JD - (1954511 + (5 / 24));
+            var zA3 = Math.floor(zA2 / 679);
+            var zA4 = zA2 - (zA3 * 679);
+            var zA5 = Math.floor((zA4 / 679) * 21600);
+            var zA6 = 21600 - zA5;
+            var Pra9 = zA6;
+            return Pra9;
+        }
+    
+    
+    
+    function Pra7(JDN) {
+        var JD;
+        if( JDN < 2422415.20833 ){
+            JD = JDN;
+        }else{
+            JD = JDN - (18 / 1440);
+        }
+        
+        var zAH3 = 1;
+        var zAH4 = 30;
+        var zAH5 = 6;
+        var zAH6 = 10000;
+        var zAH9 = 14820;
+        var zAH10 = 63;
+        var zAH11 = 7 / 6;
+        
+        var zA2 = JD - (1954511 + (5 / 24));
+        var zA3 = Math.floor(zA2 / 679);
+        var zA4 = zA2 - (zA3 * 679);
+        
+        var zA12 = JD - (1954167 + (16 / 24) + (11 / 1440) + (24 / 86400)) + (zA4 / 86400);
+        var zA13 = zA12;
+        var zA14 = zA13 / 365.25875;
+        var zA15 = Math.floor((zA14 - Math.floor(zA14)) * 292207);
+        var zA16 = Math.floor(zA15 / 24350);
+        var zA17 = zA15 - (zA16 * 24350);
+        var zA18 = Math.floor(zA17 / 811);
+        var zA19 = zA17 - (zA18 * 811);
+        var zA20 = (Math.floor(zA19 / 14));
+        var zA21 = (zA16 * 1800) + (zA18 * 60) + zA20 - 3;
+        var zE10 = zA21 - 23;
+        var zC14 = Math.floor(zA14);
+        var zC14_1;
+        if( zC14 < 610 ){
+            zC14_1 = 0;
+        }else{
+            zC14_1 = 610;
+        }
+        var zE11 = (zC14 - zC14_1) * 21600 + zE10;
+        var zAH7;
+        if( zC14 >= 610 ){
+            zAH7 = 11944;
+        }else{
+            zAH7 = 21101;
+        }
+        
+        var zAH12 = (Math.floor((zE11 * zAH3) / zAH4) + Math.floor((zE11 * zAH5) / zAH6)) + zAH7;
+        var zAH13 = zAH12 - (Math.floor(zAH12 / 21600) * 21600);
+        var zAH13 = zAH12 - (Math.floor(zAH12 / 21600) * 21600);
+        var zAH14;
+        if( zAH13 < zAH9 ){
+            zAH14 = zAH13 + 21600 - zAH9;
+        }else{
+            zAH14 = zAH13 - zAH9;
+        }
+        var zAH15 = Math.floor(zAH14 / 5400) + 1;
+        var zAH16;
+        switch(zAH15){
+            case 1:
+            zAH16 = -1;
+            break;
+            case 2:
+            zAH16 = -1;
+            break;
+            case 3:
+            zAH16 = 1;
+            break;
+            case 4:
+            zAH16 = 1;
+            break;
+        }
+        var zAH17;
+        switch(zAH15){
+            case 1:
+            zAH17 = zAH14;
+            break;
+            case 2:
+            zAH17 = 10800 - zAH14;
+            break;
+            case 3:
+            zAH17 = zAH14 - 10800;
+            break;
+            case 4:
+            zAH17 = 21600 - zAH14;
+            break;
+        }
+        var zAH18;
+        switch(zAH15){
+            case 1:
+            zAH18 = 1;
+            break;
+            case 2:
+            zAH18 = -1;
+            break;
+            case 3:
+            zAH18 = -1;
+            break;
+            case 4:
+            zAH18 = 1;
+            break;
+        }
+        var zAH19;
+        switch(zAH15){
+            case 1:
+            zAH19 = 5400 - zAH14;
+            break;
+            case 2:
+            zAH19 = zAH14 - 5400;
+            break;
+            case 3:
+            zAH19 = 16200 - zAH14;
+            break;
+            case 4:
+            zAH19 = zAH14 - 16200;
+            break;
+        }
+        
+        var zAH20;
+        if(zAH17 >= 0 && zAH17 <= 1799){
+            zAH20 = Math.floor((zAH17 * 14640) / 1800);
+        }else if(zAH17 >= 1800 && zAH17 <= 3599){
+            zAH20 = Math.floor(((zAH17 - 1800) * 10980) / 1800) + 14640;
+        }else if(zAH17 >= 1800 && zAH17 <= 5399){
+            zAH20 = Math.floor(((zAH17 - 3600) * 3660) / 1800) + 25620;
+        }
+        
+        var zAH21;
+        if(zAH19 >= 0 && zAH19 <= 1799){
+            zAH21 = Math.floor((zAH19 * 14640) / 1800);
+        }else if(zAH19 >= 1800 && zAH19 <= 3599){
+            zAH21 = Math.floor(((zAH19 - 1800) * 10980) / 1800) + 14640;
+        }else if(zAH19 >= 1800 && zAH19 <= 5399){
+            zAH21 = Math.floor(((zAH19 - 3600) * 3660) / 1800) + 25620;
+        }
+        
+        var zAH22 = Math.floor((Math.floor(zAH21 + 30) / 60) / 2);
+        var zAH23 = (zAH10 * 60) + (zAH22 * zAH18);
+        var zAH24 = Math.floor(zAH20 * 60 / zAH23);
+        var zAH25_1 = zAH13 + (zAH24 * zAH16);
+        var zAH25;
+        if( zAH25_1 < 0 ){
+            zAH25 = zAH25_1 + 21600;
+        }else{
+            zAH25 = zAH25_1;
+        }
+        var zAH26_1 = zAH25 - zE10;
+        var zAH26 = zAH26_1 + 21600 + 21600;
+        var zAH27 = zAH26 - (Math.floor(zAH26 / 21600) * 21600);
+        var zAH28 = Math.floor(zAH27 / 5400) + 1;
+        var zAH29;
+        switch(zAH28){
+            case 1:
+            zAH29 = -1;
+            break;
+            case 2:
+            zAH29 = -1;
+            break;
+            case 3:
+            zAH29 = 1;
+            break;
+            case 4:
+            zAH29 = 1;
+            break;
+        }
+        var zAH30;
+        switch(zAH28){
+            case 1:
+            zAH30 = zAH27;
+            break;
+            case 2:
+            zAH30 = 10800 - zAH27;
+            break;
+            case 3:
+            zAH30 = zAH27 - 10800;
+            break;
+            case 4:
+            zAH30 = 21600 - zAH27;
+            break;
+        }
+        
+        var zAH31;
+        switch(zAH28){
+            case 1:
+            zAH31 = 1;
+            break;
+            case 2:
+            zAH31 = -1;
+            break;
+            case 3:
+            zAH31 = -1;
+            break;
+            case 4:
+            zAH31 = 1;
+            break;
+        }
+        
+        var zAH32;
+        switch(zAH28){
+            case 1:
+            zAH32 = 5400 - zAH27;
+            break;
+            case 2:
+            zAH32 = zAH27 - 5400;
+            break;
+            case 3:
+            zAH32 = 16200 - zAH27;
+            break;
+            case 4:
+            zAH32 = zAH27 - 16200;
+            break;
+        }
+        
+        var zAH33;
+        if(zAH30 >= 0 && zAH30 <= 1799){
+            zAH33 = Math.floor((zAH30 * 14640) / 1800);
+        }else if(zAH30 >= 1800 && zAH30 <= 3599){
+            zAH33 = Math.floor(((zAH30 - 1800) * 10980) / 1800) + 14640;
+        }else if(zAH30 >= 1800 && zAH30 <= 5399){
+            zAH33 = Math.floor(((zAH30 - 3600) * 3660) / 1800) + 25620;
+        }
+        
+        var zAH34;
+        if(zAH32 >= 0 && zAH32 <= 1799){
+            zAH34 = Math.floor((zAH32 * 14640) / 1800);
+        }else if(zAH32 >= 1800 && zAH32 <= 3599){
+            zAH34 = Math.floor(((zAH32 - 1800) * 10980) / 1800) + 14640;
+        }else if(zAH32 >= 1800 && zAH32 <= 5399){
+            zAH34 = Math.floor(((zAH32 - 3600) * 3660) / 1800) + 25620;
+        }
+        
+        
+        var zAH35 = Math.floor((Math.floor(zAH33 + 30) / 60) / 3);
+        var zAH36 = Math.floor(zAH11 * zAH23);
+        var zAH37 = zAH36 + zAH35;
+        var zAH38 = zAH37 + (Math.floor((zAH34 + 30) / 60) * zAH31);
+        var zAH39 = Math.floor(zAH33 * 60 / zAH38);
+        
+        var zAH40_1 = zAH25 + (zAH39 * zAH29);
+        var zAH40 = zAH40_1 + 21600 + 21600;
+        var zAH41 = zAH40 - (Math.floor(zAH40 / 21600) * 21600);
+        var Pra7 = zAH41;
+        return Pra7;
+    }
+    
+    
+
+        function Pra6(JDN){
+                var JD;
+                if( JDN < 2422415.20833 ){
+                    JD = JDN;
+                }else{
+                    JD = JDN - (18 / 1440);
+                }
+                
+                var zAE3 = 5;
+                var zAE4 = 3;
+                var zAE5 = -10;
+                var zAE6 = 243;
+                var zAE9 = 4800;
+                var zAE10 = 320;
+                var zAE11 = 11;
+                
+                
+                var zA12 = JD - (1954167 + (16 / 24) + (11 / 1440) + (24 / 86400)) + 0.00000001;
+                var zA13 = zA12;
+                var zA14 = zA13 / 365.25875;
+                var zA15 = Math.floor((zA14 - Math.floor(zA14)) * 292207);
+                var zA16 = Math.floor(zA15 / 24350);
+                var zA17 = zA15 - (zA16 * 24350);
+                var zA18 = Math.floor(zA17 / 811);
+                var zA19 = zA17 - (zA18 * 811);
+                var zA20 = (Math.floor(zA19 / 14));
+                var zA21 = (zA16 * 1800) + (zA18 * 60) + zA20 - 3;
+                var zE10 = zA21 - 23;
+                var  zC14_1;
+                var zC14 = Math.floor(zA14);
+                if( zC14 < 610 ){
+                    zC14_1 = 0;
+                }else{
+                    zC14_1 = 610;
+                }
+                var zE11 = (zC14 - zC14_1) * 21600 + zE10;
+                var  zAE7;
+                if( zC14 >= 610 ){
+                    zAE7 = 10944;
+                }else{
+                    zAE7 = 3121;
+                }
+                
+                var zAE12 = (Math.floor((zE11 * zAE3) / zAE4) - Math.floor((zE11 * zAE5 * (-1)) / zAE6)) + zAE7;
+                var zAE13 = zAE12 - (Math.floor(zAE12 / 21600) * 21600);
+                var  zAE14;
+                if( zE10 < zAE9 ){
+                    zAE14 = zE10 + 21600 - zAE9;
+                }else{
+                    zAE14 = zE10 - zAE9;
+                }
+                var zAE15 = Math.floor(zAE14 / 5400) + 1;
+                var zAE16;
+                switch(zAE15){
+                    case 1:
+                    zAE16 = -1;
+                    break;
+                    case 2:
+                    zAE16 = -1;
+                    break;
+                    case 3:
+                    zAE16 = 1;
+                    break;
+                    case 4:
+                    zAE16 = 1;
+                    break;
+                }
+                var zAE15;
+                switch(zAE15){
+                    case 1:
+                    zAE17 = zAE14;
+                    break;
+                    case 2:
+                    zAE17 = 10800 - zAE14;
+                    break;
+                    case 3:
+                    zAE17 = zAE14 - 10800;
+                    break;
+                    case 4:
+                    zAE17 = 21600 - zAE14;
+                    break;
+                }
+                var zAE18;
+                switch(zAE15){
+                    case 1:
+                    zAE18 = 1;
+                    break;
+                    case 2:
+                    zAE18 = -1;
+                    break;
+                    case 3:
+                    zAE18 = -1;
+                    break;
+                    case 4:
+                    zAE18 = 1;
+                    break;
+                }
+                var zAE19;
+                switch(zAE15){
+                    case 1:
+                    zAE19 = 5400 - zAE14;
+                    break;
+                    case 2:
+                    zAE19 = zAE14 - 5400;
+                    break;
+                    case 3:
+                    zAE19 = 16200 - zAE14;
+                    break;
+                    case 4:
+                    zAE19 = zAE14 - 16200;
+                    break;
+                }
+                
+                var zAE20;
+                if(zAE17 >= 0 && zAE17 <= 1799){
+                    zAE20 = Math.floor((zAE17 * 14640) / 1800);
+                }else if(zAE17 >= 1800 && zAE17 <= 3599){
+                    zAE20 = Math.floor(((zAE17 - 1800) * 10980) / 1800) + 14640;
+                }else if(zAE17 >= 1800 && zAE17 <= 5399){
+                    zAE20 = Math.floor(((zAE17 - 3600) * 3660) / 1800) + 25620;
+                }
+                
+                var zAE21;
+                if(zAE19 >= 0 && zAE19 <= 1799){
+                    zAE21 = Math.floor((zAE19 * 14640) / 1800);
+                }else if(zAE19 >= 1800 && zAE19 <= 3599){
+                    zAE21 = Math.floor(((zAE19 - 1800) * 10980) / 1800) + 14640;
+                }else if(zAE19 >= 1800 && zAE19 <= 5399){
+                    zAE21 = Math.floor(((zAE19 - 3600) * 3660) / 1800) + 25620;
+                }
+                
+                var zAE22 = Math.floor((Math.floor(zAE21 + 30) / 60) / 2);
+                var zAE23 = (zAE10 * 60) + (zAE22 * zAE18);
+                var zAE24 = Math.floor(zAE20 * 60 / zAE23);
+                var zAE25_1 = zE10 + (zAE24 * zAE16);
+                var zAE25;
+                if( zAE25_1 < 0 ){
+                    zAE25 = zAE25_1 + 21600;
+                }else{
+                    zAE25 = zAE25_1;
+                }
+                var zAE26_1 = zAE25 - zAE13;
+                var zAE26 = zAE26_1 + 21600 + 21600;
+                var zAE27 = zAE26 - (Math.floor(zAE26 / 21600) * 21600);
+                var zAE28 = Math.floor(zAE27 / 5400) + 1;
+                var zAE29;
+                switch(zAE28){
+                    case 1:
+                    zAE29 = -1;
+                    break;
+                    case 2:
+                    zAE29 = -1;
+                    break;
+                    case 3:
+                    zAE29 = 1;
+                    break;
+                    case 4:
+                    zAE29 = 1;
+                    break;
+                }
+                var zAE30;
+                switch(zAE28){
+                    case 1:
+                    zAE30 = zAE27;
+                    break;
+                    case 2:
+                    zAE30 = 10800 - zAE27;
+                    break;
+                    case 3:
+                    zAE30 = zAE27 - 10800;
+                    break;
+                    case 4:
+                    zAE30 = 21600 - zAE27;
+                    break;
+                }
+                var zAE31;
+                switch(zAE28){
+                    case 1:
+                    zAE31 = 1;
+                    break;
+                    case 2:
+                    zAE31 = -1;
+                    break;
+                    case 3:
+                    zAE31 = -1;
+                    break;
+                    case 4:
+                    zAE31 = 1;
+                    break;
+                }
+                var zAE32;
+                switch(zAE28){
+                    case 1:
+                    zAE32 = 5400 - zAE27;
+                    break;
+                    case 2:
+                    zAE32 = zAE27 - 5400;
+                    break;
+                    case 3:
+                    zAE32 = 16200 - zAE27;
+                    break;
+                    case 4:
+                    zAE32 = zAE27 - 16200;
+                    break;
+                }
+                
+                var zAE33;
+                if(zAE30 >= 0 && zAE30 <= 1799){
+                    zAE33 = Math.floor((zAE30 * 14640) / 1800);
+                }else if(zAE30 >= 1800 && zAE30 <= 3599){
+                    zAE33 = Math.floor(((zAE30 - 1800) * 10980) / 1800) + 14640;
+                }else if(zAE30 >= 1800 && zAE30 <= 5399){
+                    zAE33 = Math.floor(((zAE30 - 3600) * 3660) / 1800) + 25620;
+                }
+                var zAE34;
+                if(zAE32 >= 0 && zAE32 <= 1799){
+                    zAE34 = Math.floor((zAE32 * 14640) / 1800);
+                }else if(zAE32 >= 1800 && zAE32 <= 3599){
+                    zAE34 = Math.floor(((zAE32 - 1800) * 10980) / 1800) + 14640;
+                }else if(zAE32 >= 1800 && zAE32 <= 5399){
+                    zAE34 = Math.floor(((zAE32 - 3600) * 3660) / 1800) + 25620;
+                }
+                var zAE35 = Math.floor((Math.floor(zAE33 + 30) / 60) / 3);
+                var zAE36 = zAE11 * 60;
+                var zAE37 = zAE36 + zAE35;
+                var zAE38 = zAE37 + (Math.floor((zAE34 + 30) / 60) * zAE31);
+                var zAE39 = Math.floor(zAE33 * 60 / zAE38);
+                
+                var zAE40_1 = zAE25 + (zAE39 * zAE29);
+                var zAE40 = zAE40_1 + 21600 + 21600;
+                var zAE41 = zAE40 - (Math.floor(zAE40 / 21600) * 21600);
+                var Pra6 = zAE41;
+                return Pra6;
+        }
+    
+    function Pra0(JDN) {
+        var JD;
+        if( JDN < 2422415.20833 ){
+            JD = JDN;
+        }else{
+            JD = JDN - (18 / 1440);
+        }
+        
+        var zAI3 = 1;
+        var zAI4 = 84;
+        var zAI5 = 1;
+        var zAI6 = 7224;
+        var zAI9 = 7440;
+        var zAI10 = 644;
+        var zAI11 = 3 / 7;
+        
+        var zA12 = JD - (1954167 + (16 / 24) + (11 / 1440) + (24 / 86400)) + 0.00000001;
+        var zA13 = zA12;
+        var zA14 = zA13 / 365.25875;
+        var zA15 = Math.floor((zA14 - Math.floor(zA14)) * 292207);
+        var zA16 = Math.floor(zA15 / 24350);
+        var zA17 = zA15 - (zA16 * 24350);
+        var zA18 = Math.floor(zA17 / 811);
+        var zA19 = zA17 - (zA18 * 811);
+        var zA20 = (Math.floor(zA19 / 14));
+        var zA21 = (zA16 * 1800) + (zA18 * 60) + zA20 - 3;
+        var zE10 = zA21 - 23;
+        var zC14 = Math.floor(zA14);
+        var zC14_1;
+        if( zC14 < 610 ){
+            zC14_1 = 0;
+        }else{
+            zC14_1 = 610;
+        }
+        var zE11 = (zC14 - zC14_1) * 21600 + zE10;
+        var zAI7;
+        if( zC14 >= 610 ){
+            zAI7 = 16277;
+        }else{
+            zAI7 = 8160;
+        }
+        var zAI12 = (Math.floor((zE11 * zAI3) / zAI4) + Math.floor((zE11 * zAI5) / zAI6)) + zAI7;
+        var zAI13 = zAI12 - (Math.floor(zAI12 / 21600) * 21600);
+        var zAI13 = zAI12 - (Math.floor(zAI12 / 21600) * 21600);
+        var  zAI14;
+        if( zAI13 < zAI9 ){
+            zAI14 = zAI13 + 21600 - zAI9;
+        }else{
+            zAI14 = zAI13 - zAI9;
+        }
+        var zAI15 = Math.floor(zAI14 / 5400) + 1;
+        var zAI16;
+        switch(zAI15){
+            case 1:
+            zAI16 = -1;
+            break;
+            case 2:
+            zAI16 = -1;
+            break;
+            case 3:
+            zAI16 = 1;
+            break;
+            case 4:
+            zAI16 = 1;
+            break;
+        }
+        var zAI17;
+        switch(zAI15){
+            case 1:
+            zAI17 = zAI14;
+            break;
+            case 2:
+            zAI17 = 10800 - zAI14;
+            break;
+            case 3:
+            zAI17 = zAI14 - 10800;
+            break;
+            case 4:
+            zAI17 = 21600 - zAI14;
+            break;
+        }
+        var zAI18;
+        switch(zAI15){
+            case 1:
+            zAI18 = 1;
+            break;
+            case 2:
+            zAI18 = -1;
+            break;
+            case 3:
+            zAI18 = -1;
+            break;
+            case 4:
+            zAI18 = 1;
+            break;
+        }
+        var zAI19;
+        switch(zAI15){
+            case 1:
+            zAI19 = 5400 - zAI14;
+            break;
+            case 2:
+            zAI19 = zAI14 - 5400;
+            break;
+            case 3:
+            zAI19 = 16200 - zAI14;
+            break;
+            case 4:
+            zAI19 = zAI14 - 16200;
+            break;
+        }
+        var zAI20;
+        if(zAI17 >= 0 && zAI17 <= 1799){
+            zAI20 = Math.floor((zAI17 * 14640) / 1800);
+        }else if(zAI17 >= 1800 && zAI17 <= 3599){
+            zAI20 = Math.floor(((zAI17 - 1800) * 10980) / 1800) + 14640;
+        }else if(zAI17 >= 1800 && zAI17 <= 5399){
+            zAI20 = Math.floor(((zAI17 - 3600) * 3660) / 1800) + 25620;
+        }
+        
+        var zAI21;
+        if(zAI19 >= 0 && zAI19 <= 1799){
+            zAI21 = Math.floor((zAI19 * 14640) / 1800);
+        }else if(zAI19 >= 1800 && zAI19 <= 3599){
+            zAI21 = Math.floor(((zAI19 - 1800) * 10980) / 1800) + 14640;
+        }else if(zAI19 >= 1800 && zAI19 <= 5399){
+            zAI21 = Math.floor(((zAI19 - 3600) * 3660) / 1800) + 25620;
+        }
+        var zAI22 = Math.floor((Math.floor(zAI21 + 30) / 60) / 2);
+        var zAI23 = (zAI10 * 60) + (zAI22 * zAI18);
+        var zAI24 = Math.floor(zAI20 * 60 / zAI23);
+        var zAI25_1 = zAI13 + (zAI24 * zAI16);
+        var zAI25;
+        if( zAI25_1 < 0 ){
+            zAI25 = zAI25_1 + 21600;
+        }else{
+            zAI25 = zAI25_1;
+        }
+        var zAI26_1 = zAI25 - zE10;
+        var zAI26 = zAI26_1 + 21600 + 21600;
+        var zAI27 = zAI26 - (Math.floor(zAI26 / 21600) * 21600);
+        var zAI28 = Math.floor(zAI27 / 5400) + 1;
+        var zAI29;
+        switch(zAI28){
+            case 1:
+            zAI29 = -1;
+            break;
+            case 2:
+            zAI29 = -1;
+            break;
+            case 3:
+            zAI29 = 1;
+            break;
+            case 4:
+            zAI29 = 1;
+            break;
+        }
+        var zAI30;
+        switch(zAI28){
+            case 1:
+            zAI30 = zAI27;
+            break;
+            case 2:
+            zAI30 = 10800 - zAI27;
+            break;
+            case 3:
+            zAI30 = zAI27 - 10800;
+            break;
+            case 4:
+            zAI30 = 21600 - zAI27;
+            break;
+        }
+        var zAI31
+        switch(zAI28){
+            case 1:
+            zAI31 = 1;
+            break;
+            case 2:
+            zAI31 = -1;
+            break;
+            case 3:
+            zAI31 = -1;
+            break;
+            case 4:
+            zAI31 = 1;
+            break;
+        }
+        var zAI32;
+        switch(zAI28){
+            case 1:
+            zAI32 = 5400 - zAI27;
+            break;
+            case 2:
+            zAI32 = zAI27 - 5400;
+            break;
+            case 3:
+            zAI32 = 16200 - zAI27;
+            break;
+            case 4:
+            zAI32 = zAI27 - 16200;
+            break;
+        }
+        var zAI33;
+        if(zAI30 >= 0 && zAI30 <= 1799){
+            zAI33 = Math.floor((zAI30 * 14640) / 1800);
+        }else if(zAI30 >= 1800 && zAI30 <= 3599){
+            zAI33 = Math.floor(((zAI30 - 1800) * 10980) / 1800) + 14640;
+        }else if(zAI30 >= 1800 && zAI30 <= 5399){
+            zAI33 = Math.floor(((zAI30 - 3600) * 3660) / 1800) + 25620;
+        }
+        
+        var zAI34;
+        if(zAI32 >= 0 && zAI32 <= 1799){
+            zAI34 = Math.floor((zAI32 * 14640) / 1800);
+        }else if(zAI32 >= 1800 && zAI32 <= 3599){
+            zAI34 = Math.floor(((zAI32 - 1800) * 10980) / 1800) + 14640;
+        }else if(zAI32 >= 1800 && zAI32 <= 5399){
+            zAI34 = Math.floor(((zAI32 - 3600) * 3660) / 1800) + 25620;
+        }
+        
+        
+        var zAI35 = Math.floor((Math.floor(zAI33 + 30) / 60) / 3);
+        var zAI36 = Math.floor(zAI11 * zAI23);
+        var zAI37 = zAI36 + zAI35;
+        var zAI38 = zAI37 + (Math.floor((zAI34 + 30) / 60) * zAI31);
+        var zAI39 = Math.floor(zAI33 * 60 / zAI38);
+        
+        var zAI40_1 = zAI25 + (zAI39 * zAI29);
+        var zAI40 = zAI40_1 + 21600 + 21600;
+        var zAI41 = zAI40 - (Math.floor(zAI40 / 21600) * 21600);
+        var Pra0 = zAI41;
+        return Pra0;
+    }
+    
+    function rasi(sputa) {
+        var rasi = Math.floor(sputa / 1800);
+        return rasi;
+    }
+    
+    function ongsa(sputa) {
+        var ongsa = Math.floor((sputa - (Math.floor(sputa / 1800) * 1800)) / 60);
+        return ongsa;
+    }
+    
+    function lipda(sputa) {
+        var lipda = sputa - (Math.floor(sputa / 60) * 60);
+        return lipda;
+    }
+    
+    
+
+    </script>
+</head>
+
+<body>
+    <!--button onclick="myFunction()">Try it</button-->
+</body>

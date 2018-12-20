@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01333C3C191CCE271C88146A /* libPods-YotYordTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4B40F9D5B69270DCBDE5618 /* libPods-YotYordTests.a */; };
+		181E74362D1A5B81CEBFD603 /* libPods-YotYord.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B29355293B40E08D5702263 /* libPods-YotYord.a */; };
+		4905AEAB21436AC4009393C7 /* HeaderPoint2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4905AEAA21436AC4009393C7 /* HeaderPoint2.plist */; };
+		49187ADA21535635003BA464 /* calculate_pra.html in Resources */ = {isa = PBXBuildFile; fileRef = 49187AD921535635003BA464 /* calculate_pra.html */; };
+		49187ADD215356D9003BA464 /* PopupInputDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49187ADC215356D9003BA464 /* PopupInputDetailViewController.m */; };
+		49187AE12153573D003BA464 /* RasiObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 49187AE02153573D003BA464 /* RasiObject.m */; };
+		4937FBE2212E9F86009CDD5E /* MainCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4937FBE1212E9F86009CDD5E /* MainCollectionViewCell.m */; };
+		4937FBE5212EA4D8009CDD5E /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4937FBE4212EA4D8009CDD5E /* MainTableViewCell.m */; };
 		493F0A352126AE4D0072844B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 493F0A342126AE4D0072844B /* AppDelegate.m */; };
 		493F0A382126AE4D0072844B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 493F0A372126AE4D0072844B /* ViewController.m */; };
 		493F0A3B2126AE4D0072844B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493F0A392126AE4D0072844B /* Main.storyboard */; };
@@ -15,6 +23,62 @@
 		493F0A432126AE4E0072844B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 493F0A422126AE4E0072844B /* main.m */; };
 		493F0A4D2126AE4E0072844B /* YotYordTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 493F0A4C2126AE4E0072844B /* YotYordTests.m */; };
 		493F0A582126AE4E0072844B /* YotYordUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 493F0A572126AE4E0072844B /* YotYordUITests.m */; };
+		493F0A672126B4C80072844B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 493F0A662126B4C80072844B /* GoogleService-Info.plist */; };
+		493F0A6C2126B83D0072844B /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 493F0A682126B83D0072844B /* FBSDKCoreKit.framework */; };
+		493F0A6D2126B83D0072844B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 493F0A692126B83D0072844B /* Bolts.framework */; };
+		493F0A6E2126B83D0072844B /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 493F0A6A2126B83D0072844B /* FBSDKLoginKit.framework */; };
+		493F0A6F2126B83D0072844B /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 493F0A6B2126B83D0072844B /* FBSDKShareKit.framework */; };
+		494802142147852100A48626 /* CALayer+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 494802122147852100A48626 /* CALayer+Additions.m */; };
+		4948021B21478DD400A48626 /* UIColor+RGBValues.m in Sources */ = {isa = PBXBuildFile; fileRef = 4948021621478DD400A48626 /* UIColor+RGBValues.m */; };
+		4948021C21478DD400A48626 /* LDProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4948021721478DD400A48626 /* LDProgressView.m */; };
+		4948022021478EA900A48626 /* StarTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4948021F21478EA900A48626 /* StarTableViewCell.m */; };
+		494802232147919100A48626 /* StarPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 494802222147919100A48626 /* StarPlist.plist */; };
+		49531F01219925E2007804B0 /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 49531EE6219925E2007804B0 /* gear.png */; };
+		49531F02219925E2007804B0 /* calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49531EE7219925E2007804B0 /* calendar@2x.png */; };
+		49531F03219925E2007804B0 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 49531EE8219925E2007804B0 /* plus.png */; };
+		49531F04219925E2007804B0 /* Search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49531EE9219925E2007804B0 /* Search@2x.png */; };
+		49531F05219925E2007804B0 /* edit@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49531EEA219925E2007804B0 /* edit@3x.png */; };
+		49531F06219925E2007804B0 /* Pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 49531EEB219925E2007804B0 /* Pin.png */; };
+		49531F07219925E2007804B0 /* down-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 49531EEC219925E2007804B0 /* down-arrow.png */; };
+		49531F08219925E2007804B0 /* edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49531EED219925E2007804B0 /* edit@2x.png */; };
+		49531F09219925E2007804B0 /* Search@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49531EEE219925E2007804B0 /* Search@3x.png */; };
+		49531F0A219925E2007804B0 /* calendar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49531EEF219925E2007804B0 /* calendar@3x.png */; };
+		49531F0B219925E2007804B0 /* share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49531EF0219925E2007804B0 /* share@2x.png */; };
+		49531F0C219925E2007804B0 /* Pin@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49531EF1219925E2007804B0 /* Pin@3x.png */; };
+		49531F0D219925E2007804B0 /* plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49531EF2219925E2007804B0 /* plus@2x.png */; };
+		49531F0E219925E2007804B0 /* down-arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49531EF3219925E2007804B0 /* down-arrow@2x.png */; };
+		49531F0F219925E2007804B0 /* down-arrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49531EF4219925E2007804B0 /* down-arrow@3x.png */; };
+		49531F10219925E2007804B0 /* plus@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49531EF5219925E2007804B0 /* plus@3x.png */; };
+		49531F11219925E2007804B0 /* Pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49531EF6219925E2007804B0 /* Pin@2x.png */; };
+		49531F12219925E2007804B0 /* share@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49531EF7219925E2007804B0 /* share@3x.png */; };
+		49531F13219925E2007804B0 /* Search.png in Resources */ = {isa = PBXBuildFile; fileRef = 49531EF8219925E2007804B0 /* Search.png */; };
+		49531F14219925E2007804B0 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 49531EF9219925E2007804B0 /* calendar.png */; };
+		49531F15219925E2007804B0 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 49531EFA219925E2007804B0 /* share.png */; };
+		49531F16219925E2007804B0 /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 49531EFB219925E2007804B0 /* delete.png */; };
+		49531F17219925E2007804B0 /* delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49531EFC219925E2007804B0 /* delete@2x.png */; };
+		49531F18219925E2007804B0 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 49531EFD219925E2007804B0 /* edit.png */; };
+		49531F19219925E2007804B0 /* gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49531EFE219925E2007804B0 /* gear@2x.png */; };
+		49531F1A219925E2007804B0 /* gear@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49531EFF219925E2007804B0 /* gear@3x.png */; };
+		49531F1B219925E2007804B0 /* delete@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49531F00219925E2007804B0 /* delete@3x.png */; };
+		49531F1D21998319007804B0 /* StarShowPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49531F1C21998319007804B0 /* StarShowPlist.plist */; };
+		49548EEB21A3C414008EE8A3 /* country.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49548EEA21A3C414008EE8A3 /* country.plist */; };
+		49548EED21A3C4F3008EE8A3 /* state.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49548EEC21A3C4F3008EE8A3 /* state.plist */; };
+		495AEADF212FFAD900563A4A /* MyDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 495AEADE212FFAD900563A4A /* MyDocument.m */; };
+		49A5910D21C8B2570047944F /* StarReportPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49A5910C21C8B2570047944F /* StarReportPlist.plist */; };
+		49CC1DBA2154AA2C00B84913 /* timePlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49CC1DB92154AA2C00B84913 /* timePlist.plist */; };
+		49E44F18215DF29D0002290F /* SukhumvitSet-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 49E44F12215DF29C0002290F /* SukhumvitSet-Light.ttf */; };
+		49E44F19215DF29D0002290F /* SukhumvitSet-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 49E44F13215DF29C0002290F /* SukhumvitSet-Bold.ttf */; };
+		49E44F1A215DF29D0002290F /* SukhumvitSet-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 49E44F14215DF29C0002290F /* SukhumvitSet-Thin.ttf */; };
+		49E44F1B215DF29D0002290F /* SukhumvitSet-Text.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 49E44F15215DF29C0002290F /* SukhumvitSet-Text.ttf */; };
+		49E44F1C215DF29D0002290F /* SukhumvitSet-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 49E44F16215DF29C0002290F /* SukhumvitSet-Medium.ttf */; };
+		49E44F1D215DF29D0002290F /* SukhumvitSet-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 49E44F17215DF29C0002290F /* SukhumvitSet-SemiBold.ttf */; };
+		49F4E59C2126C396004DECD3 /* PopupInputSignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F4E5962126C395004DECD3 /* PopupInputSignViewController.m */; };
+		49F4E59D2126C396004DECD3 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F4E5982126C395004DECD3 /* LoginViewController.m */; };
+		49F4E5A02126C3A2004DECD3 /* SignObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F4E59F2126C3A2004DECD3 /* SignObject.m */; };
+		49F4E5A32126C62B004DECD3 /* HeaderPointObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F4E5A22126C62B004DECD3 /* HeaderPointObject.m */; };
+		49F4E5A52126C760004DECD3 /* HeaderPoint.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49F4E5A42126C760004DECD3 /* HeaderPoint.plist */; };
+		49FBF7F721A3CA7F00135879 /* PopupCountryStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FBF7F621A3CA7F00135879 /* PopupCountryStateViewController.m */; };
+		EA6E2FCDF843E512F3FBFFB6 /* libPods-YotYordUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3164E830C3A59451DBA67038 /* libPods-YotYordUITests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +99,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11EB3066EBF05B57251A7FED /* Pods-YotYordUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YotYordUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YotYordUITests/Pods-YotYordUITests.release.xcconfig"; sourceTree = "<group>"; };
+		1BDB981ABD36EF0326C73776 /* Pods-YotYordTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YotYordTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YotYordTests/Pods-YotYordTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3164E830C3A59451DBA67038 /* libPods-YotYordUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YotYordUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		397DB8EE31A9D8C2B46841F2 /* Pods-YotYord.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YotYord.release.xcconfig"; path = "Pods/Target Support Files/Pods-YotYord/Pods-YotYord.release.xcconfig"; sourceTree = "<group>"; };
+		4905AEAA21436AC4009393C7 /* HeaderPoint2.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = HeaderPoint2.plist; sourceTree = "<group>"; };
+		49187AD921535635003BA464 /* calculate_pra.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = calculate_pra.html; sourceTree = "<group>"; };
+		49187ADB215356D9003BA464 /* PopupInputDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopupInputDetailViewController.h; sourceTree = "<group>"; };
+		49187ADC215356D9003BA464 /* PopupInputDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopupInputDetailViewController.m; sourceTree = "<group>"; };
+		49187ADF2153573D003BA464 /* RasiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RasiObject.h; sourceTree = "<group>"; };
+		49187AE02153573D003BA464 /* RasiObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RasiObject.m; sourceTree = "<group>"; };
+		4937FBE0212E9F86009CDD5E /* MainCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainCollectionViewCell.h; sourceTree = "<group>"; };
+		4937FBE1212E9F86009CDD5E /* MainCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainCollectionViewCell.m; sourceTree = "<group>"; };
+		4937FBE3212EA4D8009CDD5E /* MainTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTableViewCell.h; sourceTree = "<group>"; };
+		4937FBE4212EA4D8009CDD5E /* MainTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTableViewCell.m; sourceTree = "<group>"; };
 		493F0A302126AE4D0072844B /* YotYord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YotYord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		493F0A332126AE4D0072844B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		493F0A342126AE4D0072844B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -51,6 +129,78 @@
 		493F0A532126AE4E0072844B /* YotYordUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YotYordUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		493F0A572126AE4E0072844B /* YotYordUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YotYordUITests.m; sourceTree = "<group>"; };
 		493F0A592126AE4E0072844B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		493F0A652126B3CB0072844B /* YotYord-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YotYord-Prefix.pch"; sourceTree = "<group>"; };
+		493F0A662126B4C80072844B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		493F0A682126B83D0072844B /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Frameworks/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		493F0A692126B83D0072844B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Frameworks/Bolts.framework; sourceTree = "<group>"; };
+		493F0A6A2126B83D0072844B /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = Frameworks/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		493F0A6B2126B83D0072844B /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = Frameworks/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		494802122147852100A48626 /* CALayer+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Additions.m"; sourceTree = "<group>"; };
+		494802132147852100A48626 /* CALayer+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Additions.h"; sourceTree = "<group>"; };
+		4948021621478DD400A48626 /* UIColor+RGBValues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RGBValues.m"; sourceTree = "<group>"; };
+		4948021721478DD400A48626 /* LDProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDProgressView.m; sourceTree = "<group>"; };
+		4948021921478DD400A48626 /* UIColor+RGBValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RGBValues.h"; sourceTree = "<group>"; };
+		4948021A21478DD400A48626 /* LDProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDProgressView.h; sourceTree = "<group>"; };
+		4948021E21478EA900A48626 /* StarTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StarTableViewCell.h; sourceTree = "<group>"; };
+		4948021F21478EA900A48626 /* StarTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StarTableViewCell.m; sourceTree = "<group>"; };
+		494802222147919100A48626 /* StarPlist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = StarPlist.plist; sourceTree = "<group>"; };
+		49531EE6219925E2007804B0 /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
+		49531EE7219925E2007804B0 /* calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar@2x.png"; sourceTree = "<group>"; };
+		49531EE8219925E2007804B0 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
+		49531EE9219925E2007804B0 /* Search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Search@2x.png"; sourceTree = "<group>"; };
+		49531EEA219925E2007804B0 /* edit@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit@3x.png"; sourceTree = "<group>"; };
+		49531EEB219925E2007804B0 /* Pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pin.png; sourceTree = "<group>"; };
+		49531EEC219925E2007804B0 /* down-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "down-arrow.png"; sourceTree = "<group>"; };
+		49531EED219925E2007804B0 /* edit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit@2x.png"; sourceTree = "<group>"; };
+		49531EEE219925E2007804B0 /* Search@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Search@3x.png"; sourceTree = "<group>"; };
+		49531EEF219925E2007804B0 /* calendar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar@3x.png"; sourceTree = "<group>"; };
+		49531EF0219925E2007804B0 /* share@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share@2x.png"; sourceTree = "<group>"; };
+		49531EF1219925E2007804B0 /* Pin@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pin@3x.png"; sourceTree = "<group>"; };
+		49531EF2219925E2007804B0 /* plus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus@2x.png"; sourceTree = "<group>"; };
+		49531EF3219925E2007804B0 /* down-arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "down-arrow@2x.png"; sourceTree = "<group>"; };
+		49531EF4219925E2007804B0 /* down-arrow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "down-arrow@3x.png"; sourceTree = "<group>"; };
+		49531EF5219925E2007804B0 /* plus@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus@3x.png"; sourceTree = "<group>"; };
+		49531EF6219925E2007804B0 /* Pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pin@2x.png"; sourceTree = "<group>"; };
+		49531EF7219925E2007804B0 /* share@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share@3x.png"; sourceTree = "<group>"; };
+		49531EF8219925E2007804B0 /* Search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Search.png; sourceTree = "<group>"; };
+		49531EF9219925E2007804B0 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
+		49531EFA219925E2007804B0 /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
+		49531EFB219925E2007804B0 /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
+		49531EFC219925E2007804B0 /* delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete@2x.png"; sourceTree = "<group>"; };
+		49531EFD219925E2007804B0 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
+		49531EFE219925E2007804B0 /* gear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gear@2x.png"; sourceTree = "<group>"; };
+		49531EFF219925E2007804B0 /* gear@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gear@3x.png"; sourceTree = "<group>"; };
+		49531F00219925E2007804B0 /* delete@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete@3x.png"; sourceTree = "<group>"; };
+		49531F1C21998319007804B0 /* StarShowPlist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = StarShowPlist.plist; sourceTree = "<group>"; };
+		49548EEA21A3C414008EE8A3 /* country.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = country.plist; sourceTree = "<group>"; };
+		49548EEC21A3C4F3008EE8A3 /* state.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = state.plist; sourceTree = "<group>"; };
+		495AEADC212FF98700563A4A /* YotYord.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YotYord.entitlements; sourceTree = "<group>"; };
+		495AEADD212FFAD900563A4A /* MyDocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyDocument.h; sourceTree = "<group>"; };
+		495AEADE212FFAD900563A4A /* MyDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyDocument.m; sourceTree = "<group>"; };
+		49A5910C21C8B2570047944F /* StarReportPlist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = StarReportPlist.plist; sourceTree = "<group>"; };
+		49CC1DB92154AA2C00B84913 /* timePlist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = timePlist.plist; sourceTree = "<group>"; };
+		49E44F12215DF29C0002290F /* SukhumvitSet-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SukhumvitSet-Light.ttf"; sourceTree = "<group>"; };
+		49E44F13215DF29C0002290F /* SukhumvitSet-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SukhumvitSet-Bold.ttf"; sourceTree = "<group>"; };
+		49E44F14215DF29C0002290F /* SukhumvitSet-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SukhumvitSet-Thin.ttf"; sourceTree = "<group>"; };
+		49E44F15215DF29C0002290F /* SukhumvitSet-Text.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SukhumvitSet-Text.ttf"; sourceTree = "<group>"; };
+		49E44F16215DF29C0002290F /* SukhumvitSet-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SukhumvitSet-Medium.ttf"; sourceTree = "<group>"; };
+		49E44F17215DF29C0002290F /* SukhumvitSet-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SukhumvitSet-SemiBold.ttf"; sourceTree = "<group>"; };
+		49F4E5962126C395004DECD3 /* PopupInputSignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupInputSignViewController.m; sourceTree = "<group>"; };
+		49F4E5972126C395004DECD3 /* PopupInputSignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupInputSignViewController.h; sourceTree = "<group>"; };
+		49F4E5982126C395004DECD3 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		49F4E5992126C395004DECD3 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		49F4E59E2126C3A2004DECD3 /* SignObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignObject.h; sourceTree = "<group>"; };
+		49F4E59F2126C3A2004DECD3 /* SignObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignObject.m; sourceTree = "<group>"; };
+		49F4E5A12126C62B004DECD3 /* HeaderPointObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderPointObject.h; sourceTree = "<group>"; };
+		49F4E5A22126C62B004DECD3 /* HeaderPointObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeaderPointObject.m; sourceTree = "<group>"; };
+		49F4E5A42126C760004DECD3 /* HeaderPoint.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = HeaderPoint.plist; sourceTree = "<group>"; };
+		49FBF7F521A3CA7F00135879 /* PopupCountryStateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopupCountryStateViewController.h; sourceTree = "<group>"; };
+		49FBF7F621A3CA7F00135879 /* PopupCountryStateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopupCountryStateViewController.m; sourceTree = "<group>"; };
+		6E9A5F66CBAACF31C5E5906E /* Pods-YotYordUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YotYordUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YotYordUITests/Pods-YotYordUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8656D7A266B2D66CB241F31E /* Pods-YotYord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YotYord.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YotYord/Pods-YotYord.debug.xcconfig"; sourceTree = "<group>"; };
+		8B29355293B40E08D5702263 /* libPods-YotYord.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YotYord.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C1D98858ABBB8450E8AA1D1 /* Pods-YotYordTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YotYordTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YotYordTests/Pods-YotYordTests.release.xcconfig"; sourceTree = "<group>"; };
+		D4B40F9D5B69270DCBDE5618 /* libPods-YotYordTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YotYordTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +208,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				493F0A6D2126B83D0072844B /* Bolts.framework in Frameworks */,
+				181E74362D1A5B81CEBFD603 /* libPods-YotYord.a in Frameworks */,
+				493F0A6F2126B83D0072844B /* FBSDKShareKit.framework in Frameworks */,
+				493F0A6E2126B83D0072844B /* FBSDKLoginKit.framework in Frameworks */,
+				493F0A6C2126B83D0072844B /* FBSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +220,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01333C3C191CCE271C88146A /* libPods-YotYordTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +228,56 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA6E2FCDF843E512F3FBFFB6 /* libPods-YotYordUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		420F0AA6836C571EB98EF525 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8656D7A266B2D66CB241F31E /* Pods-YotYord.debug.xcconfig */,
+				397DB8EE31A9D8C2B46841F2 /* Pods-YotYord.release.xcconfig */,
+				1BDB981ABD36EF0326C73776 /* Pods-YotYordTests.debug.xcconfig */,
+				8C1D98858ABBB8450E8AA1D1 /* Pods-YotYordTests.release.xcconfig */,
+				6E9A5F66CBAACF31C5E5906E /* Pods-YotYordUITests.debug.xcconfig */,
+				11EB3066EBF05B57251A7FED /* Pods-YotYordUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		49187ADE2153573D003BA464 /* DateRasiObject */ = {
+			isa = PBXGroup;
+			children = (
+				49187ADF2153573D003BA464 /* RasiObject.h */,
+				49187AE02153573D003BA464 /* RasiObject.m */,
+			);
+			path = DateRasiObject;
+			sourceTree = "<group>";
+		};
+		4937FBDB212E9ED6009CDD5E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4937FBDC212E9EE9009CDD5E /* Cell&Object */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		4937FBDC212E9EE9009CDD5E /* Cell&Object */ = {
+			isa = PBXGroup;
+			children = (
+				4937FBE0212E9F86009CDD5E /* MainCollectionViewCell.h */,
+				4937FBE1212E9F86009CDD5E /* MainCollectionViewCell.m */,
+				4937FBE3212EA4D8009CDD5E /* MainTableViewCell.h */,
+				4937FBE4212EA4D8009CDD5E /* MainTableViewCell.m */,
+				4948021E21478EA900A48626 /* StarTableViewCell.h */,
+				4948021F21478EA900A48626 /* StarTableViewCell.m */,
+			);
+			path = "Cell&Object";
+			sourceTree = "<group>";
+		};
 		493F0A272126AE4C0072844B = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +285,8 @@
 				493F0A4B2126AE4E0072844B /* YotYordTests */,
 				493F0A562126AE4E0072844B /* YotYordUITests */,
 				493F0A312126AE4D0072844B /* Products */,
+				420F0AA6836C571EB98EF525 /* Pods */,
+				FB05F1A8054C68E4FF785E1A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +303,10 @@
 		493F0A322126AE4D0072844B /* YotYord */ = {
 			isa = PBXGroup;
 			children = (
+				49531EE5219925E2007804B0 /* Image */,
+				495AEADC212FF98700563A4A /* YotYord.entitlements */,
+				49F4E59B2126C395004DECD3 /* Object */,
+				49F4E5942126C395004DECD3 /* Pages */,
 				493F0A332126AE4D0072844B /* AppDelegate.h */,
 				493F0A342126AE4D0072844B /* AppDelegate.m */,
 				493F0A362126AE4D0072844B /* ViewController.h */,
@@ -109,6 +315,8 @@
 				493F0A3C2126AE4E0072844B /* Assets.xcassets */,
 				493F0A3E2126AE4E0072844B /* LaunchScreen.storyboard */,
 				493F0A412126AE4E0072844B /* Info.plist */,
+				493F0A662126B4C80072844B /* GoogleService-Info.plist */,
+				493F0A652126B3CB0072844B /* YotYord-Prefix.pch */,
 				493F0A422126AE4E0072844B /* main.m */,
 			);
 			path = YotYord;
@@ -132,6 +340,145 @@
 			path = YotYordUITests;
 			sourceTree = "<group>";
 		};
+		4948021521478DD400A48626 /* LDProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				4948021621478DD400A48626 /* UIColor+RGBValues.m */,
+				4948021721478DD400A48626 /* LDProgressView.m */,
+				4948021921478DD400A48626 /* UIColor+RGBValues.h */,
+				4948021A21478DD400A48626 /* LDProgressView.h */,
+			);
+			path = LDProgressView;
+			sourceTree = "<group>";
+		};
+		494802212147917300A48626 /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+				494802222147919100A48626 /* StarPlist.plist */,
+				49CC1DB92154AA2C00B84913 /* timePlist.plist */,
+				49531F1C21998319007804B0 /* StarShowPlist.plist */,
+				49548EEA21A3C414008EE8A3 /* country.plist */,
+				49548EEC21A3C4F3008EE8A3 /* state.plist */,
+			);
+			path = Plist;
+			sourceTree = "<group>";
+		};
+		49531EE5219925E2007804B0 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				49531EE6219925E2007804B0 /* gear.png */,
+				49531EE7219925E2007804B0 /* calendar@2x.png */,
+				49531EE8219925E2007804B0 /* plus.png */,
+				49531EE9219925E2007804B0 /* Search@2x.png */,
+				49531EEA219925E2007804B0 /* edit@3x.png */,
+				49531EEB219925E2007804B0 /* Pin.png */,
+				49531EEC219925E2007804B0 /* down-arrow.png */,
+				49531EED219925E2007804B0 /* edit@2x.png */,
+				49531EEE219925E2007804B0 /* Search@3x.png */,
+				49531EEF219925E2007804B0 /* calendar@3x.png */,
+				49531EF0219925E2007804B0 /* share@2x.png */,
+				49531EF1219925E2007804B0 /* Pin@3x.png */,
+				49531EF2219925E2007804B0 /* plus@2x.png */,
+				49531EF3219925E2007804B0 /* down-arrow@2x.png */,
+				49531EF4219925E2007804B0 /* down-arrow@3x.png */,
+				49531EF5219925E2007804B0 /* plus@3x.png */,
+				49531EF6219925E2007804B0 /* Pin@2x.png */,
+				49531EF7219925E2007804B0 /* share@3x.png */,
+				49531EF8219925E2007804B0 /* Search.png */,
+				49531EF9219925E2007804B0 /* calendar.png */,
+				49531EFA219925E2007804B0 /* share.png */,
+				49531EFB219925E2007804B0 /* delete.png */,
+				49531EFC219925E2007804B0 /* delete@2x.png */,
+				49531EFD219925E2007804B0 /* edit.png */,
+				49531EFE219925E2007804B0 /* gear@2x.png */,
+				49531EFF219925E2007804B0 /* gear@3x.png */,
+				49531F00219925E2007804B0 /* delete@3x.png */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		49E44F11215DF29C0002290F /* sukhumvit-set */ = {
+			isa = PBXGroup;
+			children = (
+				49E44F12215DF29C0002290F /* SukhumvitSet-Light.ttf */,
+				49E44F13215DF29C0002290F /* SukhumvitSet-Bold.ttf */,
+				49E44F14215DF29C0002290F /* SukhumvitSet-Thin.ttf */,
+				49E44F15215DF29C0002290F /* SukhumvitSet-Text.ttf */,
+				49E44F16215DF29C0002290F /* SukhumvitSet-Medium.ttf */,
+				49E44F17215DF29C0002290F /* SukhumvitSet-SemiBold.ttf */,
+			);
+			path = "sukhumvit-set";
+			sourceTree = "<group>";
+		};
+		49F4E5942126C395004DECD3 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				4937FBDB212E9ED6009CDD5E /* Main */,
+				49F4E5952126C395004DECD3 /* Input */,
+				49F4E59A2126C395004DECD3 /* Login */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		49F4E5952126C395004DECD3 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				49F4E5972126C395004DECD3 /* PopupInputSignViewController.h */,
+				49F4E5962126C395004DECD3 /* PopupInputSignViewController.m */,
+				49187ADB215356D9003BA464 /* PopupInputDetailViewController.h */,
+				49187ADC215356D9003BA464 /* PopupInputDetailViewController.m */,
+				49FBF7F521A3CA7F00135879 /* PopupCountryStateViewController.h */,
+				49FBF7F621A3CA7F00135879 /* PopupCountryStateViewController.m */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
+		49F4E59A2126C395004DECD3 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				49F4E5992126C395004DECD3 /* LoginViewController.h */,
+				49F4E5982126C395004DECD3 /* LoginViewController.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		49F4E59B2126C395004DECD3 /* Object */ = {
+			isa = PBXGroup;
+			children = (
+				49E44F11215DF29C0002290F /* sukhumvit-set */,
+				49187ADE2153573D003BA464 /* DateRasiObject */,
+				49187AD921535635003BA464 /* calculate_pra.html */,
+				494802212147917300A48626 /* Plist */,
+				4948021521478DD400A48626 /* LDProgressView */,
+				494802132147852100A48626 /* CALayer+Additions.h */,
+				494802122147852100A48626 /* CALayer+Additions.m */,
+				49F4E59E2126C3A2004DECD3 /* SignObject.h */,
+				49F4E59F2126C3A2004DECD3 /* SignObject.m */,
+				49F4E5A12126C62B004DECD3 /* HeaderPointObject.h */,
+				49F4E5A22126C62B004DECD3 /* HeaderPointObject.m */,
+				49F4E5A42126C760004DECD3 /* HeaderPoint.plist */,
+				4905AEAA21436AC4009393C7 /* HeaderPoint2.plist */,
+				495AEADD212FFAD900563A4A /* MyDocument.h */,
+				495AEADE212FFAD900563A4A /* MyDocument.m */,
+				49A5910C21C8B2570047944F /* StarReportPlist.plist */,
+			);
+			path = Object;
+			sourceTree = "<group>";
+		};
+		FB05F1A8054C68E4FF785E1A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				493F0A692126B83D0072844B /* Bolts.framework */,
+				493F0A682126B83D0072844B /* FBSDKCoreKit.framework */,
+				493F0A6A2126B83D0072844B /* FBSDKLoginKit.framework */,
+				493F0A6B2126B83D0072844B /* FBSDKShareKit.framework */,
+				8B29355293B40E08D5702263 /* libPods-YotYord.a */,
+				D4B40F9D5B69270DCBDE5618 /* libPods-YotYordTests.a */,
+				3164E830C3A59451DBA67038 /* libPods-YotYordUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,9 +486,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 493F0A5C2126AE4E0072844B /* Build configuration list for PBXNativeTarget "YotYord" */;
 			buildPhases = (
+				56FCEA211CAA22F04371AC49 /* [CP] Check Pods Manifest.lock */,
 				493F0A2C2126AE4D0072844B /* Sources */,
 				493F0A2D2126AE4D0072844B /* Frameworks */,
 				493F0A2E2126AE4D0072844B /* Resources */,
+				63C8EF25BB2F13BFBA9ADD8E /* [CP] Embed Pods Frameworks */,
+				07818C3E05F336F8025FA2FD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -156,9 +506,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 493F0A5F2126AE4E0072844B /* Build configuration list for PBXNativeTarget "YotYordTests" */;
 			buildPhases = (
+				3990E2564AF96EB87B10DC8B /* [CP] Check Pods Manifest.lock */,
 				493F0A442126AE4E0072844B /* Sources */,
 				493F0A452126AE4E0072844B /* Frameworks */,
 				493F0A462126AE4E0072844B /* Resources */,
+				8A82E6DE70FC1D45895AB0B4 /* [CP] Embed Pods Frameworks */,
+				5E94DD8CDFBD153C054BED8B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -174,9 +527,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 493F0A622126AE4E0072844B /* Build configuration list for PBXNativeTarget "YotYordUITests" */;
 			buildPhases = (
+				8C5A2C6BC0A4EC7BC9C09B6B /* [CP] Check Pods Manifest.lock */,
 				493F0A4F2126AE4E0072844B /* Sources */,
 				493F0A502126AE4E0072844B /* Frameworks */,
 				493F0A512126AE4E0072844B /* Resources */,
+				C921AEEEAAADBBC98687C925 /* [CP] Embed Pods Frameworks */,
+				89BBA62365E4B6AE681BBB23 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -199,6 +555,11 @@
 				TargetAttributes = {
 					493F0A2F2126AE4D0072844B = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					493F0A472126AE4E0072844B = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -236,8 +597,51 @@
 			buildActionMask = 2147483647;
 			files = (
 				493F0A402126AE4E0072844B /* LaunchScreen.storyboard in Resources */,
+				49531F08219925E2007804B0 /* edit@2x.png in Resources */,
+				49548EED21A3C4F3008EE8A3 /* state.plist in Resources */,
+				49531F0E219925E2007804B0 /* down-arrow@2x.png in Resources */,
+				49531F0A219925E2007804B0 /* calendar@3x.png in Resources */,
+				49E44F1A215DF29D0002290F /* SukhumvitSet-Thin.ttf in Resources */,
+				49531F13219925E2007804B0 /* Search.png in Resources */,
+				49531F1A219925E2007804B0 /* gear@3x.png in Resources */,
+				493F0A672126B4C80072844B /* GoogleService-Info.plist in Resources */,
+				49531F14219925E2007804B0 /* calendar.png in Resources */,
+				49E44F19215DF29D0002290F /* SukhumvitSet-Bold.ttf in Resources */,
+				49531F17219925E2007804B0 /* delete@2x.png in Resources */,
+				49548EEB21A3C414008EE8A3 /* country.plist in Resources */,
 				493F0A3D2126AE4E0072844B /* Assets.xcassets in Resources */,
+				4905AEAB21436AC4009393C7 /* HeaderPoint2.plist in Resources */,
+				49E44F1D215DF29D0002290F /* SukhumvitSet-SemiBold.ttf in Resources */,
+				494802232147919100A48626 /* StarPlist.plist in Resources */,
+				49531F0F219925E2007804B0 /* down-arrow@3x.png in Resources */,
+				49531F1B219925E2007804B0 /* delete@3x.png in Resources */,
+				49531F0B219925E2007804B0 /* share@2x.png in Resources */,
+				49CC1DBA2154AA2C00B84913 /* timePlist.plist in Resources */,
+				49531F11219925E2007804B0 /* Pin@2x.png in Resources */,
+				49187ADA21535635003BA464 /* calculate_pra.html in Resources */,
+				49531F10219925E2007804B0 /* plus@3x.png in Resources */,
+				49531F15219925E2007804B0 /* share.png in Resources */,
+				49531F01219925E2007804B0 /* gear.png in Resources */,
+				49531F07219925E2007804B0 /* down-arrow.png in Resources */,
+				49531F19219925E2007804B0 /* gear@2x.png in Resources */,
+				49531F05219925E2007804B0 /* edit@3x.png in Resources */,
+				49531F06219925E2007804B0 /* Pin.png in Resources */,
+				49531F03219925E2007804B0 /* plus.png in Resources */,
+				49E44F1C215DF29D0002290F /* SukhumvitSet-Medium.ttf in Resources */,
+				49531F16219925E2007804B0 /* delete.png in Resources */,
+				49531F12219925E2007804B0 /* share@3x.png in Resources */,
+				49531F18219925E2007804B0 /* edit.png in Resources */,
+				49531F09219925E2007804B0 /* Search@3x.png in Resources */,
+				49531F1D21998319007804B0 /* StarShowPlist.plist in Resources */,
+				49A5910D21C8B2570047944F /* StarReportPlist.plist in Resources */,
+				49531F02219925E2007804B0 /* calendar@2x.png in Resources */,
+				49E44F1B215DF29D0002290F /* SukhumvitSet-Text.ttf in Resources */,
+				49F4E5A52126C760004DECD3 /* HeaderPoint.plist in Resources */,
 				493F0A3B2126AE4D0072844B /* Main.storyboard in Resources */,
+				49531F0D219925E2007804B0 /* plus@2x.png in Resources */,
+				49531F04219925E2007804B0 /* Search@2x.png in Resources */,
+				49531F0C219925E2007804B0 /* Pin@3x.png in Resources */,
+				49E44F18215DF29D0002290F /* SukhumvitSet-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,14 +661,175 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		07818C3E05F336F8025FA2FD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YotYord/Pods-YotYord-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3990E2564AF96EB87B10DC8B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YotYordTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		56FCEA211CAA22F04371AC49 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YotYord-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5E94DD8CDFBD153C054BED8B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YotYordTests/Pods-YotYordTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		63C8EF25BB2F13BFBA9ADD8E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YotYord/Pods-YotYord-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		89BBA62365E4B6AE681BBB23 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YotYordUITests/Pods-YotYordUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A82E6DE70FC1D45895AB0B4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YotYordTests/Pods-YotYordTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C5A2C6BC0A4EC7BC9C09B6B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YotYordUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C921AEEEAAADBBC98687C925 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YotYordUITests/Pods-YotYordUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		493F0A2C2126AE4D0072844B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49187ADD215356D9003BA464 /* PopupInputDetailViewController.m in Sources */,
 				493F0A382126AE4D0072844B /* ViewController.m in Sources */,
+				4948021B21478DD400A48626 /* UIColor+RGBValues.m in Sources */,
+				4937FBE2212E9F86009CDD5E /* MainCollectionViewCell.m in Sources */,
+				49F4E5A02126C3A2004DECD3 /* SignObject.m in Sources */,
+				4948021C21478DD400A48626 /* LDProgressView.m in Sources */,
+				49FBF7F721A3CA7F00135879 /* PopupCountryStateViewController.m in Sources */,
+				4937FBE5212EA4D8009CDD5E /* MainTableViewCell.m in Sources */,
+				495AEADF212FFAD900563A4A /* MyDocument.m in Sources */,
+				49F4E59C2126C396004DECD3 /* PopupInputSignViewController.m in Sources */,
+				49F4E5A32126C62B004DECD3 /* HeaderPointObject.m in Sources */,
+				494802142147852100A48626 /* CALayer+Additions.m in Sources */,
 				493F0A432126AE4E0072844B /* main.m in Sources */,
 				493F0A352126AE4D0072844B /* AppDelegate.m in Sources */,
+				49187AE12153573D003BA464 /* RasiObject.m in Sources */,
+				49F4E59D2126C396004DECD3 /* LoginViewController.m in Sources */,
+				4948022021478EA900A48626 /* StarTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,38 +996,57 @@
 		};
 		493F0A5D2126AE4E0072844B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8656D7A266B2D66CB241F31E /* Pods-YotYord.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = YotYord/YotYord.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BJ6424JKXD;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				GCC_PREFIX_HEADER = "YotYord/YotYord-Prefix.pch";
 				INFOPLIST_FILE = YotYord/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yotyord.YotYord;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
 		493F0A5E2126AE4E0072844B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 397DB8EE31A9D8C2B46841F2 /* Pods-YotYord.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = YotYord/YotYord.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BJ6424JKXD;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				GCC_PREFIX_HEADER = "YotYord/YotYord-Prefix.pch";
 				INFOPLIST_FILE = YotYord/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yotyord.YotYord;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
 		493F0A602126AE4E0072844B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BDB981ABD36EF0326C73776 /* Pods-YotYordTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -481,6 +1065,7 @@
 		};
 		493F0A612126AE4E0072844B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C1D98858ABBB8450E8AA1D1 /* Pods-YotYordTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -499,6 +1084,7 @@
 		};
 		493F0A632126AE4E0072844B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E9A5F66CBAACF31C5E5906E /* Pods-YotYordUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = YotYordUITests/Info.plist;
@@ -516,6 +1102,7 @@
 		};
 		493F0A642126AE4E0072844B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11EB3066EBF05B57251A7FED /* Pods-YotYordUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = YotYordUITests/Info.plist;

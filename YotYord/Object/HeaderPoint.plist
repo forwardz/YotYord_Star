@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>เกษตร</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>0</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้ พร้อมอ้างอิงหลักของดาว</string>
+		<key>arrPredict</key>
+		<array>
+			<string>star == 3</string>
+			<string>star == 6</string>
+			<string>star == 4</string>
+			<string>star == 2</string>
+			<string>star == 1</string>
+			<string>star == 4</string>
+			<string>star == 6</string>
+			<string>star == 3</string>
+			<string>star == 5</string>
+			<string>star == 7</string>
+			<string>star == 8</string>
+			<string>star == 5</string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>ประเกษตร</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>0</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้ พร้อมอ้างอิงหลักของดาว</string>
+		<key>arrPredict</key>
+		<array>
+			<string>star == 6</string>
+			<string>star == 3</string>
+			<string>star == 5</string>
+			<string>star == 7</string>
+			<string>star == 8</string>
+			<string>star == 5</string>
+			<string>star == 3</string>
+			<string>star == 6</string>
+			<string>star == 4</string>
+			<string>star == 2</string>
+			<string>star == 1</string>
+			<string>star == 4</string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>ราคาโชค</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>0</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้ พร้อมอ้างอิงหลักของดาว</string>
+		<key>arrPredict</key>
+		<array>
+			<string>star == 5</string>
+			<string>star == 3</string>
+			<string>star == 1</string>
+			<string>star == 6</string>
+			<string>star == 4</string>
+			<string>star == 2</string>
+			<string>star == 8</string>
+			<string>star == 7</string>
+			<string></string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>มหาอุจ</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>0</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้ พร้อมอ้างอิงหลักของดาว</string>
+		<key>arrPredict</key>
+		<array>
+			<string>star == 1</string>
+			<string>star == 2</string>
+			<string></string>
+			<string>star == 5</string>
+			<string></string>
+			<string>star == 4</string>
+			<string>star == 7</string>
+			<string>star == 8</string>
+			<string></string>
+			<string>star == 3</string>
+			<string></string>
+			<string>star == 6</string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>นิจ</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>0</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้ พร้อมอ้างอิงหลักของดาว</string>
+		<key>arrPredict</key>
+		<array>
+			<string>star == 7</string>
+			<string>star == 8</string>
+			<string></string>
+			<string>star == 3</string>
+			<string></string>
+			<string>star == 6</string>
+			<string>star == 1</string>
+			<string>star == 2</string>
+			<string></string>
+			<string>star == 5</string>
+			<string></string>
+			<string>star == 4</string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>เทวีโชค</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>0</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้ พร้อมอ้างอิงหลักของดาว</string>
+		<key>arrPredict</key>
+		<array>
+			<string>star == 8</string>
+			<string>star == 7</string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string>star == 5</string>
+			<string>star == 3</string>
+			<string>star == 1</string>
+			<string>star == 6</string>
+			<string>star == 4</string>
+			<string>star == 2</string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>อุจจาวิลาส</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>0</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้ พร้อมอ้างอิงหลักของดาว</string>
+		<key>arrPredict</key>
+		<array>
+			<string>star == 2</string>
+			<string></string>
+			<string>star == 5</string>
+			<string></string>
+			<string>star == 4</string>
+			<string>star == 7</string>
+			<string>star == 8</string>
+			<string></string>
+			<string>star == 3</string>
+			<string></string>
+			<string>star == 6</string>
+			<string>star == 1</string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>อุจจาภิมุข</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>0</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้ พร้อมอ้างอิงหลักของดาว</string>
+		<key>arrPredict</key>
+		<array>
+			<string>star == 6</string>
+			<string>star == 1</string>
+			<string>star == 2</string>
+			<string></string>
+			<string>star == 5</string>
+			<string></string>
+			<string>star == 4</string>
+			<string>star == 7</string>
+			<string>star == 8</string>
+			<string></string>
+			<string>star == 3</string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>มหาจักร</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>0</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้ พร้อมอ้างอิงหลักของดาว</string>
+		<key>arrPredict</key>
+		<array>
+			<string>star == 2</string>
+			<string>star == 7</string>
+			<string></string>
+			<string>star == 1</string>
+			<string>star == 4</string>
+			<string>star == 3</string>
+			<string></string>
+			<string>star == 5</string>
+			<string>star == 6</string>
+			<string>star == 8</string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>จตุจักร</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>0</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้ พร้อมอ้างอิงหลักของดาว</string>
+		<key>arrPredict</key>
+		<array>
+			<string></string>
+			<string>star == 5</string>
+			<string>star == 6</string>
+			<string>star == 8</string>
+			<string></string>
+			<string></string>
+			<string>star == 2</string>
+			<string>star == 7</string>
+			<string></string>
+			<string>star == 1</string>
+			<string>star == 4</string>
+			<string>star == 3</string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>ปภินโชค</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>0</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้ พร้อมอ้างอิงหลักของดาว</string>
+		<key>arrPredict</key>
+		<array>
+			<string></string>
+			<string></string>
+			<string>star == 8</string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string>star == 8</string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string>star == 8</string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>เกตมหาอุจจ</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>0</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้ พร้อมอ้างอิงหลักของดาว</string>
+		<key>arrPredict</key>
+		<array>
+			<string></string>
+			<string></string>
+			<string>star == 9</string>
+			<string></string>
+			<string>star == 9</string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string>star == 9</string>
+			<string></string>
+			<string>star == 9</string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>มหาอุตเล็งกัน</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>1</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
+		<key>arrPredict</key>
+		<array>
+			<string>(star == 1 &amp;&amp; sign == 0) , (star == 7 &amp;&amp; sign == 6)</string>
+			<string>(star == 2 &amp;&amp; sign == 1) , (star == 8 &amp;&amp; sign == 7)</string>
+			<string></string>
+			<string>(star == 5 &amp;&amp; sign == 3) , (star == 3 &amp;&amp; sign == 9)</string>
+			<string></string>
+			<string>(star == 4 &amp;&amp; sign == 5) , (star == 6 &amp;&amp; sign == 11)</string>
+			<string>(star == 1 &amp;&amp; sign == 0) , (star == 7 &amp;&amp; sign == 6)</string>
+			<string>(star == 2 &amp;&amp; sign == 1) , (star == 8 &amp;&amp; sign == 7)</string>
+			<string></string>
+			<string>(star == 5 &amp;&amp; sign == 3) , (star == 3 &amp;&amp; sign == 9)</string>
+			<string></string>
+			<string>(star == 4 &amp;&amp; sign == 5) , (star == 6 &amp;&amp; sign == 11)</string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>เด่นภาคทิวา</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>2</integer>
+		<key>desciption</key>
+		<string>แค่มีดาว ไม่ต้องอ้างอิงหลัก</string>
+		<key>arrPredict</key>
+		<array>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string>sign == 4</string>
+			<string>sign == 5</string>
+			<string>sign == 6</string>
+			<string>sign == 7</string>
+			<string>sign == 8</string>
+			<string>sign == 9</string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>เด่นภาคราตรี</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>2</integer>
+		<key>desciption</key>
+		<string>แค่มีดาว ไม่ต้องอ้างอิงหลัก</string>
+		<key>arrPredict</key>
+		<array>
+			<string>sign == 0</string>
+			<string>sign == 1</string>
+			<string>sign == 2</string>
+			<string>sign == 3</string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string>sign == 10</string>
+			<string>sign == 11</string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>จดุษดัยเกณฑ์</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>2</integer>
+		<key>desciption</key>
+		<string>แค่มีดาว ไม่ต้องอ้างอิงหลัก</string>
+		<key>arrPredict</key>
+		<array>
+			<string>sign == 0</string>
+			<string></string>
+			<string></string>
+			<string>sign == 3</string>
+			<string></string>
+			<string></string>
+			<string>sign == 6</string>
+			<string></string>
+			<string></string>
+			<string>sign == 9</string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>อังคารถ้ำทอง เหมือนกันอังคารเป็นอุจ</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>0</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้ พร้อมอ้างอิงหลักของดาว</string>
+		<key>arrPredict</key>
+		<array>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string>star == 3</string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>จันทร์อดิศร</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>0</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้ พร้อมอ้างอิงหลักของดาว</string>
+		<key>arrPredict</key>
+		<array>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string>star == 2</string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>ดาวเด่นประจำราศรี</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>0</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้ พร้อมอ้างอิงหลักของดาว</string>
+		<key>arrPredict</key>
+		<array>
+			<string>(star == 1 || star == 2 || star == 3 || star == 8)</string>
+			<string>star == 7</string>
+			<string></string>
+			<string>(star == 1 || star == 5)</string>
+			<string>(star == 3 || star == 4)</string>
+			<string></string>
+			<string>(star == 7 || star == 8)</string>
+			<string></string>
+			<string>(star == 4 || star == 6)</string>
+			<string>star == 2</string>
+			<string></string>
+			<string>(star == 4 || star == 5 || star == 6)</string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>ดาวนิจทับ ล ให้คุณพิสดาร</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>1</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
+		<key>arrPredict</key>
+		<array>
+			<string>(star == -1 &amp;&amp; sign == 0) , (star == 7 &amp;&amp; sign == 0)</string>
+			<string>(star == -1 &amp;&amp; sign == 1) , (star == 8 &amp;&amp; sign == 1)</string>
+			<string></string>
+			<string>(star == -1 &amp;&amp; sign == 3) , (star == 3 &amp;&amp; sign == 3)</string>
+			<string></string>
+			<string>(star == -1 &amp;&amp; sign == 5) , (star == 6 &amp;&amp; sign == 5)</string>
+			<string>(star == -1 &amp;&amp; sign == 6) , (star == 1 &amp;&amp; sign == 6)</string>
+			<string>(star == -1 &amp;&amp; sign == 7) , (star == 2 &amp;&amp; sign == 7)</string>
+			<string></string>
+			<string>(star == -1 &amp;&amp; sign == 9) , (star == 5 &amp;&amp; sign == 9)</string>
+			<string></string>
+			<string>(star == -1 &amp;&amp; sign == 11) , (star == 4 &amp;&amp; sign == 11)</string>
+		</array>
+	</dict>
+</array>
+</plist>

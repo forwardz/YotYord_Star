@@ -1,0 +1,856 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>ปัศวเกณฑ์</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>1</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
+		<key>arrPredict</key>
+		<array>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 1 || self.integerValue == 2 || self.integerValue == 3 || self.integerValue == 5)</string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>นรเกณฑ์</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>1</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
+		<key>arrPredict</key>
+		<array>
+			<string>(self.integerValue == 1 || self.integerValue == 5 || self.integerValue == 7)</string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>อำพุเกณฑ์</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>1</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
+		<key>arrPredict</key>
+		<array>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 2 || self.integerValue == 4 || self.integerValue == 5 ||  self.integerValue == 6)</string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>กีฏะเกณฑ์</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>1</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
+		<key>arrPredict</key>
+		<array>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 3 || self.integerValue == 8)</string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>ปทุมเกณฑ์(สติปัญญาดี การเงินดี จิตใจดี)</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>1</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
+		<key>arrPredict</key>
+		<array>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 6)</string>
+			<string>(self.integerValue == 5)</string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 2)</string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>จันทรครุสุริยาเกณฑ์</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>1</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
+		<key>arrPredict</key>
+		<array>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 1)</string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 5)</string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 2)</string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>จตุไทยเกณฑ์</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>1</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
+		<key>arrPredict</key>
+		<array>
+			<string>(self.integerValue == 1)</string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 1)</string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 1)</string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 1)</string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>อุดมเกณฑ์ปัศวะ</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>1</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
+		<key>arrPredict</key>
+		<array>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 1 || self.integerValue == 2 || self.integerValue == 3 || self.integerValue == 6)</string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 1 || self.integerValue == 2 || self.integerValue == 3 || self.integerValue == 6)</string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>อุดมเกณฑ์นระ</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>1</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
+		<key>arrPredict</key>
+		<array>
+			<string>(self.integerValue == 4 || self.integerValue == 5 || self.integerValue == 6 || self.integerValue == 7)</string>
+			<string></string>
+			<string>(self.integerValue == 4 || self.integerValue == 5 || self.integerValue == 6 || self.integerValue == 7)</string>
+			<string>(self.integerValue == 4 || self.integerValue == 5 || self.integerValue == 6 || self.integerValue == 7)</string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 4 || self.integerValue == 5 || self.integerValue == 6 || self.integerValue == 7)</string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 4 || self.integerValue == 5 || self.integerValue == 6 || self.integerValue == 7)</string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>อุดมเกณฑ์อำพุ</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>1</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
+		<key>arrPredict</key>
+		<array>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 3 || self.integerValue == 5 || self.integerValue == 7 || self.integerValue == 8)</string>
+			<string>(self.integerValue == 3 || self.integerValue == 5 || self.integerValue == 7 || self.integerValue == 8)</string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 3 || self.integerValue == 5 || self.integerValue == 7 || self.integerValue == 8)</string>
+			<string></string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>อุดมเกณฑ์กีฏะ</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>1</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
+		<key>arrPredict</key>
+		<array>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 3 || self.integerValue == 8)</string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 3 || self.integerValue == 8)</string>
+			<string></string>
+			<string>(self.integerValue == 3 || self.integerValue == 8)</string>
+			<string></string>
+			<string>(self.integerValue == 3 || self.integerValue == 8)</string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>กมุทเกณฑ์</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>1</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
+		<key>arrPredict</key>
+		<array>
+			<string>(self.integerValue == 5)</string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>ธรรมเกณฑ์</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>1</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
+		<key>arrPredict</key>
+		<array>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 5)</string>
+			<string></string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>ราชเกณฑ์</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>1</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
+		<key>arrPredict</key>
+		<array>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 5)</string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>สิงหเกณฑ์</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>1</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
+		<key>arrPredict</key>
+		<array>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 5)</string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>อิสิติธาตุลม</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>3</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก AND</string>
+		<key>arrPredict</key>
+		<array>
+			<string>(self.integerValue == 3) , (self.integerValue == 8)</string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>อิสิติธาตุไฟ</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>3</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก AND</string>
+		<key>arrPredict</key>
+		<array>
+			<string>(self.integerValue == 1) , (self.integerValue == 7)</string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>อิสิติธาตุดิน</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>3</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก AND</string>
+		<key>arrPredict</key>
+		<array>
+			<string>(self.integerValue == 2) , (self.integerValue == 5)</string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>อิสิติธาตุน้ำ</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>3</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก AND</string>
+		<key>arrPredict</key>
+		<array>
+			<string>(self.integerValue == 4) , (self.integerValue == 6)</string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>พินทุบาท หยิ่ง ยะโส บุตร บริวาร ไม่อยากอยู่ใกล้</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>1</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
+		<key>arrPredict</key>
+		<array>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 1 || self.integerValue == 3 || self.integerValue == 7)</string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>พินทุบาท ปัญญาไม่ได้เกิดในทางที่ดี</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>1</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
+		<key>arrPredict</key>
+		<array>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 8)</string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>พินทุบาท ร้อนเรื่องเงินและความรัก</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>1</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
+		<key>arrPredict</key>
+		<array>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 6)</string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>พินทุบาท ปัญญาออกในทางลบ</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>1</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
+		<key>arrPredict</key>
+		<array>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 5)</string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>พินทุบาท กะล่อน</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>1</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
+		<key>arrPredict</key>
+		<array>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 4)</string>
+			<string></string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>พินทุบาท</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>1</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
+		<key>arrPredict</key>
+		<array>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 1 || self.integerValue == 3 || self.integerValue == 7)</string>
+			<string></string>
+			<string>(self.integerValue == 6)</string>
+			<string>(self.integerValue == 5 || self.integerValue == 2)</string>
+			<string>(self.integerValue == 4)</string>
+			<string></string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>พินทุบาท</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>1</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
+		<key>arrPredict</key>
+		<array>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 7 || self.integerValue == 8)</string>
+			<string>(self.integerValue == 3 || self.integerValue == 8)</string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>พินทุบาท</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>1</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
+		<key>arrPredict</key>
+		<array>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 1 || self.integerValue == 3 || self.integerValue == 4)</string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 5 || self.integerValue == 2)</string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 1 || self.integerValue == 2 || self.integerValue == 3 || self.integerValue == 4 || self.integerValue == 5)</string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>พินทุบาท</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>1</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
+		<key>arrPredict</key>
+		<array>
+			<string>(self.integerValue == 7)</string>
+			<string>(self.integerValue == 7 || self.integerValue == 8)</string>
+			<string></string>
+			<string>(self.integerValue == 8)</string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 6 || self.integerValue == 8)</string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>ดวงเดือนร้อนเรื่องคู่ครอง(เจ้าชู้ไก่แจ้)</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>1</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
+		<key>arrPredict</key>
+		<array>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 4 || self.integerValue == 6)</string>
+			<string>(self.integerValue == 4 || self.integerValue == 6)</string>
+			<string>(self.integerValue == 4 || self.integerValue == 6)</string>
+			<string>(self.integerValue == 2 || self.integerValue == 3 || self.integerValue == 4 || self.integerValue == 6 || self.integerValue == 8)</string>
+			<string></string>
+			<string>(self.integerValue == 4 || self.integerValue == 6)</string>
+			<string>(self.integerValue == 4 || self.integerValue == 6)</string>
+			<string>(self.integerValue == 4 || self.integerValue == 6)</string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>พฤหัสเข้าดี</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>1</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
+		<key>arrPredict</key>
+		<array>
+			<string>(self.integerValue == 5)</string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 5)</string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 5)</string>
+			<string></string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>เสาร์เข้าดี</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>1</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
+		<key>arrPredict</key>
+		<array>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 7)</string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 7)</string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>อังคารข้าดี</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>1</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
+		<key>arrPredict</key>
+		<array>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 3)</string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 3)</string>
+			<string></string>
+			<string></string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>เกณฑ์อาทิตย์</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>1</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
+		<key>arrPredict</key>
+		<array>
+			<string>(self.integerValue == 1)</string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 1)</string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 1)</string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 1)</string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>เกณฑ์จันทร์</string>
+		<key>point</key>
+		<integer>1</integer>
+		<key>recipe</key>
+		<integer>1</integer>
+		<key>desciption</key>
+		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
+		<key>arrPredict</key>
+		<array>
+			<string>(self.integerValue == 2)</string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 2)</string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 2)</string>
+			<string></string>
+			<string></string>
+			<string>(self.integerValue == 2)</string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+</array>
+</plist>
