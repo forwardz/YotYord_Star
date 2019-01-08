@@ -39,8 +39,10 @@
     StarSubObject *sso = [starReportObject.arrPoint objectAtIndex:indexPath.row];
     if(sso.sign > 0){
         [cell setBackgroundColor:BLUE_COLOR];
+        [cell.imgTick setHidden:NO];
     }else{
         [cell setBackgroundColor:[UIColor clearColor]];
+        [cell.imgTick setHidden:YES];
     }
     /*
     if(typeTable == 1){

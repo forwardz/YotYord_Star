@@ -87,8 +87,29 @@
     [self presentViewController:vc animated:YES completion:nil];
 }
 -(IBAction)deleteAction:(id)sender{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Delete" message:@"Are you sure to delete?"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * _Nonnull action) {
+                                                              [self removeSignObject];
+                                                          }];
+    UIAlertAction* cancelACtion = [UIAlertAction actionWithTitle:@"CANCEL" style:UIAlertActionStyleCancel handler:nil];
+    [alert addAction:defaultAction];
+    [alert addAction:cancelACtion];
+    [self presentViewController:alert animated:YES completion:nil];
     
 }
+-(void)removeSignObject{
+    [[SignObject shareSignObject] removeObject:signObject];
+    signObject = nil;
+    
+    if([SignObject shareSignObject].count > 0){
+        signObject = [[SignObject shareSignObject] lastObject];
+    }
+    
+    [self drawUI];
+}
+
 -(IBAction)shareAction:(id)sender{
     
 }
@@ -253,11 +274,8 @@
                     predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"%@ && sign == %d",predict,i]];
                     if([signObject.arrStarSign filteredArrayUsingPredicate:predicate].count){
                         NSLog(@"%@,%d",hpo.name,i);
-                        for(StarSubObject *sso in [sro.arrPoint filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:[NSString stringWithFormat:@"%@",predict]]]){
-                            sso.sign++;
-                            NSLog(@"ดาวจริง = %zd, คะแนน = %zd",sso.star,sso.sign);
-                            [self addPointToStar:sso.star];
-                        }
+                        NSPredicate *predicated = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"%@",predict]];
+                        [self updatePointSign:sro.arrPoint withPredicate:predicated];
                     }
                 }
                 else if(hpo.recipe == 1) {
@@ -275,15 +293,10 @@
                         }
                     }
                     if(bo){
-                        NSLog(@"%@",arr);
                         NSLog(@"%@,%d",hpo.name,i);
                         for(SignIndexObject *sio in arr){
                             NSPredicate *predict = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"star == %zd",sio.star]];
-                            for(StarSubObject *sso in [sro.arrPoint filteredArrayUsingPredicate:predict]){
-                                sso.sign++;
-                                NSLog(@"ดาวจริง = %zd, คะแนน = %zd",sso.star,sso.sign);
-                                [self addPointToStar:sso.star];
-                            }
+                            [self updatePointSign:sro.arrPoint withPredicate:predict];
                         }
                         
                     }
@@ -291,11 +304,8 @@
                     predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"%@",predict]];
                     if([signObject.arrStarSign filteredArrayUsingPredicate:predicate].count){
                         NSLog(@"%@,%d",hpo.name,i);
-                        for(StarSubObject *sso in [sro.arrPoint filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:[NSString stringWithFormat:@"star == %d",i]]]){
-                            sso.sign++;
-                            NSLog(@"ดาวจริง = %zd, คะแนน = %zd",sso.star,sso.sign);
-                            [self addPointToStar:sso.star];
-                        }
+                        NSPredicate *predicated = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"star == %d",i]];
+                        [self updatePointSign:sro.arrPoint withPredicate:predicated];
                     }
                 }
             }
@@ -320,11 +330,7 @@
                         NSLog(@"%@,%d",hpo.name,i);
                         for(NSNumber *num in arr){
                             NSPredicate *predict = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"star == %d",num.intValue]];
-                            for(StarSubObject *sso in [sro.arrPoint filteredArrayUsingPredicate:predict]){
-                                sso.sign++;
-                                NSLog(@"ดาวจริง = %zd, คะแนน = %zd",sso.star,sso.sign);
-                                [self addPointToStar:sso.star];
-                            }
+                            [self updatePointSign:sro.arrPoint withPredicate:predict];
                         }
                     }
                 }else if(hpo.recipe == 3){
@@ -347,16 +353,11 @@
                             for(NSArray *arr in array){
                                 for(NSNumber *num in arr){
                                     NSPredicate *predict = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"star == %d",num.intValue]];
-                                    for(StarSubObject *sso in [sro.arrPoint filteredArrayUsingPredicate:predict]){
-                                        sso.sign++;
-                                        NSLog(@"ดาวจริง = %zd, คะแนน = %zd",sso.star,sso.sign);
-                                        [self addPointToStar:sso.star];
-                                    }
+                                    [self updatePointSign:sro.arrPoint withPredicate:predict];
                                 }
                             }
                         }
                     }
-                    
                 }
             }
             i++;
@@ -366,6 +367,13 @@
 }
 -(void)calculateSumPoint{
     sumPoint = [[arrStar valueForKeyPath:@"@sum.point"] doubleValue];
+}
+-(void)updatePointSign:(NSArray *)arr withPredicate:(NSPredicate *)pre{
+    for(StarSubObject *sso in [arr filteredArrayUsingPredicate:pre]){
+        sso.sign++;
+        NSLog(@"ดาวจริง = %zd, คะแนน = %zd",sso.star,sso.sign);
+        [self addPointToStar:sso.star];
+    }
 }
 
 -(void)addPointToStar:(NSInteger)star{
@@ -392,6 +400,7 @@
 #pragma mark - UICollecitonView
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     if(typeTable == 0) return arrShowTable.count;
+    else if(typeTable == 3) return 0;
     return 1;
 }
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
@@ -402,21 +411,28 @@
     else if(typeTable == 2){
         return [[arrShowTable objectAtIndex:1] count];
     }
+    else if(typeTable == 3){
+        return 0;
+    }
     return 0;
 }
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     MainCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MainCollectionViewCell" forIndexPath:indexPath];
-    StarReportObject *sro;
-    if(typeTable == 0){
-        sro = [[arrShowTable objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    if(typeTable == 3){
+        
+    }else{
+        StarReportObject *sro;
+        if(typeTable == 0){
+            sro = [[arrShowTable objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+        }
+        else if(typeTable == 1){
+            sro = [[arrShowTable objectAtIndex:0] objectAtIndex:indexPath.row];
+        }
+        else if(typeTable == 2){
+            sro = [[arrShowTable objectAtIndex:1] objectAtIndex:indexPath.row];
+        }
+        [cell setDataCollectionCell:sro withSignObject:signObject withType:typeTable];
     }
-    else if(typeTable == 1){
-        sro = [[arrShowTable objectAtIndex:0] objectAtIndex:indexPath.row];
-    }
-    else if(typeTable == 2){
-        sro = [[arrShowTable objectAtIndex:1] objectAtIndex:indexPath.row];
-    }
-    [cell setDataCollectionCell:sro withSignObject:signObject withType:typeTable];
     return cell;
 }
 
@@ -425,9 +441,15 @@
     return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if(tableView == self.tblSearch) return [SignObject shareSignObject].count;
     return arrStar.count;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(tableView == self.tblSearch){
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+        cell.textLabel.text = @"555";
+        return cell;
+    }
     StarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StarTableViewCell"];
     [cell setBackgroundColor:[UIColor clearColor]];
     StarShowObject *sso = [arrStar objectAtIndex:indexPath.row];
@@ -437,7 +459,30 @@
     }else{
         [cell setStarTableViewCell:((sso.point*sso.weight)/sumPoint)];
     }
-    
+    [cell.lblWeight setText:[NSString stringWithFormat:@"%.1f",sso.weight]];
+    [cell.imgNumber setImage:[UIImage imageNamed:sso.image_name]];
     return cell;
+}
+
+#pragma mark - Search
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
+    NSLog(@"search begin");
+    [UIView animateWithDuration:0.1f animations:^{
+        [self.tblSearch setFrame:CGRectMake(self.tblSearch.frame.origin.x, self.tblSearch.frame.origin.y, self.tblSearch.frame.size.width, [self getTableSearchHeight])];
+    }];
+}
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar{
+    NSLog(@"search search");
+    searchBar.text = @"";
+    [UIView animateWithDuration:0.1f animations:^{
+        [self.tblSearch setFrame:CGRectMake(self.tblSearch.frame.origin.x, self.tblSearch.frame.origin.y, self.tblSearch.frame.size.width, 0)];
+    }];
+}
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    NSLog(@"%@",searchText);
+}
+-(NSInteger)getTableSearchHeight{
+    NSInteger h = [SignObject shareSignObject].count * 40;
+    return (h > 220 ? 220 : h);
 }
 @end

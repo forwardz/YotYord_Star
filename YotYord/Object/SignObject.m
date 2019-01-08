@@ -129,6 +129,7 @@ static NSMutableArray *shareSignObejct;
         self.weight = [[decoder decodeObjectForKey:@"weight"] doubleValue];
         self.point = [[decoder decodeObjectForKey:@"point"] integerValue];
         self.star = [[decoder decodeObjectForKey:@"star"] integerValue];
+        self.image_name = [decoder decodeObjectForKey:@"image_name"];
     }
     return self;
 }
@@ -138,6 +139,7 @@ static NSMutableArray *shareSignObejct;
     if (self.weight) [encoder encodeObject:[NSNumber numberWithDouble:self.weight] forKey:@"weight"];
     if (self.point) [encoder encodeObject:[NSNumber numberWithInteger:self.point] forKey:@"point"];
     if (self.star) [encoder encodeObject:[NSNumber numberWithInteger:self.star] forKey:@"star"];
+    if (self.image_name) [encoder encodeObject:self.image_name forKey:@"image_name"];
 }
 
 +(NSMutableArray *)createStarShowObject{
@@ -153,6 +155,7 @@ static NSMutableArray *shareSignObejct;
     sso.weight = [[dict objectForKey:@"weight"] doubleValue];
     sso.point = [[dict objectForKey:@"point"] integerValue];
     sso.star = [[dict objectForKey:@"star"] integerValue];
+    sso.image_name = [NSString stringWithFormat:@"%zd",[[dict objectForKey:@"star"] integerValue]];
     return sso;
 }
 

@@ -13,7 +13,7 @@
 #import "StarTableViewCell.h"
 #import "PopupInputDetailViewController.h"
 
-@interface ViewController : UIViewController<PopupInputSignDelegate,PopupInputDetailDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDelegate,UITableViewDataSource>{
+@interface ViewController : UIViewController<PopupInputSignDelegate,PopupInputDetailDelegate,UISearchBarDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDelegate,UITableViewDataSource>{
     SignObject *signObject;
     NSArray *arrStar;
     NSArray *arrShowTable;
@@ -24,6 +24,8 @@
 // Profile
 @property (weak, nonatomic) IBOutlet UIImageView *imgPhoto;
 @property (weak, nonatomic) IBOutlet UILabel *lblUsername;
+@property (weak, nonatomic) IBOutlet UISearchBar *txtSearch;
+@property (weak, nonatomic) IBOutlet UITableView *tblSearch;
 
 @property (weak, nonatomic) IBOutlet UIView *dateView;
 @property (weak, nonatomic) IBOutlet UILabel *lblDate;

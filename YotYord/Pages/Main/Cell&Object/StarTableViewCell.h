@@ -10,6 +10,8 @@
 #import "LDProgressView.h"
 @interface StarTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *lblStar;
+@property (weak, nonatomic) IBOutlet UILabel *lblWeight;
+@property (weak, nonatomic) IBOutlet UIImageView *imgNumber;
 @property (weak, nonatomic) IBOutlet UIProgressView *progressView;
 
 -(void)setStarTableViewCell:(double)value;

@@ -37,7 +37,7 @@
 @end
 
 @interface StarShowObject : NSObject
-@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSString *name,*image_name;
 @property (nonatomic, assign) NSInteger point;
 @property (nonatomic, assign) NSInteger star;
 @property (nonatomic, assign) double weight;
