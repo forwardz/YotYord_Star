@@ -41,5 +41,7 @@
 - (IBAction)deleteAction:(id)sender;
 - (IBAction)shareAction:(id)sender;
 -(IBAction)saveAction:(id)sender;
+
+-(IBAction)settingAction:(id)sender;
 @end
 

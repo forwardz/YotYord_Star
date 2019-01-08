@@ -389,6 +389,70 @@
     }
 }
 
+- (void)settingAction:(id)sender{
+    __block bool tapAction = false; //flag to prevent open bill when multiple tap
+    //Show action sheet
+    UIButton *btn = (UIButton *)sender;
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil
+                                                                             message:nil
+                                                                      preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *logoutAction = [UIAlertAction actionWithTitle:@"Logout"
+                                                             style:UIAlertActionStyleDestructive
+                                                           handler:^(UIAlertAction *action) {
+                                                               if(!tapAction){
+                                                                   tapAction = true;
+                                                                   NSError *signOutError;
+                                                                   BOOL status = [[FIRAuth auth] signOut:&signOutError];
+                                                                   if (!status) {
+                                                                       NSLog(@"Error signing out: %@", signOutError);
+                                                                       return;
+                                                                   }else{
+                                                                       [self gotoLoginPage];
+                                                                   }
+//                                                                   FIRAuthCredential *credential = [FIRFacebookAuthProvider
+//                                                                                                    credentialWithAccessToken:[FBSDKAccessToken currentAccessToken].tokenString];
+//                                                                   [[FIRAuth auth] signInAndRetrieveDataWithCredential:credential completion:^(FIRAuthDataResult * _Nullable authResult, NSError * _Nullable error) {
+//                                                                       if (error) {
+//                                                                           NSLog(@"sign in firebase error");
+//                                                                           [self.spinnerView setHidden:YES];
+//                                                                           return;
+//                                                                       }
+//                                                                       FIRUser *user = authResult.user;
+//                                                                       NSLog(@"%@",user.displayName);
+//                                                                       NSLog(@"%@",user.photoURL);
+//                                                                       [self dismissViewControllerAnimated:YES completion:nil];
+//                                                                   }];
+                                                               }
+                                                           }];
+//    UIAlertAction *deliveryAction = [UIAlertAction actionWithTitle:@"Cancel"
+//                                                             style:UIAlertActionStyleCancel
+//                                                           handler:^(UIAlertAction *action) {
+//                                                               if(!tapAction){
+//                                                                   tapAction = true;
+//                                                                   if([APIService isForceUpdate]){[api checkVersion]; return;}
+//                                                                   [LogCache addAction:@"Open Delivery" withText:@"Open Bill Delivey"];
+//                                                                   [self setTableStatusToBusyDidFinish:[OrderDatabase createOrderCache:3] withSelectPackage:YES];
+//                                                               }
+//                                                           }];
+    
+    // note: you can control the order buttons are shown, unlike UIActionSheet
+    [alertController addAction:logoutAction];
+//    [alertController addAction:deliveryAction];
+//    [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+//        tapAction = true;
+//    }]];
+    [alertController setModalPresentationStyle:UIModalPresentationPopover];
+
+    UIPopoverPresentationController *popPresenter = [alertController
+                                                     popoverPresentationController];
+    popPresenter.sourceView = btn;
+    popPresenter.sourceRect = btn.bounds;
+//    popPresenter.delegate = self;
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+        
+}
+
 - (IBAction)selectFilterAction:(id)sender {
     UISegmentedControl *sc = (UISegmentedControl *)sender;
     typeTable = sc.selectedSegmentIndex;
@@ -400,39 +464,34 @@
 #pragma mark - UICollecitonView
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     if(typeTable == 0) return arrShowTable.count;
-    else if(typeTable == 3) return 0;
     return 1;
 }
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     if(typeTable == 0) return [[arrShowTable objectAtIndex:section] count];
-    else if(typeTable == 1){
-        return [[arrShowTable objectAtIndex:0] count];
-    }
-    else if(typeTable == 2){
-        return [[arrShowTable objectAtIndex:1] count];
-    }
-    else if(typeTable == 3){
-        return 0;
-    }
+//    else if(typeTable == 1){
+        return [[arrShowTable objectAtIndex:typeTable-1] count];
+//    }
+//    else if(typeTable == 2){
+//        return [[arrShowTable objectAtIndex:1] count];
+//    }
+//    else if(typeTable == 3){
+//        return [[arrShowTable objectAtIndex:2] count];
+//    }
     return 0;
 }
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     MainCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MainCollectionViewCell" forIndexPath:indexPath];
-    if(typeTable == 3){
-        
-    }else{
+//    if(typeTable == 3){
+//
+//    }else{
         StarReportObject *sro;
         if(typeTable == 0){
             sro = [[arrShowTable objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
-        }
-        else if(typeTable == 1){
-            sro = [[arrShowTable objectAtIndex:0] objectAtIndex:indexPath.row];
-        }
-        else if(typeTable == 2){
-            sro = [[arrShowTable objectAtIndex:1] objectAtIndex:indexPath.row];
+        }else{
+            sro = [[arrShowTable objectAtIndex:typeTable - 1] objectAtIndex:indexPath.row];
         }
         [cell setDataCollectionCell:sro withSignObject:signObject withType:typeTable];
-    }
+//    }
     return cell;
 }
 

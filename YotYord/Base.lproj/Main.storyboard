@@ -126,6 +126,9 @@
                                                 <rect key="frame" x="213" y="4" width="50" height="42"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="gear.png"/>
+                                                <connections>
+                                                    <action selector="settingAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y1R-CV-oKy"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -383,7 +386,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MainCollectionViewCell" id="POO-7R-3FV" customClass="MainCollectionViewCell">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" reuseIdentifier="MainCollectionViewCell" id="POO-7R-3FV" customClass="MainCollectionViewCell">
                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="538"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -476,6 +479,46 @@
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <connections>
                                                                         <outlet property="imgTick" destination="Uf6-uU-5Oo" id="vxJ-4d-JxN"/>
+                                                                    </connections>
+                                                                </tableViewCell>
+                                                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainTableViewCell2" rowHeight="468" id="K2O-ek-bOC" customClass="MainTableViewCell">
+                                                                    <rect key="frame" x="0.0" y="80" width="70" height="468"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K2O-ek-bOC" id="XBh-Hg-BsK">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="70" height="468"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                        <subviews>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yJ1-DB-Rca">
+                                                                                <rect key="frame" x="0.0" y="467" width="70" height="1"/>
+                                                                                <color key="backgroundColor" red="0.91372549020000005" green="0.91764705879999997" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="1" id="9pE-Mq-9bd"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aib-cK-mns">
+                                                                                <rect key="frame" x="69" y="0.0" width="1" height="468"/>
+                                                                                <color key="backgroundColor" red="0.91372549020000005" green="0.91764705879999997" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="1" id="00M-pf-Hao"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tick.png" translatesAutoresizingMaskIntoConstraints="NO" id="6XN-RC-BhL">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="70" height="468"/>
+                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                            </imageView>
+                                                                        </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="trailing" secondItem="yJ1-DB-Rca" secondAttribute="trailing" id="6PD-Cy-lT8"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="yJ1-DB-Rca" secondAttribute="bottom" id="9vk-a9-zok"/>
+                                                                            <constraint firstItem="aib-cK-mns" firstAttribute="top" secondItem="XBh-Hg-BsK" secondAttribute="top" id="TuG-W9-dCf"/>
+                                                                            <constraint firstItem="yJ1-DB-Rca" firstAttribute="leading" secondItem="XBh-Hg-BsK" secondAttribute="leading" id="ec9-NW-hAF"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="aib-cK-mns" secondAttribute="trailing" id="rf7-8j-VSE"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="aib-cK-mns" secondAttribute="bottom" id="y4n-ZW-pdq"/>
+                                                                        </constraints>
+                                                                    </tableViewCellContentView>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <connections>
+                                                                        <outlet property="imgTick" destination="6XN-RC-BhL" id="xyd-9x-hIG"/>
                                                                     </connections>
                                                                 </tableViewCell>
                                                             </prototypes>

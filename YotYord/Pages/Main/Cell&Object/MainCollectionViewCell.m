@@ -28,13 +28,16 @@
     [self.lblHeader setText:sro.name];
     [self.tblData reloadData];
 }
-
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(typeTable == 3 || starReportObject.arrPoint.count == 1) return 468;
+    return 52;
+}
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return starReportObject.arrPoint.count;
 //    return headerPointObject.arrPredict.count;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    MainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MainTableViewCell"];
+    MainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:(typeTable == 3 ?  @"MainTableViewCell2" : @"MainTableViewCell")];
     [cell setBackgroundColor:[UIColor whiteColor]];
     StarSubObject *sso = [starReportObject.arrPoint objectAtIndex:indexPath.row];
     if(sso.sign > 0){
