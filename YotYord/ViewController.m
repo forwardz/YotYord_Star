@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "MyDocument.h"
+#import "SearchTableViewCell.h"
 
 @interface ViewController ()
 
@@ -162,6 +163,7 @@
     [self.dateView setHidden:!signObject];
     [self.lblName setText:signObject.name];
     [self.lblDate setText:[self getStringDateFromSigObject:signObject]];
+    [self.lblLocation setText:[NSString stringWithFormat:@"%@/%@",signObject.city,signObject.country]];
 }
 
 -(NSString *)getStringDateFromSigObject:(SignObject *)so{
@@ -257,6 +259,7 @@
     [self calculateTableOne];
     [self calculateTableTwo];
     [self calculateSumPoint];
+    [self calculateCircle];
     [self setLabelDateView];
     [self.mainCollectionView reloadData];
     [self.starTableView reloadData];
@@ -366,8 +369,22 @@
     }
 }
 -(void)calculateSumPoint{
-    sumPoint = [[arrStar valueForKeyPath:@"@sum.point"] doubleValue];
+    sumPoint = [[arrStar valueForKeyPath:@"@sum.point"] integerValue];
+    [self.lblSumpoint setText:[NSString stringWithFormat:@"%zd",sumPoint]];
 }
+
+-(void)calculateCircle{
+    NSMutableArray *arr = [NSMutableArray array];
+    for(int i=0;i<12;i++){
+        [arr addObject:[NSMutableArray array]];
+    }
+    for(SignIndexObject *sio in signObject.arrStarSign){
+        NSMutableArray *arrs = [arr objectAtIndex:sio.sign];
+        [arrs addObject:[NSNumber numberWithInteger:sio.star]];
+    }
+    NSLog(@"%@",arr);
+}
+
 -(void)updatePointSign:(NSArray *)arr withPredicate:(NSPredicate *)pre{
     for(StarSubObject *sso in [arr filteredArrayUsingPredicate:pre]){
         sso.sign++;
@@ -505,8 +522,9 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if(tableView == self.tblSearch){
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-        cell.textLabel.text = @"555";
+        SearchTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SearchTableViewCell"];
+        SignObject *so = [[SignObject shareSignObject] objectAtIndex:indexPath.row];
+        [cell.lblText setText:so.name];
         return cell;
     }
     StarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StarTableViewCell"];
@@ -522,12 +540,22 @@
     [cell.imgNumber setImage:[UIImage imageNamed:sso.image_name]];
     return cell;
 }
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(tableView == self.tblSearch){
+        SignObject *so = [[SignObject shareSignObject] objectAtIndex:indexPath.row];
+        signObject = so;
+        
+        [self drawUI];
+        [self.txtSearch resignFirstResponder];
+    }
+}
 #pragma mark - Search
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
     NSLog(@"search begin");
     [UIView animateWithDuration:0.1f animations:^{
         [self.tblSearch setFrame:CGRectMake(self.tblSearch.frame.origin.x, self.tblSearch.frame.origin.y, self.tblSearch.frame.size.width, [self getTableSearchHeight])];
+    }completion:^(BOOL finished) {
+        [self.tblSearch reloadData];
     }];
 }
 - (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar{
@@ -535,6 +563,8 @@
     searchBar.text = @"";
     [UIView animateWithDuration:0.1f animations:^{
         [self.tblSearch setFrame:CGRectMake(self.tblSearch.frame.origin.x, self.tblSearch.frame.origin.y, self.tblSearch.frame.size.width, 0)];
+    }completion:^(BOOL finished) {
+        [self.tblSearch reloadData];
     }];
 }
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{

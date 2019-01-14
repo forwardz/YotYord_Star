@@ -26,6 +26,8 @@
 @property (nonatomic, retain) NSString *minute;
 @property (nonatomic, retain) NSString *second;
 @property (nonatomic, retain) NSString *zone;
+@property (nonatomic, retain) NSString *city;
+@property (nonatomic, retain) NSString *country;
 @property (nonatomic, assign) NSInteger luckana;
 @property (nonatomic, retain) NSMutableArray *arrStarSign;
 @property (nonatomic, retain) NSMutableArray *arrStarSign2;

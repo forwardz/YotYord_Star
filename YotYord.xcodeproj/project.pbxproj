@@ -64,6 +64,7 @@
 		49548EEB21A3C414008EE8A3 /* country.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49548EEA21A3C414008EE8A3 /* country.plist */; };
 		49548EED21A3C4F3008EE8A3 /* state.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49548EEC21A3C4F3008EE8A3 /* state.plist */; };
 		495AEADF212FFAD900563A4A /* MyDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 495AEADE212FFAD900563A4A /* MyDocument.m */; };
+		49A32B3A21EC8DDE00E53F8C /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A32B3921EC8DDE00E53F8C /* SearchTableViewCell.m */; };
 		49A5910D21C8B2570047944F /* StarReportPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49A5910C21C8B2570047944F /* StarReportPlist.plist */; };
 		49C6168821E45EDF000EC884 /* 7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49C6166421E45EDC000EC884 /* 7@2x.png */; };
 		49C6168921E45EDF000EC884 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 49C6166521E45EDC000EC884 /* 3.png */; };
@@ -213,6 +214,8 @@
 		495AEADC212FF98700563A4A /* YotYord.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YotYord.entitlements; sourceTree = "<group>"; };
 		495AEADD212FFAD900563A4A /* MyDocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyDocument.h; sourceTree = "<group>"; };
 		495AEADE212FFAD900563A4A /* MyDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyDocument.m; sourceTree = "<group>"; };
+		49A32B3821EC8DDE00E53F8C /* SearchTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchTableViewCell.h; sourceTree = "<group>"; };
+		49A32B3921EC8DDE00E53F8C /* SearchTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewCell.m; sourceTree = "<group>"; };
 		49A5910C21C8B2570047944F /* StarReportPlist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = StarReportPlist.plist; sourceTree = "<group>"; };
 		49C6166421E45EDC000EC884 /* 7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "7@2x.png"; sourceTree = "<group>"; };
 		49C6166521E45EDC000EC884 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
@@ -346,6 +349,8 @@
 				4937FBE4212EA4D8009CDD5E /* MainTableViewCell.m */,
 				4948021E21478EA900A48626 /* StarTableViewCell.h */,
 				4948021F21478EA900A48626 /* StarTableViewCell.m */,
+				49A32B3821EC8DDE00E53F8C /* SearchTableViewCell.h */,
+				49A32B3921EC8DDE00E53F8C /* SearchTableViewCell.m */,
 			);
 			path = "Cell&Object";
 			sourceTree = "<group>";
@@ -962,6 +967,7 @@
 				4948021B21478DD400A48626 /* UIColor+RGBValues.m in Sources */,
 				4937FBE2212E9F86009CDD5E /* MainCollectionViewCell.m in Sources */,
 				49F4E5A02126C3A2004DECD3 /* SignObject.m in Sources */,
+				49A32B3A21EC8DDE00E53F8C /* SearchTableViewCell.m in Sources */,
 				4948021C21478DD400A48626 /* LDProgressView.m in Sources */,
 				49FBF7F721A3CA7F00135879 /* PopupCountryStateViewController.m in Sources */,
 				4937FBE5212EA4D8009CDD5E /* MainTableViewCell.m in Sources */,

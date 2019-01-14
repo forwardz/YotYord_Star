@@ -18,7 +18,7 @@
     NSArray *arrStar;
     NSArray *arrShowTable;
     NSInteger typeTable;
-    double sumPoint;
+    NSInteger sumPoint;
 }
 // TopBar
 // Profile
@@ -30,6 +30,9 @@
 @property (weak, nonatomic) IBOutlet UIView *dateView;
 @property (weak, nonatomic) IBOutlet UILabel *lblDate;
 @property (weak, nonatomic) IBOutlet UILabel *lblName;
+@property (weak, nonatomic) IBOutlet UILabel *lblLocation;
+
+@property (weak, nonatomic) IBOutlet UILabel *lblSumpoint;
 
 @property (weak, nonatomic) IBOutlet UICollectionView *mainCollectionView;
 @property (weak, nonatomic) IBOutlet UITableView *starTableView;

@@ -5,6 +5,7 @@
 //  Created by Tutchavee Pongsapisuth on 20/9/2561 BE.
 //  Copyright © 2561 Tutchavee Pongsapisuth. All rights reserved.
 //
+#define HEIGHT_TABLE_VIEW     200
 
 #import "PopupInputDetailViewController.h"
 #import "RasiObject.h"
@@ -29,10 +30,10 @@
     [self.datePicker setCalendar:[NSCalendar calendarWithIdentifier:NSCalendarIdentifierBuddhist]];
     [self.datePicker setLocale:[NSLocale localeWithLocaleIdentifier:@"th"]];
     
-    NSArray *arrCountry = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"country" ofType:@"plist"]];
-    NSArray *arrState = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"state" ofType:@"plist"]];
+    arrCountry = (NSMutableArray *)[NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"country" ofType:@"plist"]];
+    arrState = (NSMutableArray *)[NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"state" ofType:@"plist"]];
     NSLog(@"%@",arrCountry);
-     NSLog(@"%@",arrState);
+    NSLog(@"%@",arrState);
     [self loadMyWebView];
 }
 
@@ -41,6 +42,8 @@
     if(self.signObject){
         [self.txtName setText:self.signObject.name];
         [self.datePicker setDate:self.signObject.pure_date];
+        [self.txtCity setText:self.signObject.city];
+        [self.txtCountry setText:self.signObject.country];
         
         hour = self.signObject.hour;
         mininute = self.signObject.minute;
@@ -54,7 +57,8 @@
     }else{
         [self.txtName setText:@""];
         [self.datePicker setDate:[NSDate date]];
-   
+        [self.txtCity setText:@"Thailand"];
+        [self.txtCountry setText:@"Bangkok"];
         
     }
 }
@@ -231,6 +235,8 @@
             self.signObject.minute = mininute;
             self.signObject.second = second;
             self.signObject.zone = zone;
+            self.signObject.city = self.txtCity.text;
+            self.signObject.country = self.txtCountry.text;
             self.signObject.arrStarSign = [NSMutableArray array];
             
             SignIndexObject *sio = [self createSignIndexObject:-1 withSign:luckana];
@@ -265,6 +271,8 @@
             so.minute = mininute;
             so.second = second;
             so.zone = zone;
+            so.city = self.txtCity.text;
+            so.country = self.txtCountry.text;
             so.arrStarSign = [NSMutableArray array];
             
             SignIndexObject *sio = [self createSignIndexObject:-1 withSign:luckana];
@@ -381,8 +389,8 @@
     NSArray *arr = [date_string componentsSeparatedByString:@"/"];
     NSLog(@"%@",arr);
     if(arr.count == 3){
-        date = [arr objectAtIndex:0];
-        month = [arr objectAtIndex:1];
+        date = [arr objectAtIndex:1];
+        month = [arr objectAtIndex:0];
         year = [arr objectAtIndex:2];
     }
     
@@ -456,6 +464,68 @@
     }
     NSLog(@"ลัขนา == %d",i);
     return [NSString stringWithFormat:@"%d",i];
+}
+#pragma mark - UITableView
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if(tableView == self.tblCountry) return arrCountry.count;
+    if(dictCountry){
+        NSPredicate *pre = [NSPredicate predicateWithFormat:@"country_id.intValue == %d",[[dictCountry objectForKey:@"country_id"] intValue]];
+        return [arrState filteredArrayUsingPredicate:pre].count;
+    }
+    return arrState.count;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    NSDictionary *dict;
+    if(tableView == self.tblCountry){
+        dict = [arrCountry objectAtIndex:indexPath.row];
+    }else{
+        if(dictCountry){
+            NSPredicate *pre = [NSPredicate predicateWithFormat:@"country_id.intValue == %d",[[dictCountry objectForKey:@"country_id"] intValue]];
+            dict = [[arrState filteredArrayUsingPredicate:pre] objectAtIndex:indexPath.row];
+        }else{
+            dict = [arrState objectAtIndex:indexPath.row];
+        }
+    }
+    cell.textLabel.text = [dict objectForKey:@"name"];
+    return cell;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(tableView == self.tblCountry){
+        dictCountry = [arrCountry objectAtIndex:indexPath.row];
+        dictCity = nil;
+        [self.txtCity setText:@""];
+        [self.txtCountry setText:[dictCountry objectForKey:@"name"]];
+        [self.tblCountry setFrame:CGRectMake(self.tblCountry.frame.origin.x, self.tblCountry.frame.origin.y, self.tblCountry.frame.size.width, 0)];
+        [self.tblCity reloadData];
+    }else{
+        if(dictCountry){
+            NSPredicate *pre = [NSPredicate predicateWithFormat:@"country_id.intValue == %d",[[dictCountry objectForKey:@"country_id"] intValue]];
+            dictCity = [[arrState filteredArrayUsingPredicate:pre] objectAtIndex:indexPath.row];
+        }else{
+            dictCity = [arrState objectAtIndex:indexPath.row];
+        }
+        [self.txtCity setText:[dictCity objectForKey:@"name"]];
+        [self.tblCity setFrame:CGRectMake(self.tblCity.frame.origin.x, self.tblCity.frame.origin.y, self.tblCity.frame.size.width, 0)];
+    }
+}
+
+#pragma mark - Textfiled
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    if(textField == self.txtCity && !dictCountry) return NO;
+    [UIView animateWithDuration:0.1f animations:^{
+        if(textField == self.txtCountry){
+            [self.tblCountry setFrame:CGRectMake(self.tblCountry.frame.origin.x, self.tblCountry.frame.origin.y, self.tblCountry.frame.size.width, (self.tblCountry.frame.size.height > 0 ? 0 : HEIGHT_TABLE_VIEW))];
+        }
+        else if(textField == self.txtCity){
+            [self.tblCity setFrame:CGRectMake(self.tblCity.frame.origin.x, self.tblCity.frame.origin.y, self.tblCity.frame.size.width, (self.tblCity.frame.size.height > 0 ? 0 : HEIGHT_TABLE_VIEW))];
+        }
+    }];
+    
+    return NO;
 }
 
 #pragma mark - PickerView

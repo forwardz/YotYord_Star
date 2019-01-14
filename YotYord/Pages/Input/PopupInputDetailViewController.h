@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)updateSignObjectFidnish:(SignObject *)so;
 @end
 
-@interface PopupInputDetailViewController : UIViewController<UIWebViewDelegate,UIPickerViewDelegate,UIPickerViewDataSource>{
+@interface PopupInputDetailViewController : UIViewController<UIWebViewDelegate,UIPickerViewDelegate,UIPickerViewDataSource,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>{
     
     UIWebView *webView;
     NSMutableArray *arrNumber,*arrParam;
@@ -30,6 +30,9 @@ NS_ASSUME_NONNULL_BEGIN
     NSString *date,*month,*year,*zone;
     
     NSString *b_hour,*b_minute,*b_second;
+    
+    NSMutableArray *arrCountry,*arrState;
+    NSDictionary *dictCountry,*dictCity;
 }
 - (IBAction)calculateAction:(id)sender;
 - (IBAction)backAction:(id)sender;
@@ -41,13 +44,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIPickerView *timePicker;
 
 @property (nonatomic,weak) IBOutlet UITextField *txtName;
-//@property (nonatomic,weak) IBOutlet UITextField *txtDate;
-//@property (nonatomic,weak) IBOutlet UITextField *txtMonth;
-//@property (nonatomic,weak) IBOutlet UITextField *txtYear;
-//@property (nonatomic,weak) IBOutlet UITextField *txtHour;
-//@property (nonatomic,weak) IBOutlet UITextField *txtMinute;
-//@property (nonatomic,weak) IBOutlet UITextField *txtSecond;
+@property (nonatomic,weak) IBOutlet UITextField *txtCountry;
+@property (nonatomic,weak) IBOutlet UITextField *txtCity;
 @property (nonatomic,weak) IBOutlet UITextField *txtZone;
+
+@property (nonatomic,weak) IBOutlet UITableView *tblCountry;
+@property (nonatomic,weak) IBOutlet UITableView *tblCity;
+
 @end
 
 NS_ASSUME_NONNULL_END

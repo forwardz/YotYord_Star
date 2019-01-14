@@ -54,21 +54,12 @@ static NSMutableArray *shareSignObejct;
         self.month = [decoder decodeObjectForKey:@"month"];
         self.year = [decoder decodeObjectForKey:@"year"];
         self.hour = [decoder decodeObjectForKey:@"hour"] ;
-        self.minute = [decoder decodeObjectForKey:@"minute"] ;
+        self.minute = [decoder decodeObjectForKey:@"minute"];
         self.second = [decoder decodeObjectForKey:@"second"];
         self.zone = [decoder decodeObjectForKey:@"zone"];
         
-//        self.asc = [decoder decodeObjectForKey:@"asc"];
-//        self.one = [decoder decodeObjectForKey:@"one"];
-//        self.two = [decoder decodeObjectForKey:@"two"];
-//        self.three = [decoder decodeObjectForKey:@"three"];
-//        self.four = [decoder decodeObjectForKey:@"four"];
-//        self.five = [decoder decodeObjectForKey:@"five"];
-//        self.six = [decoder decodeObjectForKey:@"six"];
-//        self.seven = [decoder decodeObjectForKey:@"seven"];
-//        self.eight = [decoder decodeObjectForKey:@"eight"];
-//        self.nine = [decoder decodeObjectForKey:@"nine"];
-//        self.zero = [decoder decodeObjectForKey:@"zero"];
+        self.city = [decoder decodeObjectForKey:@"city"];
+        self.country = [decoder decodeObjectForKey:@"country"];
     }
     return self;
 }
@@ -89,6 +80,8 @@ static NSMutableArray *shareSignObejct;
     if(self.second) [encoder encodeObject:self.second forKey:@"second"];
     if(self.zone) [encoder encodeObject:self.zone forKey:@"zone"];
     
+    if(self.city) [encoder encodeObject:self.city forKey:@"city"];
+    if(self.country) [encoder encodeObject:self.country forKey:@"country"];
 //    if (self.asc) [encoder encodeObject:self.asc forKey:@"asc"];
 //    if (self.one) [encoder encodeObject:self.one forKey:@"one"];
 //    if (self.two) [encoder encodeObject:self.two forKey:@"two"];
