@@ -8,6 +8,7 @@
 #define HEIGHT_TABLE_VIEW     200
 
 #import "PopupInputDetailViewController.h"
+#import "SearchTableViewCell.h"
 #import "RasiObject.h"
 @interface PopupInputDetailViewController (){
     NSString *JDN;
@@ -30,12 +31,19 @@
     [self.datePicker setCalendar:[NSCalendar calendarWithIdentifier:NSCalendarIdentifierBuddhist]];
     [self.datePicker setLocale:[NSLocale localeWithLocaleIdentifier:@"th"]];
     
-    arrCountry = (NSMutableArray *)[NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"country" ofType:@"plist"]];
-    arrState = (NSMutableArray *)[NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"state" ofType:@"plist"]];
-    NSLog(@"%@",arrCountry);
-    NSLog(@"%@",arrState);
+    arrTimezone = [NSMutableArray arrayWithArray:[self JSONFromFile]];
+    arrZone = [NSMutableArray array];
+
     [self loadMyWebView];
 }
+
+- (NSArray *)JSONFromFile
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"timezones" ofType:@"json"];
+    NSData *data = [NSData dataWithContentsOfFile:path];
+    return [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+}
+
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -44,6 +52,7 @@
         [self.datePicker setDate:self.signObject.pure_date];
         [self.txtCity setText:self.signObject.city];
         [self.txtCountry setText:self.signObject.country];
+        timezone = self.signObject.zone;
         
         hour = self.signObject.hour;
         mininute = self.signObject.minute;
@@ -57,9 +66,9 @@
     }else{
         [self.txtName setText:@""];
         [self.datePicker setDate:[NSDate date]];
-        [self.txtCity setText:@"Thailand"];
-        [self.txtCountry setText:@"Bangkok"];
-        
+        [self.txtCountry setText:@"(UTC+07:00) Bangkok, Hanoi, Jakarta"];
+        [self.txtCity setText:@"Asia/Bangkok"];
+        timezone = @"7";
     }
 }
 
@@ -103,7 +112,7 @@
 
 -(void)calculateLuckana{
     isCalLuckna = YES;
-    zone = self.txtZone.text;
+    zone = timezone;
     b_hour = hour;
     b_minute = mininute;
     b_second = second;
@@ -470,45 +479,42 @@
     return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if(tableView == self.tblCountry) return arrCountry.count;
-    if(dictCountry){
-        NSPredicate *pre = [NSPredicate predicateWithFormat:@"country_id.intValue == %d",[[dictCountry objectForKey:@"country_id"] intValue]];
-        return [arrState filteredArrayUsingPredicate:pre].count;
-    }
-    return arrState.count;
+    if(tableView == self.tblCountry) return arrTimezone.count;
+    return arrZone.count;
+//    if(dictCountry){
+//        NSPredicate *pre = [NSPredicate predicateWithFormat:@"country_id.intValue == %d",[[dictCountry objectForKey:@"country_id"] intValue]];
+//        return [arrState filteredArrayUsingPredicate:pre].count;
+//    }
+//    return arrState.count;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    NSDictionary *dict;
+    SearchTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SearchTableViewCell"];
     if(tableView == self.tblCountry){
-        dict = [arrCountry objectAtIndex:indexPath.row];
+        NSDictionary *dict = [arrTimezone objectAtIndex:indexPath.row];
+        cell.lblText.text = [dict objectForKey:@"text"];
     }else{
-        if(dictCountry){
-            NSPredicate *pre = [NSPredicate predicateWithFormat:@"country_id.intValue == %d",[[dictCountry objectForKey:@"country_id"] intValue]];
-            dict = [[arrState filteredArrayUsingPredicate:pre] objectAtIndex:indexPath.row];
-        }else{
-            dict = [arrState objectAtIndex:indexPath.row];
-        }
+        cell.lblText.text = [arrZone objectAtIndex:indexPath.row];
     }
-    cell.textLabel.text = [dict objectForKey:@"name"];
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if(tableView == self.tblCountry){
-        dictCountry = [arrCountry objectAtIndex:indexPath.row];
-        dictCity = nil;
-        [self.txtCity setText:@""];
-        [self.txtCountry setText:[dictCountry objectForKey:@"name"]];
+        dictCountry = [arrTimezone objectAtIndex:indexPath.row];
+        [arrZone removeAllObjects];
+        [arrZone addObjectsFromArray:[dictCountry objectForKey:@"utc"]];
+        
+        if(arrZone.count == 1){
+            [self.txtCity setText:[arrZone objectAtIndex:0]];
+        }else{
+            [self.txtCity setText:@""];
+        }
+        timezone = [NSString stringWithFormat:@"%zd",[[dictCountry objectForKey:@"offset"] integerValue]];
+        
+        [self.txtCountry setText:[dictCountry objectForKey:@"text"]];
         [self.tblCountry setFrame:CGRectMake(self.tblCountry.frame.origin.x, self.tblCountry.frame.origin.y, self.tblCountry.frame.size.width, 0)];
         [self.tblCity reloadData];
     }else{
-        if(dictCountry){
-            NSPredicate *pre = [NSPredicate predicateWithFormat:@"country_id.intValue == %d",[[dictCountry objectForKey:@"country_id"] intValue]];
-            dictCity = [[arrState filteredArrayUsingPredicate:pre] objectAtIndex:indexPath.row];
-        }else{
-            dictCity = [arrState objectAtIndex:indexPath.row];
-        }
-        [self.txtCity setText:[dictCity objectForKey:@"name"]];
+        [self.txtCity setText:[arrZone objectAtIndex:indexPath.row]];
         [self.tblCity setFrame:CGRectMake(self.tblCity.frame.origin.x, self.tblCity.frame.origin.y, self.tblCity.frame.size.width, 0)];
     }
 }
@@ -521,7 +527,7 @@
             [self.tblCountry setFrame:CGRectMake(self.tblCountry.frame.origin.x, self.tblCountry.frame.origin.y, self.tblCountry.frame.size.width, (self.tblCountry.frame.size.height > 0 ? 0 : HEIGHT_TABLE_VIEW))];
         }
         else if(textField == self.txtCity){
-            [self.tblCity setFrame:CGRectMake(self.tblCity.frame.origin.x, self.tblCity.frame.origin.y, self.tblCity.frame.size.width, (self.tblCity.frame.size.height > 0 ? 0 : HEIGHT_TABLE_VIEW))];
+            [self.tblCity setFrame:CGRectMake(self.tblCity.frame.origin.x, self.tblCity.frame.origin.y, self.tblCity.frame.size.width, (self.tblCity.frame.size.height > 0 ? 0 : ((self->arrZone.count * 30 > HEIGHT_TABLE_VIEW) ? HEIGHT_TABLE_VIEW : arrZone.count * 30)))];
         }
     }];
     

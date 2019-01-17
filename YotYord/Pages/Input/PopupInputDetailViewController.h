@@ -31,8 +31,10 @@ NS_ASSUME_NONNULL_BEGIN
     
     NSString *b_hour,*b_minute,*b_second;
     
-    NSMutableArray *arrCountry,*arrState;
-    NSDictionary *dictCountry,*dictCity;
+//    NSMutableArray *arrCountry,*arrState;
+    NSMutableArray *arrTimezone,*arrZone;
+    NSDictionary *dictCountry;
+    NSString *timezone;
 }
 - (IBAction)calculateAction:(id)sender;
 - (IBAction)backAction:(id)sender;
@@ -46,7 +48,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,weak) IBOutlet UITextField *txtName;
 @property (nonatomic,weak) IBOutlet UITextField *txtCountry;
 @property (nonatomic,weak) IBOutlet UITextField *txtCity;
-@property (nonatomic,weak) IBOutlet UITextField *txtZone;
 
 @property (nonatomic,weak) IBOutlet UITableView *tblCountry;
 @property (nonatomic,weak) IBOutlet UITableView *tblCity;

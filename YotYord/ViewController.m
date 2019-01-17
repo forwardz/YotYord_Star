@@ -50,7 +50,7 @@
 -(void)saveiCloud:(NSData *)save_data{
     
     NSURL* ubiq = [[NSFileManager defaultManager]URLForUbiquityContainerIdentifier:nil];
-    NSURL *ubiquitousPackage = [[ubiq URLByAppendingPathComponent:@"Documents"]  URLByAppendingPathComponent:@"iCloudPictures.zip"];
+    NSURL *ubiquitousPackage = [[ubiq URLByAppendingPathComponent:@"Documents"]  URLByAppendingPathComponent:@"iCloudYodYord.zip"];
     if(ubiquitousPackage){
         MyDocument *mydoc = [[MyDocument alloc] initWithFileURL:ubiquitousPackage];
         NSData *data = save_data;
@@ -133,7 +133,7 @@
     {
         NSError *error = nil;
         NSURL *ubiq = [[NSFileManager defaultManager]URLForUbiquityContainerIdentifier:nil];// in place of nil you can add your container name
-        NSURL *ubiquitousPackage = [[ubiq URLByAppendingPathComponent:@"Documents"]URLByAppendingPathComponent:@"iCloudPictures.zip"];
+        NSURL *ubiquitousPackage = [[ubiq URLByAppendingPathComponent:@"Documents"]URLByAppendingPathComponent:@"iCloudYodYord.zip"];
         BOOL isFileDounloaded = [[NSFileManager defaultManager]startDownloadingUbiquitousItemAtURL:ubiquitousPackage error:&error];
         if (isFileDounloaded) {
             NSLog(@"%d",isFileDounloaded);
@@ -144,8 +144,11 @@
             NSData *dataFile = [NSData dataWithContentsOfURL:ubiquitousPackage];
             BOOL fileStatus = [dataFile writeToFile:fileAtPath atomically:NO];
             if (fileStatus) {
-                SignObject *so =  (SignObject *)[NSKeyedUnarchiver unarchiveObjectWithData:dataFile];
-                [self saveSignObjectFidnish:so];
+                NSMutableArray *array =  (NSMutableArray *)[NSKeyedUnarchiver unarchiveObjectWithData:dataFile];
+                NSLog(@"%@",array);
+                [[SignObject shareSignObject] removeAllObjects];
+                [[SignObject shareSignObject] addObjectsFromArray:array];
+                if(array.count) [self updateSignObjectFidnish:[[SignObject shareSignObject] firstObject]];
             }
         }
         else{
@@ -163,7 +166,7 @@
     [self.dateView setHidden:!signObject];
     [self.lblName setText:signObject.name];
     [self.lblDate setText:[self getStringDateFromSigObject:signObject]];
-    [self.lblLocation setText:[NSString stringWithFormat:@"%@/%@",signObject.city,signObject.country]];
+    [self.lblLocation setText:signObject.city];
 }
 
 -(NSString *)getStringDateFromSigObject:(SignObject *)so{
@@ -193,6 +196,7 @@
             dispatch_sync(dispatch_get_main_queue(), ^{
                 [self.imgPhoto setImage:[UIImage imageWithData:imageData]];
                 [self.lblUsername setText:user.displayName];
+                [self loadiCloud];
             });
         });
         
@@ -401,7 +405,7 @@
 
 -(void)saveAction:(id)sender{
     if(signObject){
-        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:signObject];
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:[SignObject shareSignObject]];
         [self saveiCloud:data];
     }
 }
@@ -525,6 +529,7 @@
         SearchTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SearchTableViewCell"];
         SignObject *so = [[SignObject shareSignObject] objectAtIndex:indexPath.row];
         [cell.lblText setText:so.name];
+        [cell.lblDate setText:[self getStringDateFromSigObject:so]];
         return cell;
     }
     StarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StarTableViewCell"];

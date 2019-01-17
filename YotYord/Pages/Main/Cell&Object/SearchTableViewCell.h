@@ -10,4 +10,5 @@
 
 @interface SearchTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *lblText;
+@property (weak, nonatomic) IBOutlet UILabel *lblDate;
 @end
