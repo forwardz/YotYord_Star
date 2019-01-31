@@ -39,6 +39,7 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             self.progressView.progress = value;
+//            self.progressView.progress = 0.5f;
 //            self.progressView.animate = @YES;
         });
         

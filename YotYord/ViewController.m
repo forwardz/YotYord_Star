@@ -18,33 +18,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationController.navigationBar.hidden = true;
     [FIRAnalytics setScreenName:@"Main" screenClass:@"class name"];
     // Do any additional setup after loading the view, typically from a nib.
-    
-    
-//    arrStar = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"StarShowPlist" ofType:@"plist"]];
-    
-    
     [HeaderPointObject createHeaderPointArray];
     [HeaderPointObject createHeaderPoint2Array];
     
     typeTable = 0;
     arrStar = [StarShowObject createStarShowObject];
     arrShowTable = [StarReportObject createStarReportArray];
-//    arrShowTable = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"StarReportPlist" ofType:@"plist"]];
-//    arrShowTable = [HeaderPointObject shareHeaderPoint];
-    /*
-    progressView.progress = 0.40;
-    progressView.background = [UIColor colorWithRed:219/255.0f green:219/255.0f blue:219/255.0f alpha:1.0];
-    progressView.color = [UIColor colorWithRed:1/255.0f green:181/255.0f blue:254/255.0f alpha:1.0];
-    progressView.type = LDProgressSolid;
-    progressView.showBackgroundInnerShadow = @NO;
-    progressView.flat = @YES;
-    
-    progressView.showStroke = @NO;
-    [progressView overrideProgressTextColor:[UIColor whiteColor]];
-    */
-    
 }
 
 -(void)saveiCloud:(NSData *)save_data{
@@ -116,7 +98,8 @@
 }
 
 - (void)loadiCloud {
-    
+    if(isLoadiCloud) return;
+    isLoadiCloud = true;
     //--------------------------Get data back from iCloud -----------------------------//
     id token = [[NSFileManager defaultManager] ubiquityIdentityToken];
     if (token == nil)
@@ -248,7 +231,6 @@
 -(void)saveSignObjectFidnish:(SignObject *)so{
     [[SignObject shareSignObject] addObject:so];
     signObject = so;
-    
     [self drawUI];
 }
 -(void)updateSignObjectFidnish:(SignObject *)so{
@@ -259,6 +241,7 @@
 
 -(void)drawUI{
     arrStar = [StarShowObject createStarShowObject];
+    [self calculateWeakStar];
     arrShowTable = [StarReportObject createStarReportArray];
     [self calculateTableOne];
     [self calculateTableTwo];
@@ -282,7 +265,7 @@
                     if([signObject.arrStarSign filteredArrayUsingPredicate:predicate].count){
                         NSLog(@"%@,%d",hpo.name,i);
                         NSPredicate *predicated = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"%@",predict]];
-                        [self updatePointSign:sro.arrPoint withPredicate:predicated];
+                        [self updatePointSign:sro.arrPoint withPredicate:predicated withWeakStar:hpo.isWeakStar];
                     }
                 }
                 else if(hpo.recipe == 1) {
@@ -303,7 +286,7 @@
                         NSLog(@"%@,%d",hpo.name,i);
                         for(SignIndexObject *sio in arr){
                             NSPredicate *predict = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"star == %zd",sio.star]];
-                            [self updatePointSign:sro.arrPoint withPredicate:predict];
+                            [self updatePointSign:sro.arrPoint withPredicate:predict withWeakStar:hpo.isWeakStar];
                         }
                         
                     }
@@ -312,7 +295,7 @@
                     if([signObject.arrStarSign filteredArrayUsingPredicate:predicate].count){
                         NSLog(@"%@,%d",hpo.name,i);
                         NSPredicate *predicated = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"star == %d",i]];
-                        [self updatePointSign:sro.arrPoint withPredicate:predicated];
+                        [self updatePointSign:sro.arrPoint withPredicate:predicated withWeakStar:hpo.isWeakStar];
                     }
                 }
             }
@@ -337,7 +320,7 @@
                         NSLog(@"%@,%d",hpo.name,i);
                         for(NSNumber *num in arr){
                             NSPredicate *predict = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"star == %d",num.intValue]];
-                            [self updatePointSign:sro.arrPoint withPredicate:predict];
+                            [self updatePointSign:sro.arrPoint withPredicate:predict withWeakStar:hpo.isWeakStar];
                         }
                     }
                 }else if(hpo.recipe == 3){
@@ -360,7 +343,7 @@
                             for(NSArray *arr in array){
                                 for(NSNumber *num in arr){
                                     NSPredicate *predict = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"star == %d",num.intValue]];
-                                    [self updatePointSign:sro.arrPoint withPredicate:predict];
+                                    [self updatePointSign:sro.arrPoint withPredicate:predict withWeakStar:hpo.isWeakStar];
                                 }
                             }
                         }
@@ -389,17 +372,38 @@
     NSLog(@"%@",arr);
 }
 
--(void)updatePointSign:(NSArray *)arr withPredicate:(NSPredicate *)pre{
-    for(StarSubObject *sso in [arr filteredArrayUsingPredicate:pre]){
-        sso.sign++;
-        NSLog(@"ดาวจริง = %zd, คะแนน = %zd",sso.star,sso.sign);
-        [self addPointToStar:sso.star];
+-(void)calculateWeakStar{
+    int i=0;
+    for(StarShowObject *sso in arrStar){
+        sso.weight = [[signObject.arrWeight objectAtIndex:i] integerValue];
+        i++;
     }
 }
 
--(void)addPointToStar:(NSInteger)star{
+-(void)updatePointSign:(NSArray *)arr withPredicate:(NSPredicate *)pre withWeakStar:(BOOL)isWeakStar{
+    for(StarSubObject *sso in [arr filteredArrayUsingPredicate:pre]){
+        sso.sign++;
+        NSLog(@"ดาวจริง = %zd, คะแนน = %zd",sso.star,sso.sign);
+        [self addPointToStar:sso.star withWeakStar:isWeakStar];
+    }
+}
+
+-(void)addPointToStar:(NSInteger)star withWeakStar:(BOOL)isWeakStar{
     for(StarShowObject *sso in [arrStar filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:[NSString stringWithFormat:@"star == %zd",star]]]){
         sso.point++;
+        if(isWeakStar){
+            if(signObject.weakStar > 0){
+                NSLog(@"ติดลบ");
+                sso.percent = sso.percent - (50/signObject.weakStar);
+                if(sso.percent < 0) sso.percent = 0;
+            }
+        }else{
+            if(signObject.solidStar > 0){
+                NSLog(@"ติดบวก");
+                sso.percent = sso.percent + (50/signObject.weakStar);
+                if(sso.percent > 100) sso.percent = 100;
+            }
+        }
     }
 }
 
@@ -411,67 +415,50 @@
 }
 
 - (void)settingAction:(id)sender{
-    __block bool tapAction = false; //flag to prevent open bill when multiple tap
     //Show action sheet
     UIButton *btn = (UIButton *)sender;
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil
                                                                              message:nil
                                                                       preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *settingAction = [UIAlertAction actionWithTitle:@"Setting"
+                                                           style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction *action) {
+                                                             NSLog(@"ตั้งค่าดวงดาว");
+                                                             [self gotoSettingPage];
+                                                         }];
     UIAlertAction *logoutAction = [UIAlertAction actionWithTitle:@"Logout"
                                                              style:UIAlertActionStyleDestructive
                                                            handler:^(UIAlertAction *action) {
-                                                               if(!tapAction){
-                                                                   tapAction = true;
-                                                                   NSError *signOutError;
-                                                                   BOOL status = [[FIRAuth auth] signOut:&signOutError];
-                                                                   if (!status) {
-                                                                       NSLog(@"Error signing out: %@", signOutError);
-                                                                       return;
-                                                                   }else{
-                                                                       [self gotoLoginPage];
-                                                                   }
-//                                                                   FIRAuthCredential *credential = [FIRFacebookAuthProvider
-//                                                                                                    credentialWithAccessToken:[FBSDKAccessToken currentAccessToken].tokenString];
-//                                                                   [[FIRAuth auth] signInAndRetrieveDataWithCredential:credential completion:^(FIRAuthDataResult * _Nullable authResult, NSError * _Nullable error) {
-//                                                                       if (error) {
-//                                                                           NSLog(@"sign in firebase error");
-//                                                                           [self.spinnerView setHidden:YES];
-//                                                                           return;
-//                                                                       }
-//                                                                       FIRUser *user = authResult.user;
-//                                                                       NSLog(@"%@",user.displayName);
-//                                                                       NSLog(@"%@",user.photoURL);
-//                                                                       [self dismissViewControllerAnimated:YES completion:nil];
-//                                                                   }];
+                                                               NSError *signOutError;
+                                                               BOOL status = [[FIRAuth auth] signOut:&signOutError];
+                                                               if (!status) {
+                                                                   NSLog(@"Error signing out: %@", signOutError);
+                                                                   return;
+                                                               }else{
+                                                                   [self gotoLoginPage];
                                                                }
                                                            }];
-//    UIAlertAction *deliveryAction = [UIAlertAction actionWithTitle:@"Cancel"
-//                                                             style:UIAlertActionStyleCancel
-//                                                           handler:^(UIAlertAction *action) {
-//                                                               if(!tapAction){
-//                                                                   tapAction = true;
-//                                                                   if([APIService isForceUpdate]){[api checkVersion]; return;}
-//                                                                   [LogCache addAction:@"Open Delivery" withText:@"Open Bill Delivey"];
-//                                                                   [self setTableStatusToBusyDidFinish:[OrderDatabase createOrderCache:3] withSelectPackage:YES];
-//                                                               }
-//                                                           }];
-    
-    // note: you can control the order buttons are shown, unlike UIActionSheet
+    [alertController addAction:settingAction];
     [alertController addAction:logoutAction];
-//    [alertController addAction:deliveryAction];
-//    [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-//        tapAction = true;
-//    }]];
     [alertController setModalPresentationStyle:UIModalPresentationPopover];
 
     UIPopoverPresentationController *popPresenter = [alertController
                                                      popoverPresentationController];
     popPresenter.sourceView = btn;
     popPresenter.sourceRect = btn.bounds;
-//    popPresenter.delegate = self;
-    
     [self presentViewController:alertController animated:YES completion:nil];
         
+}
+
+-(void)gotoSettingPage{
+    SettingViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SettingViewController"];
+    vc.delegate = self;
+    vc.signObject = signObject;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+-(void)updateStarSettingDidfinish{
+    [self drawUI];
 }
 
 - (IBAction)selectFilterAction:(id)sender {
@@ -518,11 +505,13 @@
 
 #pragma mark - TableView
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
+    if(tableView == self.tblSearch) return 1;
+    return 2;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if(tableView == self.tblSearch) return [SignObject shareSignObject].count;
-    return arrStar.count;
+    if(section == 0) return arrStar.count-1;
+    return 1;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if(tableView == self.tblSearch){
@@ -534,14 +523,20 @@
     }
     StarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StarTableViewCell"];
     [cell setBackgroundColor:[UIColor clearColor]];
-    StarShowObject *sso = [arrStar objectAtIndex:indexPath.row];
+    StarShowObject *sso;
+    if(indexPath.section == 0){
+        sso = [arrStar objectAtIndex:indexPath.row];
+    }else{
+        sso = [arrStar objectAtIndex:arrStar.count-1];
+    }
     [cell.lblStar setText:sso.name];
     if(sumPoint == 0){
         [cell setStarTableViewCell:0];
     }else{
-        [cell setStarTableViewCell:((sso.point*sso.weight)/sumPoint)];
+//        [cell setStarTableViewCell:((sso.point*sso.weight)/sumPoint)];
+        [cell setStarTableViewCell:(sso.percent/100.0f)];
     }
-    [cell.lblWeight setText:[NSString stringWithFormat:@"%.1f",sso.weight]];
+    [cell.lblWeight setText:[NSString stringWithFormat:@"%zd",sso.weight]];
     [cell.imgNumber setImage:[UIImage imageNamed:sso.image_name]];
     return cell;
 }

@@ -92,5 +92,15 @@
 		<key>star</key>
 		<integer>9</integer>
 	</dict>
+	<dict>
+		<key>name</key>
+		<string>คะแนนรูปดาว</string>
+		<key>weight</key>
+		<integer>1</integer>
+		<key>point</key>
+		<integer>0</integer>
+		<key>star</key>
+		<integer>10</integer>
+	</dict>
 </array>
 </plist>

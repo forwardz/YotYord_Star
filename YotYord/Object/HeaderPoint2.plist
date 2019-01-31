@@ -484,6 +484,8 @@
 		<integer>1</integer>
 		<key>recipe</key>
 		<integer>1</integer>
+		<key>is_weak_star</key>
+		<true/>
 		<key>desciption</key>
 		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
 		<key>arrPredict</key>
@@ -509,6 +511,8 @@
 		<integer>1</integer>
 		<key>recipe</key>
 		<integer>1</integer>
+		<key>is_weak_star</key>
+		<true/>
 		<key>desciption</key>
 		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
 		<key>arrPredict</key>
@@ -534,6 +538,8 @@
 		<integer>1</integer>
 		<key>recipe</key>
 		<integer>1</integer>
+		<key>is_weak_star</key>
+		<true/>
 		<key>desciption</key>
 		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
 		<key>arrPredict</key>
@@ -559,6 +565,8 @@
 		<integer>1</integer>
 		<key>recipe</key>
 		<integer>1</integer>
+		<key>is_weak_star</key>
+		<true/>
 		<key>desciption</key>
 		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
 		<key>arrPredict</key>
@@ -584,6 +592,8 @@
 		<integer>1</integer>
 		<key>recipe</key>
 		<integer>1</integer>
+		<key>is_weak_star</key>
+		<true/>
 		<key>desciption</key>
 		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
 		<key>arrPredict</key>
@@ -609,6 +619,8 @@
 		<integer>1</integer>
 		<key>recipe</key>
 		<integer>1</integer>
+		<key>is_weak_star</key>
+		<true/>
 		<key>desciption</key>
 		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
 		<key>arrPredict</key>
@@ -634,6 +646,8 @@
 		<integer>1</integer>
 		<key>recipe</key>
 		<integer>1</integer>
+		<key>is_weak_star</key>
+		<true/>
 		<key>desciption</key>
 		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
 		<key>arrPredict</key>
@@ -659,6 +673,8 @@
 		<integer>1</integer>
 		<key>recipe</key>
 		<integer>1</integer>
+		<key>is_weak_star</key>
+		<true/>
 		<key>desciption</key>
 		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
 		<key>arrPredict</key>
@@ -684,6 +700,8 @@
 		<integer>1</integer>
 		<key>recipe</key>
 		<integer>1</integer>
+		<key>is_weak_star</key>
+		<true/>
 		<key>desciption</key>
 		<string>ใช้สูตรที่ให้เท่านั้น ไม่ต้องอ้างอิงหลัก</string>
 		<key>arrPredict</key>

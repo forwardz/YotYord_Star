@@ -6,6 +6,8 @@
 //  Copyright © 2561 Tutchavee Pongsapisuth. All rights reserved.
 //
 #define HEIGHT_TABLE_VIEW     200
+#define SOLID_STAR_DEFAULT      4
+#define WEAK_STAR_DEFAULT       4
 
 #import "PopupInputDetailViewController.h"
 #import "SearchTableViewCell.h"
@@ -247,6 +249,12 @@
             self.signObject.city = self.txtCity.text;
             self.signObject.country = self.txtCountry.text;
             self.signObject.arrStarSign = [NSMutableArray array];
+//            self.signObject.solidStar = 2;
+//            self.signObject.weakStar = 2;
+//            self.signObject.arrWeight = [NSMutableArray array];
+//            for(int i=0;i<9;i++){
+//                [self.signObject.arrWeight addObject:[NSString stringWithFormat:@"%d",10]];
+//            }
             
             SignIndexObject *sio = [self createSignIndexObject:-1 withSign:luckana];
             [self.signObject.arrStarSign addObject:sio];
@@ -283,6 +291,12 @@
             so.city = self.txtCity.text;
             so.country = self.txtCountry.text;
             so.arrStarSign = [NSMutableArray array];
+            so.solidStar = SOLID_STAR_DEFAULT;
+            so.weakStar = WEAK_STAR_DEFAULT;
+            so.arrWeight = [NSMutableArray array];
+            for(int i=0;i<10;i++){
+                [so.arrWeight addObject:[NSString stringWithFormat:@"%d",10]];
+            }
             
             SignIndexObject *sio = [self createSignIndexObject:-1 withSign:luckana];
             [so.arrStarSign addObject:sio];

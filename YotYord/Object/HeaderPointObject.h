@@ -12,6 +12,7 @@
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, assign) NSInteger point;
 @property (nonatomic, assign) NSInteger recipe;
+@property (nonatomic, assign) BOOL isWeakStar;
 @property (nonatomic, retain) NSMutableArray *arrPredict;
 
 +(NSMutableArray *)shareHeaderPoint;
@@ -23,6 +24,7 @@
 @interface StarReportObject : NSObject
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSMutableArray *arrPoint;
+@property (nonatomic, assign) BOOL isWeakStar;
 +(NSArray *)createStarReportArray;
 @end
 

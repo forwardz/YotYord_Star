@@ -34,6 +34,8 @@
 		<integer>1</integer>
 		<key>recipe</key>
 		<integer>0</integer>
+		<key>is_weak_star</key>
+		<true/>
 		<key>desciption</key>
 		<string>ใช้สูตรที่ให้ พร้อมอ้างอิงหลักของดาว</string>
 		<key>arrPredict</key>
@@ -108,6 +110,8 @@
 		<integer>1</integer>
 		<key>recipe</key>
 		<integer>0</integer>
+		<key>is_weak_star</key>
+		<true/>
 		<key>desciption</key>
 		<string>ใช้สูตรที่ให้ พร้อมอ้างอิงหลักของดาว</string>
 		<key>arrPredict</key>

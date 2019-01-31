@@ -29,6 +29,11 @@
 @property (nonatomic, retain) NSString *city;
 @property (nonatomic, retain) NSString *country;
 @property (nonatomic, assign) NSInteger luckana;
+
+@property (nonatomic, assign) int solidStar;
+@property (nonatomic, assign) int weakStar;
+@property (nonatomic, retain) NSMutableArray *arrWeight;
+
 @property (nonatomic, retain) NSMutableArray *arrStarSign;
 @property (nonatomic, retain) NSMutableArray *arrStarSign2;
 @end
@@ -42,7 +47,8 @@
 @property (nonatomic, retain) NSString *name,*image_name;
 @property (nonatomic, assign) NSInteger point;
 @property (nonatomic, assign) NSInteger star;
-@property (nonatomic, assign) double weight;
+@property (nonatomic, assign) NSInteger weight;
+@property (nonatomic, assign) NSInteger percent;
 +(NSMutableArray *)createStarShowObject;
 +(StarShowObject *)createStarShowObjectWithDictionary:(NSDictionary *)dict;
 @end

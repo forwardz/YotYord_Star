@@ -49,6 +49,9 @@ static NSMutableArray *shareHeaderPoint2;
         hpo.name = [dict objectForKey:@"name"];
         hpo.point = [[dict objectForKey:@"point"] integerValue];
         hpo.recipe = [[dict objectForKey:@"recipe"] integerValue];
+        if([dict objectForKey:@"is_weak_star"]){
+            hpo.isWeakStar = YES;
+        }
         hpo.arrPredict = [NSMutableArray arrayWithArray:[dict objectForKey:@"arrPredict"]];
         [arr addObject:hpo];
     }
@@ -63,6 +66,9 @@ static NSMutableArray *shareHeaderPoint2;
         hpo.name = [dict objectForKey:@"name"];
         hpo.point = [[dict objectForKey:@"point"] integerValue];
         hpo.recipe = [[dict objectForKey:@"recipe"] integerValue];
+        if([dict objectForKey:@"is_weak_star"]){
+            hpo.isWeakStar = YES;
+        }
         hpo.arrPredict = [NSMutableArray arrayWithArray:[dict objectForKey:@"arrPredict"]];
         [arr addObject:hpo];
     }
@@ -143,6 +149,7 @@ static NSMutableArray *shareHeaderPoint2;
         self.point = [[decoder decodeObjectForKey:@"asc"] integerValue];
         self.recipe = [[decoder decodeObjectForKey:@"recipe"] integerValue];
         self.arrPredict = [decoder decodeObjectForKey:@"arrPredict"];
+        self.isWeakStar = [[decoder decodeObjectForKey:@"isWeakStar"] boolValue];
     }
     return self;
 }
@@ -152,6 +159,7 @@ static NSMutableArray *shareHeaderPoint2;
     if (self.point) [encoder encodeObject:[NSNumber numberWithInteger:self.point] forKey:@"point"];
     if (self.recipe) [encoder encodeObject:[NSNumber numberWithBool:self.recipe] forKey:@"recipe"];
     if (self.arrPredict) [encoder encodeObject:self.arrPredict forKey:@"arrPredict"];
+    if (self.isWeakStar) [encoder encodeObject:[NSNumber numberWithBool:self.isWeakStar] forKey:@"isWeakStar"];
 }
 @end
 

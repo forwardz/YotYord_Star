@@ -12,13 +12,16 @@
 #import "LDProgressView.h"
 #import "StarTableViewCell.h"
 #import "PopupInputDetailViewController.h"
+#import "SettingViewController.h"
 
-@interface ViewController : UIViewController<PopupInputSignDelegate,PopupInputDetailDelegate,UISearchBarDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDelegate,UITableViewDataSource>{
+@interface ViewController : UIViewController<PopupInputSignDelegate,PopupInputDetailDelegate,UISearchBarDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDelegate,UITableViewDataSource,SettingViewDelegate>{
     SignObject *signObject;
     NSArray *arrStar;
     NSArray *arrShowTable;
     NSInteger typeTable;
     NSInteger sumPoint;
+    
+    BOOL isLoadiCloud;
 }
 // TopBar
 // Profile
