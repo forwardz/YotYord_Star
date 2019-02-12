@@ -44,6 +44,7 @@
 		49A32B3A21EC8DDE00E53F8C /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A32B3921EC8DDE00E53F8C /* SearchTableViewCell.m */; };
 		49A49EE121F8A0DE00D8828D /* allImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49A49EE021F8A0DE00D8828D /* allImages.xcassets */; };
 		49A5910D21C8B2570047944F /* StarReportPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49A5910C21C8B2570047944F /* StarReportPlist.plist */; };
+		49B84C00221308C700DA0F46 /* PopupSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B84BFF221308C700DA0F46 /* PopupSettingViewController.m */; };
 		49CC1DBA2154AA2C00B84913 /* timePlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49CC1DB92154AA2C00B84913 /* timePlist.plist */; };
 		49E44F18215DF29D0002290F /* SukhumvitSet-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 49E44F12215DF29C0002290F /* SukhumvitSet-Light.ttf */; };
 		49E44F19215DF29D0002290F /* SukhumvitSet-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 49E44F13215DF29C0002290F /* SukhumvitSet-Bold.ttf */; };
@@ -139,6 +140,8 @@
 		49A32B3921EC8DDE00E53F8C /* SearchTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewCell.m; sourceTree = "<group>"; };
 		49A49EE021F8A0DE00D8828D /* allImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = allImages.xcassets; sourceTree = "<group>"; };
 		49A5910C21C8B2570047944F /* StarReportPlist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = StarReportPlist.plist; sourceTree = "<group>"; };
+		49B84BFE221308C700DA0F46 /* PopupSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopupSettingViewController.h; sourceTree = "<group>"; };
+		49B84BFF221308C700DA0F46 /* PopupSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopupSettingViewController.m; sourceTree = "<group>"; };
 		49CC1DB92154AA2C00B84913 /* timePlist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = timePlist.plist; sourceTree = "<group>"; };
 		49E44F12215DF29C0002290F /* SukhumvitSet-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SukhumvitSet-Light.ttf"; sourceTree = "<group>"; };
 		49E44F13215DF29C0002290F /* SukhumvitSet-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SukhumvitSet-Bold.ttf"; sourceTree = "<group>"; };
@@ -344,6 +347,8 @@
 				4994DC4122031A7B001BCCAE /* SettingViewController.m */,
 				491BADBA2212E8EA004D2CDB /* SettingStarTableViewCell.h */,
 				491BADBB2212E8EA004D2CDB /* SettingStarTableViewCell.m */,
+				49B84BFE221308C700DA0F46 /* PopupSettingViewController.h */,
+				49B84BFF221308C700DA0F46 /* PopupSettingViewController.m */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -745,6 +750,7 @@
 				4948021B21478DD400A48626 /* UIColor+RGBValues.m in Sources */,
 				4937FBE2212E9F86009CDD5E /* MainCollectionViewCell.m in Sources */,
 				49F4E5A02126C3A2004DECD3 /* SignObject.m in Sources */,
+				49B84C00221308C700DA0F46 /* PopupSettingViewController.m in Sources */,
 				49A32B3A21EC8DDE00E53F8C /* SearchTableViewCell.m in Sources */,
 				4948021C21478DD400A48626 /* LDProgressView.m in Sources */,
 				49FBF7F721A3CA7F00135879 /* PopupCountryStateViewController.m in Sources */,

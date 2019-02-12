@@ -367,7 +367,7 @@
         sumTop += (sso.percent * sso.weight);
         sumWeight += sso.weight;
     }
-    [self.lblSumpoint setText:[NSString stringWithFormat:@"%.0f",(sumTop/sumWeight)]];
+    [self.lblSumpoint setText:[NSString stringWithFormat:@"%.0f%%",(sumTop/sumWeight)]];
     
 }
 
@@ -426,39 +426,29 @@
 }
 
 - (void)settingAction:(id)sender{
-    //Show action sheet
-    UIButton *btn = (UIButton *)sender;
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil
-                                                                             message:nil
-                                                                      preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *settingAction = [UIAlertAction actionWithTitle:@"Setting"
-                                                           style:UIAlertActionStyleDefault
-                                                         handler:^(UIAlertAction *action) {
-                                                             NSLog(@"ตั้งค่าดวงดาว");
-                                                             [self gotoSettingPage:NO];
-                                                         }];
-    UIAlertAction *logoutAction = [UIAlertAction actionWithTitle:@"Logout"
-                                                             style:UIAlertActionStyleDestructive
-                                                           handler:^(UIAlertAction *action) {
-                                                               NSError *signOutError;
-                                                               BOOL status = [[FIRAuth auth] signOut:&signOutError];
-                                                               if (!status) {
-                                                                   NSLog(@"Error signing out: %@", signOutError);
-                                                                   return;
-                                                               }else{
-                                                                   [self gotoLoginPage];
-                                                               }
-                                                           }];
-    [alertController addAction:settingAction];
-    [alertController addAction:logoutAction];
-    [alertController setModalPresentationStyle:UIModalPresentationPopover];
+    
+    PopupSettingViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"PopupSettingViewController"];
+    vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    vc.modalPresentationStyle = UIModalPresentationPopover;
+    vc.delegate = self;
+    UIPopoverPresentationController *popPresenter = [vc popoverPresentationController];
+    popPresenter.sourceView = sender;
+    popPresenter.sourceRect = [sender bounds];
+    [self presentViewController:vc animated:YES completion:nil];
+}
 
-    UIPopoverPresentationController *popPresenter = [alertController
-                                                     popoverPresentationController];
-    popPresenter.sourceView = btn;
-    popPresenter.sourceRect = btn.bounds;
-    [self presentViewController:alertController animated:YES completion:nil];
-        
+-(void)logout{
+    NSError *signOutError;
+    BOOL status = [[FIRAuth auth] signOut:&signOutError];
+    if (!status) {
+        NSLog(@"Error signing out: %@", signOutError);
+        return;
+    }else{
+        [self gotoLoginPage];
+    }
+}
+-(void)selectSettingStar{
+    [self gotoSettingPage:NO];
 }
 
 -(void)gotoSettingPage:(BOOL)bo{

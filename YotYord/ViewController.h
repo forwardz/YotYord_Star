@@ -13,8 +13,9 @@
 #import "StarTableViewCell.h"
 #import "PopupInputDetailViewController.h"
 #import "SettingViewController.h"
+#import "PopupSettingViewController.h"
 
-@interface ViewController : UIViewController<PopupInputSignDelegate,PopupInputDetailDelegate,UISearchBarDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDelegate,UITableViewDataSource,SettingViewDelegate>{
+@interface ViewController : UIViewController<PopupInputSignDelegate,PopupInputDetailDelegate,UISearchBarDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDelegate,UITableViewDataSource,SettingViewDelegate,PopupSettingViewControllerDelegate>{
     SignObject *signObject;
     NSArray *arrStar;
     NSArray *arrShowTable;
@@ -39,6 +40,7 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *mainCollectionView;
 @property (weak, nonatomic) IBOutlet UITableView *starTableView;
+
 -(IBAction)addAction:(id)sender;
 - (IBAction)selectFilterAction:(id)sender;
 -(IBAction)loadAction:(id)sender;
