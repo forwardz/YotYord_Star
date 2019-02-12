@@ -69,6 +69,9 @@
     vc.signObject = signObject;
     [self presentViewController:vc animated:YES completion:nil];
 }
+-(void)editWeightAction:(id)sender{
+    [self gotoSettingPage:YES];
+}
 -(IBAction)deleteAction:(id)sender{
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Delete" message:@"Are you sure to delete?"
                                                             preferredStyle:UIAlertControllerStyleAlert];
@@ -357,7 +360,15 @@
 }
 -(void)calculateSumPoint{
     sumPoint = [[arrStar valueForKeyPath:@"@sum.point"] integerValue];
-    [self.lblSumpoint setText:[NSString stringWithFormat:@"%zd",sumPoint]];
+//    [self.lblSumpoint setText:[NSString stringWithFormat:@"%zd",sumPoint]];
+    double sumTop = 0;
+    double sumWeight = 0;
+    for(StarShowObject *sso in arrStar){
+        sumTop += (sso.percent * sso.weight);
+        sumWeight += sso.weight;
+    }
+    [self.lblSumpoint setText:[NSString stringWithFormat:@"%.0f",(sumTop/sumWeight)]];
+    
 }
 
 -(void)calculateCircle{
@@ -424,7 +435,7 @@
                                                            style:UIAlertActionStyleDefault
                                                          handler:^(UIAlertAction *action) {
                                                              NSLog(@"ตั้งค่าดวงดาว");
-                                                             [self gotoSettingPage];
+                                                             [self gotoSettingPage:NO];
                                                          }];
     UIAlertAction *logoutAction = [UIAlertAction actionWithTitle:@"Logout"
                                                              style:UIAlertActionStyleDestructive
@@ -450,10 +461,10 @@
         
 }
 
--(void)gotoSettingPage{
+-(void)gotoSettingPage:(BOOL)bo{
     SettingViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SettingViewController"];
     vc.delegate = self;
-    vc.signObject = signObject;
+    if(bo) vc.signObject = signObject;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

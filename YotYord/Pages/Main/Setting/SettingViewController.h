@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SettingStarTableViewCell.h"
 
 @protocol SettingViewDelegate <NSObject>
 -(void)updateStarSettingDidfinish;
 @end
 
-@interface SettingViewController : UIViewController
+@interface SettingViewController : UIViewController <UITableViewDelegate,UITableViewDataSource,SettingStarTableViewCellDelegate>
+
+
 @property (retain, nonatomic) SignObject *signObject;
 
 @property (weak, nonatomic) id<SettingViewDelegate> delegate;

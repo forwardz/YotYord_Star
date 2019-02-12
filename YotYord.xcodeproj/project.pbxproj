@@ -13,6 +13,7 @@
 		49187ADA21535635003BA464 /* calculate_pra.html in Resources */ = {isa = PBXBuildFile; fileRef = 49187AD921535635003BA464 /* calculate_pra.html */; };
 		49187ADD215356D9003BA464 /* PopupInputDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49187ADC215356D9003BA464 /* PopupInputDetailViewController.m */; };
 		49187AE12153573D003BA464 /* RasiObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 49187AE02153573D003BA464 /* RasiObject.m */; };
+		491BADBC2212E8EA004D2CDB /* SettingStarTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 491BADBB2212E8EA004D2CDB /* SettingStarTableViewCell.m */; };
 		4937FBE2212E9F86009CDD5E /* MainCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4937FBE1212E9F86009CDD5E /* MainCollectionViewCell.m */; };
 		4937FBE5212EA4D8009CDD5E /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4937FBE4212EA4D8009CDD5E /* MainTableViewCell.m */; };
 		493F0A352126AE4D0072844B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 493F0A342126AE4D0072844B /* AppDelegate.m */; };
@@ -87,6 +88,8 @@
 		49187ADC215356D9003BA464 /* PopupInputDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopupInputDetailViewController.m; sourceTree = "<group>"; };
 		49187ADF2153573D003BA464 /* RasiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RasiObject.h; sourceTree = "<group>"; };
 		49187AE02153573D003BA464 /* RasiObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RasiObject.m; sourceTree = "<group>"; };
+		491BADBA2212E8EA004D2CDB /* SettingStarTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingStarTableViewCell.h; sourceTree = "<group>"; };
+		491BADBB2212E8EA004D2CDB /* SettingStarTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingStarTableViewCell.m; sourceTree = "<group>"; };
 		4937FBE0212E9F86009CDD5E /* MainCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainCollectionViewCell.h; sourceTree = "<group>"; };
 		4937FBE1212E9F86009CDD5E /* MainCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainCollectionViewCell.m; sourceTree = "<group>"; };
 		4937FBE3212EA4D8009CDD5E /* MainTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTableViewCell.h; sourceTree = "<group>"; };
@@ -339,6 +342,8 @@
 			children = (
 				4994DC4022031A7B001BCCAE /* SettingViewController.h */,
 				4994DC4122031A7B001BCCAE /* SettingViewController.m */,
+				491BADBA2212E8EA004D2CDB /* SettingStarTableViewCell.h */,
+				491BADBB2212E8EA004D2CDB /* SettingStarTableViewCell.m */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -751,6 +756,7 @@
 				494802142147852100A48626 /* CALayer+Additions.m in Sources */,
 				493F0A432126AE4E0072844B /* main.m in Sources */,
 				493F0A352126AE4D0072844B /* AppDelegate.m in Sources */,
+				491BADBC2212E8EA004D2CDB /* SettingStarTableViewCell.m in Sources */,
 				49187AE12153573D003BA464 /* RasiObject.m in Sources */,
 				49F4E59D2126C396004DECD3 /* LoginViewController.m in Sources */,
 				4948022021478EA900A48626 /* StarTableViewCell.m in Sources */,
@@ -932,7 +938,7 @@
 				);
 				GCC_PREFIX_HEADER = "YotYord/YotYord-Prefix.pch";
 				INFOPLIST_FILE = YotYord/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -957,7 +963,7 @@
 				);
 				GCC_PREFIX_HEADER = "YotYord/YotYord-Prefix.pch";
 				INFOPLIST_FILE = YotYord/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

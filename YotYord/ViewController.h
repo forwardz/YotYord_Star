@@ -44,6 +44,7 @@
 -(IBAction)loadAction:(id)sender;
 
 - (IBAction)editAction:(id)sender;
+- (IBAction)editWeightAction:(id)sender;
 - (IBAction)deleteAction:(id)sender;
 - (IBAction)shareAction:(id)sender;
 -(IBAction)saveAction:(id)sender;
