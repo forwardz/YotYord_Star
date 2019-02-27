@@ -14,8 +14,9 @@
 #import "PopupInputDetailViewController.h"
 #import "SettingViewController.h"
 #import "PopupSettingViewController.h"
+#import "SettingSelectPersonViewController.h"
 
-@interface ViewController : UIViewController<PopupInputSignDelegate,PopupInputDetailDelegate,UISearchBarDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDelegate,UITableViewDataSource,SettingViewDelegate,PopupSettingViewControllerDelegate>{
+@interface MainViewController : UIViewController<PopupInputSignDelegate,PopupInputDetailDelegate,UISearchBarDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDelegate,UITableViewDataSource,SettingViewDelegate,PopupSettingViewControllerDelegate>{
     SignObject *signObject;
     NSArray *arrStar;
     NSArray *arrShowTable;

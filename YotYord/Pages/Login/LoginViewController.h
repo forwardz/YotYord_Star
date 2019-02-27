@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface LoginViewController : UIViewController<FBSDKLoginButtonDelegate>
-@property (weak, nonatomic) IBOutlet FBSDKLoginButton *loginButton;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIView *spinnerView;
 
 @end

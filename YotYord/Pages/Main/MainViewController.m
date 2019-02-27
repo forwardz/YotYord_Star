@@ -6,15 +6,17 @@
 //  Copyright © 2561 Tutchavee Pongsapisuth. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MainViewController.h"
 #import "MyDocument.h"
 #import "SearchTableViewCell.h"
 
-@interface ViewController ()
+@interface MainViewController (){
+    BOOL isSetting;
+}
 
 @end
 
-@implementation ViewController
+@implementation MainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -94,6 +96,7 @@
     }
     
     [self drawUI];
+    [self saveToCloud];
 }
 
 -(IBAction)shareAction:(id)sender{
@@ -157,37 +160,42 @@
 
 -(NSString *)getStringDateFromSigObject:(SignObject *)so{
     if(so){
-//        NSString *timezone = so.zone;
-//        if(so.zone.integerValue){
-//            timezone = [NSString stringWithFormat:@"+%@",so.zone];
-//        }
+        //        NSString *timezone = so.zone;
+        //        if(so.zone.integerValue){
+        //            timezone = [NSString stringWithFormat:@"+%@",so.zone];
+        //        }
         return [NSString stringWithFormat:@"%@/%@/%@ %@:%@",so.date,so.month,so.year,so.hour,so.minute];
-//        return [NSString stringWithFormat:@"%@/%@/%@ %@:%@:%@ %@",so.date,so.month,so.year,so.hour,so.minute,so.second,timezone];
+        //        return [NSString stringWithFormat:@"%@/%@/%@ %@:%@:%@ %@",so.date,so.month,so.year,so.hour,so.minute,so.second,timezone];
     }
     return @"";
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    if ([FIRAuth auth].currentUser) {
-        // User is signed in.
-        // ...
-        
-        FIRUser *user = [FIRAuth auth].currentUser;
-        
-        
-        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-        dispatch_async(queue, ^{
-            NSData *imageData = [NSData dataWithContentsOfURL:user.photoURL];
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                [self.imgPhoto setImage:[UIImage imageWithData:imageData]];
-                [self.lblUsername setText:user.displayName];
-                [self loadiCloud];
+    if(!isSetting){
+        if ([FIRAuth auth].currentUser) {
+            // User is signed in.
+            // ...
+            
+            FIRUser *user = [FIRAuth auth].currentUser;
+            
+            
+            dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+            dispatch_async(queue, ^{
+                NSData *imageData = [NSData dataWithContentsOfURL:user.photoURL];
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    [self.imgPhoto setImage:[UIImage imageWithData:imageData]];
+                    [self.lblUsername setText:user.displayName];
+                    [self loadiCloud];
+                });
             });
-        });
-        
-    } else {
-        [self performSelector:@selector(gotoLoginPage) withObject:nil afterDelay:0.6];
+            
+        } else {
+            [self performSelector:@selector(gotoLoginPage) withObject:nil afterDelay:0.6];
+        }
+    }else{
+        isSetting = NO;
+        [[SignObject shareSignObject] setValue:@NO forKey:@"isSelected"];
     }
 }
 
@@ -217,14 +225,14 @@
     actionSheet.popoverPresentationController.sourceView = self.imgPhoto;
     actionSheet.popoverPresentationController.sourceRect = [self.imgPhoto bounds];
     // Present action sheet.
-    [self presentViewController:actionSheet animated:YES completion:nil];    
+    [self presentViewController:actionSheet animated:YES completion:nil];
 }
 
 -(void)addAction:(id)sender{
     /*
-    PopupInputSignViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"PopupInputSignViewController"];
-    vc.delegate = self;
-    [self presentViewController:vc animated:YES completion:nil];
+     PopupInputSignViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"PopupInputSignViewController"];
+     vc.delegate = self;
+     [self presentViewController:vc animated:YES completion:nil];
      */
     PopupInputDetailViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"PopupInputDetailViewController"];
     vc.delegate = self;
@@ -235,11 +243,13 @@
     [[SignObject shareSignObject] addObject:so];
     signObject = so;
     [self drawUI];
+    [self saveToCloud];
 }
 -(void)updateSignObjectFidnish:(SignObject *)so{
     signObject = so;
     
     [self drawUI];
+    [self saveToCloud];
 }
 
 -(void)drawUI{
@@ -251,6 +261,25 @@
     [self calculateSumPoint];
     [self calculateCircle];
     [self setLabelDateView];
+    [self.mainCollectionView reloadData];
+    [self.starTableView reloadData];
+}
+-(void)clearUI{
+    signObject = nil;
+    arrStar = [StarShowObject createStarShowObject];
+    [self calculateWeakStar];
+    arrShowTable = [StarReportObject createStarReportArray];
+    [self calculateTableOne];
+    [self calculateTableTwo];
+    [self calculateSumPoint];
+    [self calculateCircle];
+    
+//    [self setLabelDateView];
+    [self.dateView setHidden:YES];
+    [self.lblName setText:@""];
+    [self.lblDate setText:@""];
+    [self.lblLocation setText:@""];
+    
     [self.mainCollectionView reloadData];
     [self.starTableView reloadData];
 }
@@ -360,7 +389,7 @@
 }
 -(void)calculateSumPoint{
     sumPoint = [[arrStar valueForKeyPath:@"@sum.point"] integerValue];
-//    [self.lblSumpoint setText:[NSString stringWithFormat:@"%zd",sumPoint]];
+    //    [self.lblSumpoint setText:[NSString stringWithFormat:@"%zd",sumPoint]];
     double sumTop = 0;
     double sumWeight = 0;
     for(StarShowObject *sso in arrStar){
@@ -419,6 +448,10 @@
 }
 
 -(void)saveAction:(id)sender{
+    [self saveToCloud];
+}
+
+-(void)saveToCloud{
     if(signObject){
         NSData *data = [NSKeyedArchiver archivedDataWithRootObject:[SignObject shareSignObject]];
         [self saveiCloud:data];
@@ -426,7 +459,6 @@
 }
 
 - (void)settingAction:(id)sender{
-    
     PopupSettingViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"PopupSettingViewController"];
     vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     vc.modalPresentationStyle = UIModalPresentationPopover;
@@ -444,14 +476,21 @@
         NSLog(@"Error signing out: %@", signOutError);
         return;
     }else{
+        [self clearUI];
         [self gotoLoginPage];
     }
 }
 -(void)selectSettingStar{
-    [self gotoSettingPage:NO];
+    isSetting = YES;
+//    [self gotoSettingPage:NO];
+    SettingSelectPersonViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SettingSelectPersonViewController"];
+    vc.delegate = self;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 -(void)gotoSettingPage:(BOOL)bo{
+    isSetting = YES;
+    
     SettingViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SettingViewController"];
     vc.delegate = self;
     if(bo) vc.signObject = signObject;
@@ -460,6 +499,7 @@
 
 -(void)updateStarSettingDidfinish{
     [self drawUI];
+    [self saveToCloud];
 }
 
 - (IBAction)selectFilterAction:(id)sender {
@@ -469,7 +509,6 @@
     [self.starTableView reloadData];
 }
 
-
 #pragma mark - UICollecitonView
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     if(typeTable == 0) return arrShowTable.count;
@@ -477,30 +516,30 @@
 }
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     if(typeTable == 0) return [[arrShowTable objectAtIndex:section] count];
-//    else if(typeTable == 1){
-        return [[arrShowTable objectAtIndex:typeTable-1] count];
-//    }
-//    else if(typeTable == 2){
-//        return [[arrShowTable objectAtIndex:1] count];
-//    }
-//    else if(typeTable == 3){
-//        return [[arrShowTable objectAtIndex:2] count];
-//    }
+    //    else if(typeTable == 1){
+    return [[arrShowTable objectAtIndex:typeTable-1] count];
+    //    }
+    //    else if(typeTable == 2){
+    //        return [[arrShowTable objectAtIndex:1] count];
+    //    }
+    //    else if(typeTable == 3){
+    //        return [[arrShowTable objectAtIndex:2] count];
+    //    }
     return 0;
 }
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     MainCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MainCollectionViewCell" forIndexPath:indexPath];
-//    if(typeTable == 3){
-//
-//    }else{
-        StarReportObject *sro;
-        if(typeTable == 0){
-            sro = [[arrShowTable objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
-        }else{
-            sro = [[arrShowTable objectAtIndex:typeTable - 1] objectAtIndex:indexPath.row];
-        }
-        [cell setDataCollectionCell:sro withSignObject:signObject withType:typeTable];
-//    }
+    //    if(typeTable == 3){
+    //
+    //    }else{
+    StarReportObject *sro;
+    if(typeTable == 0){
+        sro = [[arrShowTable objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    }else{
+        sro = [[arrShowTable objectAtIndex:typeTable - 1] objectAtIndex:indexPath.row];
+    }
+    [cell setDataCollectionCell:sro withSignObject:signObject withType:typeTable];
+    //    }
     return cell;
 }
 
@@ -534,7 +573,7 @@
     if(sumPoint == 0){
         [cell setStarTableViewCell:0];
     }else{
-//        [cell setStarTableViewCell:((sso.point*sso.weight)/sumPoint)];
+        //        [cell setStarTableViewCell:((sso.point*sso.weight)/sumPoint)];
         [cell setStarTableViewCell:(sso.percent/100.0f)];
     }
     [cell.lblWeight setText:[NSString stringWithFormat:@"%zd",sso.weight]];

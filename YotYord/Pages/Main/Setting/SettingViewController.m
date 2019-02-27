@@ -43,7 +43,7 @@
         [self.lblWeakStar setText:@"2"];
         [self.sliWeakStar setValue:0.2];
         
-        for(int i=0;i<11;i++){
+        for(int i=0;i<10;i++){
             [arrWeigth addObject:[NSNumber numberWithInteger:10]];
         }
     }
@@ -65,17 +65,33 @@
 -(void)saveAction:(id)sender{
     if(signObject){
         signObject.weakStar = [self.lblWeakStar.text intValue];
-        signObject.solidStar = [self.lblWeakStar.text intValue];
+        signObject.solidStar = [self.lblSolidStar.text intValue];
         int i=0;
         for(NSNumber *a in arrWeigth){
             [signObject.arrWeight  replaceObjectAtIndex:i withObject:a];
             i++;
         }
+    }else{
+        NSArray *arr = [self getArrayFormSelected];
+        for(SignObject *so in arr){
+            so.weakStar = [self.lblWeakStar.text intValue];
+            so.solidStar = [self.lblSolidStar.text intValue];
+            int i=0;
+            for(NSNumber *a in arrWeigth){
+                [so.arrWeight  replaceObjectAtIndex:i withObject:a];
+                i++;
+            }
+        }
     }
-    [self backAction:nil];
+    [self.navigationController popToRootViewControllerAnimated:YES];
     if([delegate respondsToSelector:@selector(updateStarSettingDidfinish)]){
         [delegate updateStarSettingDidfinish];
     }
+}
+
+-(NSArray *)getArrayFormSelected{
+    NSPredicate *pre = [NSPredicate predicateWithFormat:@"isSelected == 1"];
+    return [[SignObject shareSignObject] filteredArrayUsingPredicate:pre];
 }
 
 -(void)backAction:(id)sender{

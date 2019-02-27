@@ -27,14 +27,15 @@ static NSMutableArray *shareSignObejct;
 }
 
 +(void)cacheSignObjectToCache{
-    NSData *myEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:shareSignObejct];
+    NSData *myEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:shareSignObejct requiringSecureCoding:NO error:nil];
     [[NSUserDefaults standardUserDefaults] setObject:myEncodedObject forKey:@"KEYCAHCESIGNOBJECT"];
 }
 
 +(NSMutableArray *)getSignArrayFromCache{
     NSData *myDecodedObject = [[NSUserDefaults standardUserDefaults] objectForKey:@"KEYCAHCESIGNOBJECT"];
     if (myDecodedObject) {
-        return (NSMutableArray *)[NSKeyedUnarchiver unarchiveObjectWithData:myDecodedObject];
+        
+        return (NSMutableArray *)[NSKeyedUnarchiver unarchivedObjectOfClass:[NSMutableArray class] fromData:myDecodedObject error:nil];
     }
     return nil;
 }
@@ -64,6 +65,7 @@ static NSMutableArray *shareSignObejct;
         self.solidStar = [[decoder decodeObjectForKey:@"solidStar"] intValue];
         self.weakStar = [[decoder decodeObjectForKey:@"weakStar"] intValue];
         self.arrWeight = [decoder decodeObjectForKey:@"arrWeight"];
+//        self.isSelected = [[decoder decodeObjectForKey:@"isSelected"] boolValue];
     }
     return self;
 }
@@ -90,6 +92,7 @@ static NSMutableArray *shareSignObejct;
     if(self.solidStar) [encoder encodeObject:[NSNumber numberWithInt:self.solidStar] forKey:@"solidStar"];
     if(self.weakStar) [encoder encodeObject:[NSNumber numberWithInt:self.weakStar] forKey:@"weakStar"];
     if(self.arrWeight) [encoder encodeObject:self.arrWeight forKey:@"arrWeight"];
+//    if(self.isSelected) [encoder encodeObject:[NSNumber numberWithBool:self.isSelected] forKey:@"isSelected"];
 //    if (self.asc) [encoder encodeObject:self.asc forKey:@"asc"];
 //    if (self.one) [encoder encodeObject:self.one forKey:@"one"];
 //    if (self.two) [encoder encodeObject:self.two forKey:@"two"];

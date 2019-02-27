@@ -17,9 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    loginButton.delegate = self;
-    loginButton.readPermissions =
-    @[@"public_profile", @"email", @"user_friends"];
+    
+//    loginButton.delegate = self;
+//    loginButton.readPermissions = @[@"public_profile", @"email", @"user_friends"];
     
     if ([FBSDKAccessToken currentAccessToken]) {
         // User is logged in, do work such as go to next view controller.
@@ -60,6 +60,16 @@
     // Do any additional setup after loading the view.
     
 }
+- (IBAction)loginFacebookAction:(id)sender {
+    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+    [login
+     logInWithReadPermissions: @[@"public_profile"]
+     fromViewController:self
+     handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+         [self loginButton:nil didCompleteWithResult:result error:error];
+     }];
+}
+
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     //    [loginButton setHidden:YES];

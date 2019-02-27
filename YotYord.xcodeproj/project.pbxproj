@@ -17,7 +17,6 @@
 		4937FBE2212E9F86009CDD5E /* MainCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4937FBE1212E9F86009CDD5E /* MainCollectionViewCell.m */; };
 		4937FBE5212EA4D8009CDD5E /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4937FBE4212EA4D8009CDD5E /* MainTableViewCell.m */; };
 		493F0A352126AE4D0072844B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 493F0A342126AE4D0072844B /* AppDelegate.m */; };
-		493F0A382126AE4D0072844B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 493F0A372126AE4D0072844B /* ViewController.m */; };
 		493F0A3B2126AE4D0072844B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493F0A392126AE4D0072844B /* Main.storyboard */; };
 		493F0A3D2126AE4E0072844B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 493F0A3C2126AE4E0072844B /* Assets.xcassets */; };
 		493F0A402126AE4E0072844B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493F0A3E2126AE4E0072844B /* LaunchScreen.storyboard */; };
@@ -45,6 +44,9 @@
 		49A49EE121F8A0DE00D8828D /* allImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49A49EE021F8A0DE00D8828D /* allImages.xcassets */; };
 		49A5910D21C8B2570047944F /* StarReportPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49A5910C21C8B2570047944F /* StarReportPlist.plist */; };
 		49B84C00221308C700DA0F46 /* PopupSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B84BFF221308C700DA0F46 /* PopupSettingViewController.m */; };
+		49BE679022264505002FDF36 /* ShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BE678F22264505002FDF36 /* ShadowView.m */; };
+		49BE679322264A1E002FDF36 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BE679222264A1E002FDF36 /* MainViewController.m */; };
+		49BE679622264DD9002FDF36 /* SettingSelectPersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BE679522264DD9002FDF36 /* SettingSelectPersonViewController.m */; };
 		49CC1DBA2154AA2C00B84913 /* timePlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49CC1DB92154AA2C00B84913 /* timePlist.plist */; };
 		49E44F18215DF29D0002290F /* SukhumvitSet-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 49E44F12215DF29C0002290F /* SukhumvitSet-Light.ttf */; };
 		49E44F19215DF29D0002290F /* SukhumvitSet-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 49E44F13215DF29C0002290F /* SukhumvitSet-Bold.ttf */; };
@@ -98,8 +100,6 @@
 		493F0A302126AE4D0072844B /* YotYord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YotYord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		493F0A332126AE4D0072844B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		493F0A342126AE4D0072844B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		493F0A362126AE4D0072844B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		493F0A372126AE4D0072844B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		493F0A3A2126AE4D0072844B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		493F0A3C2126AE4E0072844B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		493F0A3F2126AE4E0072844B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -142,6 +142,12 @@
 		49A5910C21C8B2570047944F /* StarReportPlist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = StarReportPlist.plist; sourceTree = "<group>"; };
 		49B84BFE221308C700DA0F46 /* PopupSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopupSettingViewController.h; sourceTree = "<group>"; };
 		49B84BFF221308C700DA0F46 /* PopupSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopupSettingViewController.m; sourceTree = "<group>"; };
+		49BE678E22264505002FDF36 /* ShadowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShadowView.h; sourceTree = "<group>"; };
+		49BE678F22264505002FDF36 /* ShadowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShadowView.m; sourceTree = "<group>"; };
+		49BE679122264A1E002FDF36 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		49BE679222264A1E002FDF36 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		49BE679422264DD9002FDF36 /* SettingSelectPersonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingSelectPersonViewController.h; sourceTree = "<group>"; };
+		49BE679522264DD9002FDF36 /* SettingSelectPersonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingSelectPersonViewController.m; sourceTree = "<group>"; };
 		49CC1DB92154AA2C00B84913 /* timePlist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = timePlist.plist; sourceTree = "<group>"; };
 		49E44F12215DF29C0002290F /* SukhumvitSet-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SukhumvitSet-Light.ttf"; sourceTree = "<group>"; };
 		49E44F13215DF29C0002290F /* SukhumvitSet-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SukhumvitSet-Bold.ttf"; sourceTree = "<group>"; };
@@ -226,6 +232,8 @@
 			children = (
 				4994DC3F22031A6E001BCCAE /* Setting */,
 				4937FBDC212E9EE9009CDD5E /* Cell&Object */,
+				49BE679122264A1E002FDF36 /* MainViewController.h */,
+				49BE679222264A1E002FDF36 /* MainViewController.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -276,8 +284,6 @@
 				49F4E5942126C395004DECD3 /* Pages */,
 				493F0A332126AE4D0072844B /* AppDelegate.h */,
 				493F0A342126AE4D0072844B /* AppDelegate.m */,
-				493F0A362126AE4D0072844B /* ViewController.h */,
-				493F0A372126AE4D0072844B /* ViewController.m */,
 				493F0A392126AE4D0072844B /* Main.storyboard */,
 				493F0A3C2126AE4E0072844B /* Assets.xcassets */,
 				493F0A3E2126AE4E0072844B /* LaunchScreen.storyboard */,
@@ -349,6 +355,8 @@
 				491BADBB2212E8EA004D2CDB /* SettingStarTableViewCell.m */,
 				49B84BFE221308C700DA0F46 /* PopupSettingViewController.h */,
 				49B84BFF221308C700DA0F46 /* PopupSettingViewController.m */,
+				49BE679422264DD9002FDF36 /* SettingSelectPersonViewController.h */,
+				49BE679522264DD9002FDF36 /* SettingSelectPersonViewController.m */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -417,6 +425,8 @@
 				495AEADD212FFAD900563A4A /* MyDocument.h */,
 				495AEADE212FFAD900563A4A /* MyDocument.m */,
 				49A5910C21C8B2570047944F /* StarReportPlist.plist */,
+				49BE678E22264505002FDF36 /* ShadowView.h */,
+				49BE678F22264505002FDF36 /* ShadowView.m */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -746,7 +756,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				49187ADD215356D9003BA464 /* PopupInputDetailViewController.m in Sources */,
-				493F0A382126AE4D0072844B /* ViewController.m in Sources */,
 				4948021B21478DD400A48626 /* UIColor+RGBValues.m in Sources */,
 				4937FBE2212E9F86009CDD5E /* MainCollectionViewCell.m in Sources */,
 				49F4E5A02126C3A2004DECD3 /* SignObject.m in Sources */,
@@ -756,15 +765,18 @@
 				49FBF7F721A3CA7F00135879 /* PopupCountryStateViewController.m in Sources */,
 				4994DC4222031A7B001BCCAE /* SettingViewController.m in Sources */,
 				4937FBE5212EA4D8009CDD5E /* MainTableViewCell.m in Sources */,
+				49BE679322264A1E002FDF36 /* MainViewController.m in Sources */,
 				495AEADF212FFAD900563A4A /* MyDocument.m in Sources */,
 				49F4E59C2126C396004DECD3 /* PopupInputSignViewController.m in Sources */,
 				49F4E5A32126C62B004DECD3 /* HeaderPointObject.m in Sources */,
 				494802142147852100A48626 /* CALayer+Additions.m in Sources */,
 				493F0A432126AE4E0072844B /* main.m in Sources */,
 				493F0A352126AE4D0072844B /* AppDelegate.m in Sources */,
+				49BE679622264DD9002FDF36 /* SettingSelectPersonViewController.m in Sources */,
 				491BADBC2212E8EA004D2CDB /* SettingStarTableViewCell.m in Sources */,
 				49187AE12153573D003BA464 /* RasiObject.m in Sources */,
 				49F4E59D2126C396004DECD3 /* LoginViewController.m in Sources */,
+				49BE679022264505002FDF36 /* ShadowView.m in Sources */,
 				4948022021478EA900A48626 /* StarTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

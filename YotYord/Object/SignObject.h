@@ -29,6 +29,7 @@
 @property (nonatomic, retain) NSString *city;
 @property (nonatomic, retain) NSString *country;
 @property (nonatomic, assign) NSInteger luckana;
+@property (nonatomic, assign) BOOL isSelected;
 
 @property (nonatomic, assign) int solidStar;
 @property (nonatomic, assign) int weakStar;
