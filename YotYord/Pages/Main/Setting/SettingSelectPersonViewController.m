@@ -30,6 +30,7 @@
         [[SignObject shareSignObject] setValue:@YES forKey:@"isSelected"];
     }
     [_tblPerson reloadData];
+    [self checkButton];
 }
 
 - (IBAction)backAction:(id)sender {

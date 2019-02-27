@@ -453,7 +453,7 @@
 
 -(void)saveToCloud{
     if(signObject){
-        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:[SignObject shareSignObject]];
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:[SignObject shareSignObject] requiringSecureCoding:NO error:nil];
         [self saveiCloud:data];
     }
 }

@@ -109,28 +109,28 @@ static NSMutableArray *shareHeaderPoint2;
 
 
 +(void)cacheHeaderPoint{
-    NSData *myEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:shareHeaderPoint];
+    NSData *myEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:shareHeaderPoint requiringSecureCoding:NO error:nil];
     [[NSUserDefaults standardUserDefaults] setObject:myEncodedObject forKey:KEYCACHEHEADERPOINT];
 }
 +(void)cacheHeaderPoint2{
-    NSData *myEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:shareHeaderPoint2];
+    NSData *myEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:shareHeaderPoint2 requiringSecureCoding:NO error:nil];
     [[NSUserDefaults standardUserDefaults] setObject:myEncodedObject forKey:KEYCACHEHEADERPOINT2];
 }
 
 +(void)cacheHeaderPoint:(NSMutableArray *)array{
-    NSData *myEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:array];
+    NSData *myEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:array requiringSecureCoding:NO error:nil];
     [[NSUserDefaults standardUserDefaults] setObject:myEncodedObject forKey:KEYCACHEHEADERPOINT];
 }
 
 +(void)cacheHeaderPoint2:(NSMutableArray *)array{
-    NSData *myEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:array];
+    NSData *myEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:array requiringSecureCoding:NO error:nil];
     [[NSUserDefaults standardUserDefaults] setObject:myEncodedObject forKey:KEYCACHEHEADERPOINT2];
 }
 
 +(NSMutableArray *)getHeaderPointArrayFromCache{
     NSData *myDecodedObject = [[NSUserDefaults standardUserDefaults] objectForKey:KEYCACHEHEADERPOINT];
     if (myDecodedObject) {
-        return (NSMutableArray *)[NSKeyedUnarchiver unarchiveObjectWithData:myDecodedObject];
+        return (NSMutableArray *)[NSKeyedUnarchiver unarchivedObjectOfClass:[NSMutableArray class] fromData:myDecodedObject error:nil];
     }
     return nil;
 }
@@ -138,7 +138,7 @@ static NSMutableArray *shareHeaderPoint2;
 +(NSMutableArray *)getHeaderPoint2ArrayFromCache{
     NSData *myDecodedObject = [[NSUserDefaults standardUserDefaults] objectForKey:KEYCACHEHEADERPOINT2];
     if (myDecodedObject) {
-        return (NSMutableArray *)[NSKeyedUnarchiver unarchiveObjectWithData:myDecodedObject];
+        return (NSMutableArray *)[NSKeyedUnarchiver unarchivedObjectOfClass:[NSMutableArray class] fromData:myDecodedObject error:nil];
     }
     return nil;
 }
